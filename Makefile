@@ -25,6 +25,7 @@ CPP_MODULES = \
 daisy_seed \
 daisy_pod \
 daisy_patch \
+daisy_heart-of-gold \
 daisy_petal \
 daisy_field \
 daisy_versio \
@@ -33,6 +34,7 @@ dev/sr_595 \
 dev/codec_ak4556 \
 dev/codec_pcm3060 \
 dev/codec_wm8731 \
+dev/dac_8568 \
 dev/lcd_hd44780 \
 hid/ctrl \
 hid/encoder \
