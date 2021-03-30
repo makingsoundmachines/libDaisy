@@ -16,78 +16,78 @@ static void Error_Handler()
 #define PIN_CHN_3    \
     {                \
         DSY_GPIOA, 6 \
-    }
+    }                   //ADC12_INP3 - CV3
 #define PIN_CHN_4    \
     {                \
         DSY_GPIOC, 4 \
-    }
+    }                   //ADC12_INP4 - CV1
 #define PIN_CHN_5    \
     {                \
         DSY_GPIOB, 1 \
-    }
+    }                   //ADC12_INP5 - CV5
 #define PIN_CHN_7    \
     {                \
         DSY_GPIOA, 7 \
-    }
+    }                   //ADC12_INP7 - CV4
 #define PIN_CHN_8    \
     {                \
         DSY_GPIOC, 5 \
-    }
+    }                   //ADC12_INP8 - CV11
 #define PIN_CHN_9    \
     {                \
         DSY_GPIOB, 0 \
-    }
+    }                   //ADC12_INP9 - CV8
 #define PIN_CHN_10   \
     {                \
         DSY_GPIOC, 0 \
-    }
+    }                   //ADC123_INP10 - CV7
 #define PIN_CHN_11   \
     {                \
         DSY_GPIOC, 1 \
-    }
+    }                   //ADC123_INP11 - CV2
 #define PIN_CHN_14   \
     {                \
         DSY_GPIOA, 2 \
-    }
+    }                   //ADC12_INP14 - SAI2_SCK_B
 #define PIN_CHN_15   \
     {                \
         DSY_GPIOA, 3 \
-    }
+    }                   //ADC12_INP15 - CV6
 #define PIN_CHN_16   \
     {                \
         DSY_GPIOA, 0 \
-    }
+    }                   //ADC1_INP16 - SAI2_SD_B
 #define PIN_CHN_17   \
     {                \
         DSY_GPIOA, 1 \
-    }
+    }                   //ADC1_INP17 - SAI2_MCLK_B
 #define PIN_CHN_18   \
     {                \
-        DSY_GPIOA, 4 \
-    }
+        DSY_GPIOC, 2 \
+    }                   //ADC3_INP0 PC2_C - ADC123_INP12
 #define PIN_CHN_19   \
     {                \
-        DSY_GPIOA, 5 \
-    }
+        DSY_GPIOC, 3 \
+    }                   //ADC3_INP1 PC3_C - ADC123_INP13
 
 #define DSY_ADC_MAX_MUX_CHANNELS 8
 #define DSY_ADC_MAX_RESOLUTION 65536.0f
 
 static const uint32_t dsy_adc_channel_map[DSY_ADC_MAX_CHANNELS] = {
-    ADC_CHANNEL_3,
-    ADC_CHANNEL_4,
-    ADC_CHANNEL_5,
-    ADC_CHANNEL_7,
-    ADC_CHANNEL_8,
-    ADC_CHANNEL_9,
-    ADC_CHANNEL_10,
-    ADC_CHANNEL_11,
-    ADC_CHANNEL_14,
-    ADC_CHANNEL_15,
-    ADC_CHANNEL_16,
-    ADC_CHANNEL_17,
-    ADC_CHANNEL_18,
-    ADC_CHANNEL_19,
+    ADC_CHANNEL_3,  //ADC12_INP3 - CV3
+    ADC_CHANNEL_4,  //ADC12_INP4 - CV1
+    ADC_CHANNEL_5,  //ADC12_INP5 - CV5
+    ADC_CHANNEL_7,  //ADC12_INP7 - CV4
+    ADC_CHANNEL_8,  //ADC12_INP8 - CV11
+    ADC_CHANNEL_9,  //ADC12_INP9 - CV8
+    ADC_CHANNEL_10, //ADC123_INP10 - CV7
+    ADC_CHANNEL_11, //ADC123_INP11 - CV
+    ADC_CHANNEL_14, //ADC12_INP14 - SAI2_SCK_B
+    ADC_CHANNEL_15, //ADC12_INP15 - CV6
+    ADC_CHANNEL_16, //ADC1_INP16 - SAI2_SD_B
+    ADC_CHANNEL_17, //ADC1_INP17 - SAI2_MCLK_B
+    ADC_CHANNEL_12, //ADC3_INP0 PC2_C - ADC123_INP12
+    ADC_CHANNEL_13, //ADC3_INP1 PC3_C - ADC123_INP13
 };
 
 static const uint32_t dsy_adc_rank_map[] = {
@@ -159,20 +159,20 @@ static const uint32_t adc_channel_from_pin(dsy_gpio_pin* pin)
 {
     // For now just a rough switch case for all ADC_CHANNEL values
     dsy_gpio_pin adcpins[DSY_ADC_MAX_CHANNELS] = {
-        PIN_CHN_3,
-        PIN_CHN_4,
-        PIN_CHN_5,
-        PIN_CHN_7,
-        PIN_CHN_8,
-        PIN_CHN_9,
-        PIN_CHN_10,
-        PIN_CHN_11,
-        PIN_CHN_14,
-        PIN_CHN_15,
-        PIN_CHN_16,
+        PIN_CHN_3,  //ADC12_INP3 - CV3
+        PIN_CHN_4,  //ADC12_INP4 - CV1
+        PIN_CHN_5,  //ADC12_INP5 - CV5
+        PIN_CHN_7,  //ADC12_INP7 - CV4
+        PIN_CHN_8,  //ADC12_INP8 - CV11
+        PIN_CHN_9,  //ADC12_INP9 - CV8
+        PIN_CHN_10, //ADC123_INP10 - CV7
+        PIN_CHN_11, //ADC123_INP11 - CV2
+        PIN_CHN_14, //ADC12_INP14 - SAI2_SCK_B
+        PIN_CHN_15, //ADC12_INP15 - CV6
+        PIN_CHN_16, //ADC1_INP16 - SAI2_SD_B
         PIN_CHN_17,
-        PIN_CHN_18,
-        PIN_CHN_19,
+        PIN_CHN_18, //ADC3_INP0 PC2_C -
+        PIN_CHN_19, //ADC3_INP1 PC3_C -
     };
     for(size_t i = 0; i < DSY_ADC_MAX_CHANNELS; i++)
     {
@@ -508,6 +508,11 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     {
         // ADC1 clock enable
         __HAL_RCC_ADC12_CLK_ENABLE();
+
+        // MSM Switch PC2 and PC3 for use with ADC 1
+        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC2, SYSCFG_SWITCH_PC2_CLOSE);
+        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC3, SYSCFG_SWITCH_PC3_CLOSE);
+
         adc_init_dma1();
         __HAL_LINKDMA(&adc.hadc1, DMA_Handle, adc.hdma_adc1);
     }
