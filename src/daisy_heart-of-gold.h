@@ -179,6 +179,9 @@ class DaisyHeartOfGold
 
     ShiftRegister595 sr_595;
 
+    Is31fl3731 ledmatrix;
+    void InitLEDMatrix();
+
   private:
     void InitAudio();
     void InitControls();

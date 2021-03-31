@@ -36,6 +36,7 @@ dev/codec_pcm3060 \
 dev/codec_wm8731 \
 dev/dac_8568 \
 dev/lcd_hd44780 \
+dev/led_is31fl3731 \
 hid/ctrl \
 hid/encoder \
 hid/gatein \

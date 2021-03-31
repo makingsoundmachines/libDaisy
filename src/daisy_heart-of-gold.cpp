@@ -171,6 +171,27 @@ void DaisyHeartOfGold::ProcessDigitalControls()
 }
 
 
+void DaisyHeartOfGold::InitLEDMatrix() {
+
+    /* static constexpr I2CHandle::Config i2c_config = {
+        I2CHandle::Config::Peripheral::I2C_1,
+        {{DSY_GPIOB, 8},
+         {DSY_GPIOB, 9}}, 
+        I2CHandle::Config::Speed::I2C_400KHZ}; */
+
+    I2CHandle::Config i2c_config;
+
+    i2c_config.periph             = I2CHandle::Config::Peripheral::I2C_1;
+    i2c_config.pin_config.scl     = {DSY_GPIOB, 8}, 
+    i2c_config.pin_config.sda     = {DSY_GPIOB, 9};
+    i2c_config.speed              = I2CHandle::Config::Speed::I2C_400KHZ;
+
+    ledmatrix.Init(i2c_config);
+}
+
+
+
+
 // Private Function Implementations
 // set SAI2 stuff -- run this between seed configure and init
 void DaisyHeartOfGold::InitAudio()

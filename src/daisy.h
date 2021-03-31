@@ -43,6 +43,7 @@
 #include "dev/codec_wm8731.h"
 #include "dev/dac_8568.h"
 #include "dev/lcd_hd44780.h"
+#include "dev/led_is31fl3731.h"
 #include "util/scopedirqblocker.h"
 #include "util/WaveTableLoader.h"
 #include "util/WavWriter.h"
