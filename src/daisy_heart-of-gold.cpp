@@ -278,10 +278,20 @@ void DaisyHeartOfGold::InitCvOutputs()
 
 void DaisyHeartOfGold::InitEncoder()
 {
+    #ifndef HEARTOFGOLD_REV1
+
     encoder[ENC_1].Init({DSY_GPIOB, 8},   //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOC, 7}
                         {DSY_GPIOB, 9},   //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOG, 14}
                         {DSY_GPIOB, 12},  //seed.GetPin(PIN_ENC_1_CLICK),
                         AudioCallbackRate());
+
+    #else
+
+    encoder[ENC_1].Init({DSY_GPIOC, 7},   //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOC, 7}
+                        {DSY_GPIOG, 14},   //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOG, 14}
+                        {DSY_GPIOB, 12},  //seed.GetPin(PIN_ENC_1_CLICK),
+                        AudioCallbackRate());
+    #endif
 
     encoder[ENC_2].Init({DSY_GPIOB, 15},  //seed.GetPin(PIN_ENC_2_A)
                         {DSY_GPIOB, 13},  //seed.GetPin(PIN_ENC_2_B)
