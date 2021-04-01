@@ -186,7 +186,13 @@ void DaisyHeartOfGold::InitLEDMatrix() {
     i2c_config.pin_config.sda     = {DSY_GPIOB, 9};
     i2c_config.speed              = I2CHandle::Config::Speed::I2C_400KHZ;
 
-    ledmatrix.Init(i2c_config);
+    uint8_t   addr[1] = { 0b01110100 }; // 0x74
+
+    I2CHandle i2c;
+    i2c.Init(i2c_config);    
+
+    // init with i2c handle, array of adresses, number of driver chips
+    ledmatrix.Init(i2c, addr, 1);
 }
 
 

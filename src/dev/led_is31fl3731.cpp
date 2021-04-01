@@ -47,53 +47,57 @@ typedef struct
 } Is31fl3731_t;
 
 
-static Is31fl3731_t Is31fl3731_;
-static I2CHandle h_i2c;
-static I2CHandle::Config _i2c_config; 
+static  Is31fl3731_t Is31fl3731_;
+static  I2CHandle i2c_;
 
-void Is31fl3731::Init(const I2CHandle::Config config) 
+
+void Is31fl3731::Init(const I2CHandle i2c, const uint8_t * addresses, uint8_t numDrivers) 
 {
     
-    _i2c_config = config;
+    i2c_ = i2c;
+    numDrivers_ = numDrivers;
+    for(int d = 0; d < numDrivers_; d++)
+        addresses_[d] = addresses[d];
 
-    // Initialize I2C
-    h_i2c.Init(_i2c_config);
-
-    // now i2c points to the corresponding peripheral and can be used.
     // Init procedure used here is from the ISSI example code.
 
-    
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0xFD, 0x0B); // 0xFD, 0x0B  write function register
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0x0A, 0x00); // 0x0A, 0x00  enter software shutdown mode
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0xFD, 0x00); // 0xFD, 0x00  write first frame
+    // init the individual drivers
+    for(int d = 0; d < numDrivers_; d++)
+    {
 
-    //turn on all LED
-    for(uint8_t k = 0; k < 0x12; k++)
-    {
-        WriteIs31fl3731(ISSI_ADDR_DEFAULT, k, 0xff);
-    } 
-    
-    //Need to turn off the position where LED is not mounted
-    //write all PWM set 0x00
-    for(uint8_t k = 0x24; k < 0xB4; k++)
-    {
-        WriteIs31fl3731(ISSI_ADDR_DEFAULT, k, 0x00);
+        WriteIs31fl3731(addresses_[d], 0xFD, 0x0B); // 0xFD, 0x0B  write function register
+        WriteIs31fl3731(addresses_[d], 0x0A, 0x00); // 0x0A, 0x00  enter software shutdown mode
+        WriteIs31fl3731(addresses_[d], 0xFD, 0x00); // 0xFD, 0x00  write first frame
+
+        //turn on all LED
+        for(uint8_t k = 0; k < 0x12; k++)
+        {
+            WriteIs31fl3731(addresses_[d], k, 0xff);
+        } 
+        
+        //Need to turn off the position where LED is not mounted
+        //write all PWM set 0x00
+        for(uint8_t k = 0x24; k < 0xB4; k++)
+        {
+            WriteIs31fl3731(addresses_[d], k, 0x00);
+        }
+
+        WriteIs31fl3731(addresses_[d], 0xFD, 0x0B); // 0xFD, 0x0B  write function register
+        WriteIs31fl3731(addresses_[d], 0x00, 0x00); // 0x00, 0x00  picture mode
+        WriteIs31fl3731(addresses_[d], 0x01, 0x00); // 0x01, 0x00  select first frame
+        WriteIs31fl3731(addresses_[d], 0x0A, 0x01); // 0x0A, 0x01  normal operation
+        WriteIs31fl3731(addresses_[d], 0xFD, 0x00); // 0xFD, 0x00  write first frame
+
+        //write all PWM set 0x80
+        /*for(uint8_t k = 0x24; k < 0xB4; k++)
+        {
+            i2c_buff[0] = k;
+            i2c_buff[1] = 0x80;
+            i2c.TransmitBlocking(IS31FL3731_ADDRESS, i2c_buff, 2, 1000);
+        }*/
+        System::DelayUs(20); // wait for clear
+
     }
-
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0xFD, 0x0B); // 0xFD, 0x0B  write function register
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0x00, 0x00); // 0x00, 0x00  picture mode
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0x01, 0x00); // 0x01, 0x00  select first frame
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0x0A, 0x01); // 0x0A, 0x01  normal operation
-    WriteIs31fl3731(ISSI_ADDR_DEFAULT, 0xFD, 0x00); // 0xFD, 0x00  write first frame
-
-    //write all PWM set 0x80
-    /*for(uint8_t k = 0x24; k < 0xB4; k++)
-    {
-        i2c_buff[0] = k;
-        i2c_buff[1] = 0x80;
-        i2c.TransmitBlocking(IS31FL3731_ADDRESS, i2c_buff, 2, 1000);
-    }*/
-    System::DelayUs(20); // wait for clear
 
     Is31fl3731_.Initialized = 1;
 }
@@ -116,7 +120,7 @@ void Is31fl3731::WriteIs31fl3731(uint8_t address, uint8_t command, uint8_t data)
     b[0] = command;
     b[1] = data;
 
-    h_i2c.TransmitBlocking(address, b, 2, 1000);
+    i2c_.TransmitBlocking(address, b, 2, 1000);
 }
 
 
@@ -126,7 +130,10 @@ void Is31fl3731::Test_mode()
     {
         for(uint8_t i = 0x24; i < 0xB4; i++)
         {
-            WriteIs31fl3731(ISSI_ADDR_DEFAULT, i, j);
+            for(int d = 0; d < numDrivers_; d++)
+            {
+                WriteIs31fl3731(addresses_[d], i, j);
+            }
         }
     }
 
@@ -134,7 +141,10 @@ void Is31fl3731::Test_mode()
     {
         for(uint8_t i = 0x24; i < 0xB4; i++)
         {
-            WriteIs31fl3731(ISSI_ADDR_DEFAULT, i, j);
+            for(int d = 0; d < numDrivers_; d++)
+            {
+                WriteIs31fl3731(addresses_[d], i, j);
+            }
         }
     }
 }
