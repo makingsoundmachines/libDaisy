@@ -195,6 +195,30 @@ void DaisyHeartOfGold::InitLEDMatrix() {
     ledmatrix.Init(i2c, addr, 1);
 }
 
+void DaisyHeartOfGold::InitBelaTrill() {
+
+    /* static constexpr I2CHandle::Config i2c_config = {
+        I2CHandle::Config::Peripheral::I2C_1,
+        {{DSY_GPIOB, 8},
+         {DSY_GPIOB, 9}}, 
+        I2CHandle::Config::Speed::I2C_400KHZ}; */
+
+    I2CHandle::Config i2c_config;
+
+    i2c_config.periph             = I2CHandle::Config::Peripheral::I2C_1;
+    i2c_config.pin_config.scl     = {DSY_GPIOB, 8}, 
+    i2c_config.pin_config.sda     = {DSY_GPIOB, 9};
+    i2c_config.speed              = I2CHandle::Config::Speed::I2C_400KHZ;
+
+    uint8_t addr = 0b00101000; // 0x28 - BELA SQUARE
+
+    I2CHandle i2c;
+    i2c.Init(i2c_config);    
+
+    // init with i2c handle, array of adresses, number of driver chips
+    bela_trill.setup(i2c, Trill::device::SQUARE, addr);
+}
+
 
 
 

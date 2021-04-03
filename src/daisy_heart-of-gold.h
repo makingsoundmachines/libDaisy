@@ -179,8 +179,13 @@ class DaisyHeartOfGold
 
     ShiftRegister595 sr_595;
 
+    /**  Init a LED Matrix using an IS31FL3731 chip */
     Is31fl3731 ledmatrix;
     void InitLEDMatrix();
+
+    /**  Init a LED Matrix using an IS31FL3731 chip */
+    Trill bela_trill;
+    void InitBelaTrill();
 
   private:
     void InitAudio();

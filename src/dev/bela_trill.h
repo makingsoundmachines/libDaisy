@@ -26,7 +26,7 @@ class Trill
 		/**
 		 * The acquisition modes that a device can be set to.
 		 */
-		typedef enum {
+		typedef enum mode {
 			AUTO = -1, /**< Auto mode: the mode is set
 				     automatically based on the device type */
 			CENTROID = 0, /**< Centroid mode: detect discrete touches */
@@ -38,7 +38,7 @@ class Trill
 		/**
 		 * The types of Trill devices
 		 */
-		typedef enum {
+		typedef enum device {
 			NONE = -1, ///< No device
 			UNKNOWN = 0, ///< A valid device of unknown type
 			BAR = 1, ///< %Trill Bar
