@@ -119,13 +119,13 @@ class Trill
 		 * found. If `255` or no value is passed, the default address
 		 * for the specified device type will be used.
 		 */
-		Trill(const I2CHandle i2c, Device device, uint8_t i2c_address = 255);
+		Trill(const I2CHandle i2c, Device device, uint8_t i2c_address); // uint8_t i2c_address = 255
 		/**
 		 * \copydoc Trill::Trill(unsigned int, Device, uint8_t)
 		 *
 		 * @return 0 upon success, an error code otherwise.
 		 */
-		int setup(const I2CHandle i2c, Device device, uint8_t i2c_address = 255);
+		int setup(const I2CHandle i2c, Device device, uint8_t i2c_address); // uint8_t i2c_address = 255
 
 		/**
 		 * Probe the bus for a device at the specified address.

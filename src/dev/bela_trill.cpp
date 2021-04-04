@@ -112,10 +112,11 @@ int Trill::setup(const I2CHandle i2c, Device device, uint8_t i2c_address)
 {
     
     i2c_ = i2c;
+	address = i2c_address;
 
 	dataBuffer.resize(kRawLength);
 	rawData.resize(kNumChannelsMax);
-	address = 0;
+
 	device_type_ = NONE;
 	TrillDefaults defaults = trillDefaults.at(device);
 
