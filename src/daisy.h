@@ -46,6 +46,7 @@
 #include "dev/lcd_hd44780.h"
 #include "dev/led_is31fl3731.h"
 #include "util/scopedirqblocker.h"
+#include "util/FixedCapStr.h"
 #include "util/WaveTableLoader.h"
 #include "util/WavWriter.h"
 #endif

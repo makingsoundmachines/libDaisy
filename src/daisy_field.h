@@ -2,6 +2,7 @@
 #ifndef DSY_FIELD_BSP_H
 #define DSY_FIELD_BSP_H /**< & */
 #include "daisy_seed.h"
+#include "dev/oled_ssd130x.h"
 
 /**
    @brief Hardware defines and helpers for daisy field platform.
@@ -209,16 +210,19 @@ class DaisyField
      **/
     void VegasMode();
 
-    DaisySeed                 seed;
-    OledDisplay               display;
-    dsy_gpio                  gate_out;
-    GateIn                    gate_in;
-    LedDriverPca9685<2, true> led_driver;
-    Switch                    sw[SW_LAST];
-    AnalogControl             knob[KNOB_LAST];
-    AnalogControl             cv[CV_LAST];
+    DaisySeed                                seed;
+    OledDisplay<SSD130x4WireSpi128x64Driver> display;
+    dsy_gpio                                 gate_out;
+    GateIn                                   gate_in;
+    LedDriverPca9685<2, true>                led_driver;
+    Switch                                   sw[SW_LAST];
+    AnalogControl                            knob[KNOB_LAST];
+    AnalogControl                            cv[CV_LAST];
 
   private:
+    /** Set all the HID callback rates any time a new callback rate is established */
+    void SetHidUpdateRates();
+
     ShiftRegister4021<2> keyboard_sr_; /**< Two 4021s daisy-chained. */
     uint8_t              keyboard_state_[16];
     uint32_t             last_led_update_; // for vegas mode
