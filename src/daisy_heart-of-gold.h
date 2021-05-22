@@ -188,6 +188,7 @@ class DaisyHeartOfGold
     void InitBelaTrill();
 
   private:
+    void SetHidUpdateRates();
     void InitAudio();
     void InitControls();
     /** void InitDisplay(); */

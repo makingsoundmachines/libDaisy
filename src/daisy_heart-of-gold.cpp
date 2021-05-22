@@ -85,15 +85,25 @@ void DaisyHeartOfGold::Init(bool boost)
     InitMidi();
     InitControls();
     // Reset AK4556
-    dsy_gpio_write(&ak4556_reset_pin_, 0);
+    /* dsy_gpio_write(&ak4556_reset_pin_, 0);
     DelayMs(10);
-    dsy_gpio_write(&ak4556_reset_pin_, 1);
+    dsy_gpio_write(&ak4556_reset_pin_, 1); */
 }
 
 void DaisyHeartOfGold::DelayMs(size_t del)
 {
     seed.DelayMs(del);
 }
+
+void DaisyHeartOfGold::SetHidUpdateRates()
+{
+    for(size_t i = 0; i < CTRL_LAST; i++)
+    {
+        controls[i].SetSampleRate(AudioCallbackRate());
+    }
+    encoder.SetUpdateRate(AudioCallbackRate());
+}
+
 
 void DaisyHeartOfGold::StartAudio(AudioHandle::AudioCallback cb)
 {
@@ -113,6 +123,7 @@ void DaisyHeartOfGold::StopAudio()
 void DaisyHeartOfGold::SetAudioSampleRate(SaiHandle::Config::SampleRate samplerate)
 {
     seed.SetAudioSampleRate(samplerate);
+    SetHidUpdateRates();
 }
 
 float DaisyHeartOfGold::AudioSampleRate()
@@ -123,6 +134,7 @@ float DaisyHeartOfGold::AudioSampleRate()
 void DaisyHeartOfGold::SetAudioBlockSize(size_t size)
 {
     seed.SetAudioBlockSize(size);
+    SetHidUpdateRates();
 }
 
 size_t DaisyHeartOfGold::AudioBlockSize()
