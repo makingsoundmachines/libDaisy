@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loggerconsts_1327',['LoggerConsts',['../group__external.html#gaa6626e0cc32e5d8a4259168bc05fc8bb',1,'daisy::Logger']]],
-  ['loggerdestination_1328',['LoggerDestination',['../namespacedaisy.html#a1c3b206bedb5432fc7b46e4f1cbce8f9',1,'daisy']]]
+  ['knob_1551',['Knob',['../classdaisy_1_1_daisy_petal.html#a0273fd343346e74767bb5fc7bd290d64',1,'daisy::DaisyPetal::Knob()'],['../classdaisy_1_1_daisy_pod.html#a43462bcc3a3d5167a383a5eda489878f',1,'daisy::DaisyPod::Knob()']]]
 ];

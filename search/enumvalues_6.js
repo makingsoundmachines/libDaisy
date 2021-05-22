@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['i2c_5f1_1421',['I2C_1',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3ac6fd6f26e2aa63abe2238fab4b47dd79',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f100khz_1422',['I2C_100KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea553b1e80b412bd08e176aac5f3ab4cb9',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f1mhz_1423',['I2C_1MHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469eae8625e0ea19033600b2fe93cf1709250',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f2_1424',['I2C_2',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a4df67eab35d40f92e3e08f3e92c42f07',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f3_1425',['I2C_3',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a953b2c7701d3e795fe6f524ab7ba0966',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f4_1426',['I2C_4',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3acb1bc673df00194e6f8091f5130dd6c1',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f400khz_1427',['I2C_400KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea18db2d43c0673a83aa3629f1e0bc2d07',1,'daisy::I2CHandle::Config']]],
-  ['input_5fmode_5fnone_1428',['INPUT_MODE_NONE',['../classdaisy_1_1_midi_handler.html#acc2df91e9c18571da6edecaec4fbc7fea32cd9417eb3265497ba90fa3be6f9dfc',1,'daisy::MidiHandler']]],
-  ['input_5fmode_5fuart1_1429',['INPUT_MODE_UART1',['../classdaisy_1_1_midi_handler.html#acc2df91e9c18571da6edecaec4fbc7feab8ede8098956a405f213f8014c25bf81',1,'daisy::MidiHandler']]],
-  ['input_5fmode_5fusb_5fext_1430',['INPUT_MODE_USB_EXT',['../classdaisy_1_1_midi_handler.html#acc2df91e9c18571da6edecaec4fbc7fea82cc8668120499b8a52bec1112cab819',1,'daisy::MidiHandler']]],
-  ['input_5fmode_5fusb_5fint_1431',['INPUT_MODE_USB_INT',['../classdaisy_1_1_midi_handler.html#acc2df91e9c18571da6edecaec4fbc7fea0b1d605cc2619bf5032c5cc6b78277ef',1,'daisy::MidiHandler']]]
+  ['gate_5fin_5f3_1655',['GATE_IN_3',['../classdaisy_1_1_daisy_heart_of_gold.html#aa9ac7f5c07d125428faad50a9c23d2fba2ae14ffe80e3a3e6d012f24c55153cd2',1,'daisy::DaisyHeartOfGold']]],
+  ['gate_5fin_5f4_1656',['GATE_IN_4',['../classdaisy_1_1_daisy_heart_of_gold.html#aa9ac7f5c07d125428faad50a9c23d2fba7a954239218f915f862288be43fc8c84',1,'daisy::DaisyHeartOfGold']]],
+  ['gate_5fin_5flast_1657',['GATE_IN_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#aa9ac7f5c07d125428faad50a9c23d2fbad7b9bf961169fe75fc2583309290a84c',1,'daisy::DaisyHeartOfGold::GATE_IN_LAST()'],['../classdaisy_1_1_daisy_patch.html#ac2ca484062f9527de2c4111022d86953ad276bd6100dc0a8ef5c4b9aa307f45cc',1,'daisy::DaisyPatch::GATE_IN_LAST()']]],
+  ['gate_5fout_5f3_1658',['GATE_OUT_3',['../classdaisy_1_1_daisy_heart_of_gold.html#a0f4555a529ec307ce1010be7f8da9c08a5d18de9d0366557f9267f73e001c5ee9',1,'daisy::DaisyHeartOfGold']]],
+  ['gate_5fout_5f4_1659',['GATE_OUT_4',['../classdaisy_1_1_daisy_heart_of_gold.html#a0f4555a529ec307ce1010be7f8da9c08a7151cf8080ac35ce9cf9f6f4488ca7c6',1,'daisy::DaisyHeartOfGold']]],
+  ['gate_5fout_5flast_1660',['GATE_OUT_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#a0f4555a529ec307ce1010be7f8da9c08a90e6a9b353b70398366f73919ae345dc',1,'daisy::DaisyHeartOfGold']]],
+  ['gold_1661',['GOLD',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a0b32c5df8961411a66895e57509677ac',1,'daisy::Color']]],
+  ['green_1662',['GREEN',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a17ff845ca14ff51412514797406ee423',1,'daisy::Color']]]
 ];

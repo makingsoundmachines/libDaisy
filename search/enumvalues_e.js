@@ -1,20 +1,14 @@
 var searchData=
 [
-  ['slow_1524',['SLOW',['../classdaisy_1_1_sdmmc_handler.html#a78a654b5e915c05224fb64f0dfbe6bcea0e3066cbbd284dce8b76e7c4620d6d75',1,'daisy::SdmmcHandler']]],
-  ['spi_5fperiph_5f1_1525',['SPI_PERIPH_1',['../group__serial.html#ggaf711442ff4ba0ed7d1e6f6bae7c574b6a067119d88d70ecdcb4f5017f9c28071c',1,'daisy']]],
-  ['spi_5fperiph_5f3_1526',['SPI_PERIPH_3',['../group__serial.html#ggaf711442ff4ba0ed7d1e6f6bae7c574b6abe36a904be436f0e99a6c60bcdc5db03',1,'daisy']]],
-  ['spi_5fperiph_5f6_1527',['SPI_PERIPH_6',['../group__serial.html#ggaf711442ff4ba0ed7d1e6f6bae7c574b6a73dc62e39838820d4779ed3cbfc421c0',1,'daisy']]],
-  ['spi_5fpin_5fcs_1528',['SPI_PIN_CS',['../group__serial.html#ggab9d0e8af9fe3d0320cdf38af4ec31a1aa619aa10855c03a6ac7fe1ca417058c6b',1,'daisy']]],
-  ['spi_5fpin_5fmiso_1529',['SPI_PIN_MISO',['../group__serial.html#ggab9d0e8af9fe3d0320cdf38af4ec31a1aaf95730671f55a42b4d7012faea2f27c7',1,'daisy']]],
-  ['spi_5fpin_5fmosi_1530',['SPI_PIN_MOSI',['../group__serial.html#ggab9d0e8af9fe3d0320cdf38af4ec31a1aadbc82a205c33fae68c5acd4d11f909c0',1,'daisy']]],
-  ['spi_5fpin_5fsck_1531',['SPI_PIN_SCK',['../group__serial.html#ggab9d0e8af9fe3d0320cdf38af4ec31a1aaf0815c8244af198ed0fddd44cb62b8bd',1,'daisy']]],
-  ['standard_1532',['STANDARD',['../classdaisy_1_1_sdmmc_handler.html#a78a654b5e915c05224fb64f0dfbe6bcea94e94133f4bdc1794c6b647b8ea134d0',1,'daisy::SdmmcHandler']]],
-  ['sw_5f1_1533',['SW_1',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911ab2afe0429e8b94db1fad8f879aa4b2ff',1,'daisy::DaisyPetal::SW_1()'],['../classdaisy_1_1_daisy_field.html#a418e1e43655501188c4e740e90e98beca741b822407920a640d754e56dc9c5cf2',1,'daisy::DaisyField::SW_1()']]],
-  ['sw_5f2_1534',['SW_2',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911a684e6a6ab7d709f8b827c97b2639f2ab',1,'daisy::DaisyPetal::SW_2()'],['../classdaisy_1_1_daisy_field.html#a418e1e43655501188c4e740e90e98becaead8e960d21a99c44694ae3f7ddedf7b',1,'daisy::DaisyField::SW_2()']]],
-  ['sw_5f3_1535',['SW_3',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911aa2bd052d217894508a36856ea5843d3e',1,'daisy::DaisyPetal']]],
-  ['sw_5f4_1536',['SW_4',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911acda6031d654ad6b6d6f094419e97968c',1,'daisy::DaisyPetal']]],
-  ['sw_5f5_1537',['SW_5',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911a9a13b8958600f5421b29017057614f64',1,'daisy::DaisyPetal']]],
-  ['sw_5f6_1538',['SW_6',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911ad45878f759196455d7fa6ee41ed93dc6',1,'daisy::DaisyPetal']]],
-  ['sw_5f7_1539',['SW_7',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911ae2a1269dd381d8c8aa9de3aae9e400f4',1,'daisy::DaisyPetal']]],
-  ['sw_5flast_1540',['SW_LAST',['../classdaisy_1_1_daisy_field.html#a418e1e43655501188c4e740e90e98beca865113e9e584259b98c17d98e2bb88ad',1,'daisy::DaisyField::SW_LAST()'],['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911af4668f61ed58c3103b2800d3cf45ca7c',1,'daisy::DaisyPetal::SW_LAST()']]]
+  ['pin_5fclk_1746',['PIN_CLK',['../class_shift_register595.html#a2e0140c5d6cac8821d558b2683f7a134a4e50d83a47cc620a8427d2879aca30ec',1,'ShiftRegister595']]],
+  ['pin_5fdata_1747',['PIN_DATA',['../class_shift_register595.html#a2e0140c5d6cac8821d558b2683f7a134ae9ea4e9926a41b050735081ea122036b',1,'ShiftRegister595']]],
+  ['pitchbend_1748',['PitchBend',['../group__external.html#ggaaf09bb687034c8776ca0c68ed3ed4179a4f812cde2a6d2b270ec408514516443d',1,'daisy']]],
+  ['polarity_5finverted_1749',['POLARITY_INVERTED',['../classdaisy_1_1_switch.html#aef37136dd1b4cd077ef82a0f62bcfa3da6a67d181b4de52438ae5109bd9cfec63',1,'daisy::Switch']]],
+  ['polarity_5fnormal_1750',['POLARITY_NORMAL',['../classdaisy_1_1_switch.html#aef37136dd1b4cd077ef82a0f62bcfa3daca3b7fb0df13cde6adfeefc3f1f45e68',1,'daisy::Switch']]],
+  ['polyphonickeypressure_1751',['PolyphonicKeyPressure',['../group__external.html#ggaaf09bb687034c8776ca0c68ed3ed4179a1df3c32711e2b5d1c02c5e548b7d4f7b',1,'daisy']]],
+  ['programchange_1752',['ProgramChange',['../group__external.html#ggaaf09bb687034c8776ca0c68ed3ed4179a27e60326355eedaf215c23c4527ce627',1,'daisy']]],
+  ['pull_5fdown_1753',['PULL_DOWN',['../classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51aec89c3f7c267f0eaacd65441ef854bca',1,'daisy::Switch']]],
+  ['pull_5fnone_1754',['PULL_NONE',['../classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51a2ea8b603f1a3f5864f2f5a40a09be347',1,'daisy::Switch']]],
+  ['pull_5fup_1755',['PULL_UP',['../classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51a1f6f843c9fc60e6d00e2cbcbe97bbe8d',1,'daisy::Switch']]],
+  ['purple_1756',['PURPLE',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40ae6af67acb46818429af923ce98b6d196',1,'daisy::Color']]]
 ];

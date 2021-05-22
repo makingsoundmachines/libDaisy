@@ -1,9 +1,19 @@
 var searchData=
 [
-  ['tim_5f2_1541',['TIM_2',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaa848c6355c514c385d53dde45615d0411',1,'daisy::TimerHandle::Config']]],
-  ['tim_5f3_1542',['TIM_3',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaa069b86aefb75f0c622fc14d8e28db631',1,'daisy::TimerHandle::Config']]],
-  ['tim_5f4_1543',['TIM_4',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaac9136368e302d247b27e74dd7726ec1f',1,'daisy::TimerHandle::Config']]],
-  ['tim_5f5_1544',['TIM_5',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaa6840481ce38511a53a7e49e81c02a936',1,'daisy::TimerHandle::Config']]],
-  ['type_5fmomentary_1545',['TYPE_MOMENTARY',['../classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483aaddc897d9c79b39b2024829bebb336a1',1,'daisy::Switch']]],
-  ['type_5ftoggle_1546',['TYPE_TOGGLE',['../classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483a5c6a5cc5d4fbe03be97b81244e669038',1,'daisy::Switch']]]
+  ['raw_1757',['RAW',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbbac8df584062df5174a3186d3801adfecc',1,'daisy::Trill']]],
+  ['receive_1758',['RECEIVE',['../classdaisy_1_1_i2_c_handle.html#a8f815f7a77948286f0fa0065a1f7c54ca42ddaaef1ffd16ad35901150add8f8f2',1,'daisy::I2CHandle']]],
+  ['red_1759',['RED',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a8b805ea394bedf4786fd371ea10283b8',1,'daisy::Color']]],
+  ['ring_1760',['RING',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4a71378fad8ad8795c258e6c28f2b82f1e',1,'daisy::Trill']]],
+  ['ring_5fled_5f1_1761',['RING_LED_1',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a4868bead6b4bb7b6d1e15ce3f6a34edf',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f2_1762',['RING_LED_2',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682ac7b3f1596a8438fac25c8696a8d8e165',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f3_1763',['RING_LED_3',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a1bd8643462c5d2072526d49dd47a69db',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f4_1764',['RING_LED_4',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a546d934044b1971c72a872a95e1f7391',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f5_1765',['RING_LED_5',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a962ed86e4759724ea0392e07ccc89aa9',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f6_1766',['RING_LED_6',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682add3683515df29d7a38efde9933530895',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f7_1767',['RING_LED_7',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a86e88f2c21c605b6bb514c3eaf6f330e',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5f8_1768',['RING_LED_8',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a1f6fc229b42f772bc9088f62ce3e5036',1,'daisy::DaisyPetal']]],
+  ['ring_5fled_5flast_1769',['RING_LED_LAST',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a4b60f0a2dbcfe749c77a3cf054f85e39',1,'daisy::DaisyPetal']]],
+  ['route_5fbutton_5f3_1770',['ROUTE_BUTTON_3',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ea837efda39d83045b5293504ca13ebee4',1,'daisy::DaisyHeartOfGold']]],
+  ['route_5fbutton_5f4_1771',['ROUTE_BUTTON_4',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ead57ed99488b154428f491a61488afceb',1,'daisy::DaisyHeartOfGold']]],
+  ['route_5fbutton_5flast_1772',['ROUTE_BUTTON_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2eaf7a78fe806cc5c72241e45a9cfc261dc',1,'daisy::DaisyHeartOfGold']]]
 ];

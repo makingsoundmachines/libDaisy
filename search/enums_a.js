@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['result_1340',['Result',['../classdaisy_1_1_wm8731.html#acee74b7ae4c637c45d33afcb91da7988',1,'daisy::Wm8731::Result()'],['../class_usb_handle.html#a676c11695fe5f925515eaa3d3e2d53a6',1,'UsbHandle::Result()'],['../class_usb_handle.html#a676c11695fe5f925515eaa3d3e2d53a6',1,'UsbHandle::Result()'],['../classdaisy_1_1_dac_handle.html#a66e1c535c1809b56744d842005008d54',1,'daisy::DacHandle::Result()'],['../classdaisy_1_1_i2_c_handle.html#a4896eede457dea6ed2ed68d9b06e8e16',1,'daisy::I2CHandle::Result()'],['../classdaisy_1_1_sai_handle.html#a5463939a5d7fe1a363cfb9beb602d468',1,'daisy::SaiHandle::Result()'],['../classdaisy_1_1_sdmmc_handler.html#ad3aa247c4e2a3e8da344a64673768970',1,'daisy::SdmmcHandler::Result()'],['../classdaisy_1_1_timer_handle.html#a7425f809b115688f70d7a12acd5a16c7',1,'daisy::TimerHandle::Result()'],['../classdaisy_1_1_wav_writer.html#ab6477ad91d6d9f4804ac9150edd33e1b',1,'daisy::WavWriter::Result()']]],
-  ['ringled_1341',['RingLed',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682',1,'daisy::DaisyPetal']]]
+  ['peripheral_1561',['Peripheral',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3',1,'daisy::I2CHandle::Config::Peripheral()'],['../structdaisy_1_1_sai_handle_1_1_config.html#a68789209ff997e6ca653db010594959b',1,'daisy::SaiHandle::Config::Peripheral()'],['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bca',1,'daisy::TimerHandle::Config::Peripheral()']]],
+  ['pins_1562',['Pins',['../classdaisy_1_1_dac8568.html#a78d5e70343ec59826c486c9b18db9b9f',1,'daisy::Dac8568::Pins()'],['../class_shift_register595.html#a2e0140c5d6cac8821d558b2683f7a134',1,'ShiftRegister595::Pins()']]],
+  ['polarity_1563',['Polarity',['../classdaisy_1_1_switch.html#aef37136dd1b4cd077ef82a0f62bcfa3d',1,'daisy::Switch']]],
+  ['presetcolor_1564',['PresetColor',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40',1,'daisy::Color']]],
+  ['pull_1565',['Pull',['../classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51',1,'daisy::Switch']]]
 ];

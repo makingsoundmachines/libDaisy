@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['samplerate_1342',['SampleRate',['../structdaisy_1_1_sai_handle_1_1_config.html#adace22abaff171f0c459cff4a44026fc',1,'daisy::SaiHandle::Config']]],
-  ['speed_1343',['Speed',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469e',1,'daisy::I2CHandle::Config::Speed()'],['../classdaisy_1_1_sdmmc_handler.html#a78a654b5e915c05224fb64f0dfbe6bce',1,'daisy::SdmmcHandler::Speed()']]],
-  ['spiperiph_1344',['SpiPeriph',['../group__serial.html#gaf711442ff4ba0ed7d1e6f6bae7c574b6',1,'daisy']]],
-  ['spipin_1345',['SpiPin',['../group__serial.html#gab9d0e8af9fe3d0320cdf38af4ec31a1a',1,'daisy']]],
-  ['sw_1346',['Sw',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911',1,'daisy::DaisyPetal::Sw()'],['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeb',1,'daisy::DaisyPod::Sw()']]],
-  ['sync_1347',['Sync',['../structdaisy_1_1_sai_handle_1_1_config.html#a269af182475979f6845fb06ffa3c4055',1,'daisy::SaiHandle::Config']]],
-  ['sysclkfreq_1348',['SysClkFreq',['../structdaisy_1_1_system_1_1_config.html#a100d6b1e0b41cf2bf17ecffe28fabfa7',1,'daisy::System::Config']]]
+  ['result_1566',['Result',['../classdaisy_1_1_wm8731.html#acee74b7ae4c637c45d33afcb91da7988',1,'daisy::Wm8731::Result()'],['../class_usb_handle.html#a676c11695fe5f925515eaa3d3e2d53a6',1,'UsbHandle::Result()'],['../class_usb_handle.html#a676c11695fe5f925515eaa3d3e2d53a6',1,'UsbHandle::Result()'],['../classdaisy_1_1_dac_handle.html#a66e1c535c1809b56744d842005008d54',1,'daisy::DacHandle::Result()'],['../classdaisy_1_1_i2_c_handle.html#a4896eede457dea6ed2ed68d9b06e8e16',1,'daisy::I2CHandle::Result()'],['../classdaisy_1_1_sai_handle.html#a5463939a5d7fe1a363cfb9beb602d468',1,'daisy::SaiHandle::Result()'],['../classdaisy_1_1_sdmmc_handler.html#ad3aa247c4e2a3e8da344a64673768970',1,'daisy::SdmmcHandler::Result()'],['../classdaisy_1_1_timer_handle.html#a7425f809b115688f70d7a12acd5a16c7',1,'daisy::TimerHandle::Result()'],['../classdaisy_1_1_uart_handler.html#ac45c7ac82e6f0328b4e7b03fd12e7237',1,'daisy::UartHandler::Result()'],['../classdaisy_1_1_wav_writer.html#ab6477ad91d6d9f4804ac9150edd33e1b',1,'daisy::WavWriter::Result()']]],
+  ['ringled_1567',['RingLed',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682',1,'daisy::DaisyPetal']]],
+  ['routebutton_1568',['RouteButton',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2e',1,'daisy::DaisyHeartOfGold']]]
 ];
