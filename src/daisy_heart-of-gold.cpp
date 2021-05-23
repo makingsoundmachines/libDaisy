@@ -101,7 +101,10 @@ void DaisyHeartOfGold::SetHidUpdateRates()
     {
         controls[i].SetSampleRate(AudioCallbackRate());
     }
-    encoder.SetUpdateRate(AudioCallbackRate());
+    encoder[ENC_1].SetUpdateRate(AudioCallbackRate());
+    encoder[ENC_2].SetUpdateRate(AudioCallbackRate());
+    encoder[ENC_3].SetUpdateRate(AudioCallbackRate());
+    encoder[ENC_4].SetUpdateRate(AudioCallbackRate());
 }
 
 
