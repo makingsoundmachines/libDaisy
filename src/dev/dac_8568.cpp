@@ -52,8 +52,33 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     pin_sync.pin  = pin_cfg[Dac8568::SYNC];
     dsy_gpio_init(&pin_sync);
 
+    // Initialize both GPIO
+    //pin_dc_.mode = DSY_GPIO_MODE_OUTPUT_PP;
+    //pin_dc_.pin  = config.pin_config.dc;
+    //dsy_gpio_init(&pin_dc_);
+
     // Initialize SPI
-    h_spi.Init();
+    // h_spi.Init(); 
+
+    // Initialize SPI
+    SpiHandle::Config spi_config;
+    spi_config.periph    = SpiHandle::Config::Peripheral::SPI_1;
+    spi_config.mode      = SpiHandle::Config::Mode::MASTER;
+    spi_config.direction = SpiHandle::Config::Direction::TWO_LINES_TX_ONLY;
+    spi_config.datasize  = 8;
+    spi_config.clock_polarity = SpiHandle::Config::ClockPolarity::HIGH;
+    spi_config.clock_phase    = SpiHandle::Config::ClockPhase::ONE_EDGE;
+    spi_config.nss            = SpiHandle::Config::NSS::SOFT;
+    spi_config.baud_prescaler = SpiHandle::Config::BaudPrescaler::PS_2;
+
+    spi_config.pin_config.sclk = {DSY_GPIOG, 11};
+    spi_config.pin_config.miso = {DSY_GPIOB, 4};
+    spi_config.pin_config.mosi = {DSY_GPIOB, 5};
+    spi_config.pin_config.nss  = {DSY_GPIOX, 0};
+
+    h_spi.Init(spi_config);
+
+
 
     // initialize DAC8568
     Reset();
