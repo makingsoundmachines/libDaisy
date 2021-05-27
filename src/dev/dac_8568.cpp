@@ -74,7 +74,7 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     spi_config.pin_config.sclk = {DSY_GPIOG, 11};
     spi_config.pin_config.miso = {DSY_GPIOB, 4};
     spi_config.pin_config.mosi = {DSY_GPIOB, 5};
-    spi_config.pin_config.nss  = {DSY_GPIOX, 0};
+    spi_config.pin_config.nss  = {DSY_GPIOG, 10}; //{DSY_GPIOX, 0};
 
     h_spi.Init(spi_config);
 
