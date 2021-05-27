@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gate_5finput_1443',['gate_input',['../classdaisy_1_1_daisy_heart_of_gold.html#a5224ec926d1bf12b3cf04aab22dca807',1,'daisy::DaisyHeartOfGold::gate_input()'],['../classdaisy_1_1_daisy_patch.html#aa2a65b214c0c247dd246428962ccd060',1,'daisy::DaisyPatch::gate_input()']]],
-  ['gate_5foutput_1444',['gate_output',['../classdaisy_1_1_daisy_heart_of_gold.html#a801e414ae780952fcb65d7ce0b758616',1,'daisy::DaisyHeartOfGold::gate_output()'],['../classdaisy_1_1_daisy_patch.html#a91a7d7e5aae230d58794b63c78f2cfda',1,'daisy::DaisyPatch::gate_output()']]]
+  ['gate_5finput_1453',['gate_input',['../classdaisy_1_1_daisy_heart_of_gold.html#a5224ec926d1bf12b3cf04aab22dca807',1,'daisy::DaisyHeartOfGold::gate_input()'],['../classdaisy_1_1_daisy_patch.html#aa2a65b214c0c247dd246428962ccd060',1,'daisy::DaisyPatch::gate_input()']]],
+  ['gate_5foutput_1454',['gate_output',['../classdaisy_1_1_daisy_heart_of_gold.html#a801e414ae780952fcb65d7ce0b758616',1,'daisy::DaisyHeartOfGold::gate_output()'],['../classdaisy_1_1_daisy_patch.html#a91a7d7e5aae230d58794b63c78f2cfda',1,'daisy::DaisyPatch::gate_output()']]]
 ];
