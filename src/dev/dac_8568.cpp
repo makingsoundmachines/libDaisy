@@ -52,14 +52,6 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     pin_sync.pin  = pin_cfg[Dac8568::SYNC];
     dsy_gpio_init(&pin_sync);
 
-    // Initialize both GPIO
-    //pin_dc_.mode = DSY_GPIO_MODE_OUTPUT_PP;
-    //pin_dc_.pin  = config.pin_config.dc;
-    //dsy_gpio_init(&pin_dc_);
-
-    // Initialize SPI
-    // h_spi.Init(); 
-
     // Initialize SPI
     SpiHandle::Config spi_config;
     spi_config.periph    = SpiHandle::Config::Peripheral::SPI_1;
