@@ -131,9 +131,9 @@ SpiHandle::Result SpiHandle::Impl::Init(const Config& config)
     uint32_t nss;
     switch(config_.nss)
     {
-        case Config::NSS::SOFT: clock_phase = SPI_NSS_SOFT; break;
-        case Config::NSS::HARD_INPUT: clock_phase = SPI_NSS_HARD_INPUT; break;
-        case Config::NSS::HARD_OUTPUT: clock_phase = SPI_NSS_HARD_OUTPUT; break;
+        case Config::NSS::SOFT: nss = SPI_NSS_SOFT; break;
+        case Config::NSS::HARD_INPUT: nss = SPI_NSS_HARD_INPUT; break;
+        case Config::NSS::HARD_OUTPUT: nss = SPI_NSS_HARD_OUTPUT; break;
         default: return Result::ERR;
     }
 
@@ -167,24 +167,24 @@ SpiHandle::Result SpiHandle::Impl::Init(const Config& config)
         default: return Result::ERR;
     }
 
-    /* hspi_.Instance               = periph;
+    hspi_.Instance               = periph;
     hspi_.Init.Mode              = mode;
     hspi_.Init.Direction         = direction;
     hspi_.Init.DataSize          = datasize;
     hspi_.Init.CLKPolarity       = clock_polarity;
     hspi_.Init.CLKPhase          = clock_phase;
     hspi_.Init.NSS               = nss;
-    hspi_.Init.BaudRatePrescaler = baud_prescaler; */
+    hspi_.Init.BaudRatePrescaler = baud_prescaler;
 
     // Dirty hack
-    hspi_.Instance               = SPI1;
+    /*hspi_.Instance               = SPI1;
     hspi_.Init.Mode              = SPI_MODE_MASTER;
     hspi_.Init.Direction         = SPI_DIRECTION_2LINES_TXONLY;
     hspi_.Init.DataSize          = SPI_DATASIZE_8BIT;
     hspi_.Init.CLKPolarity       = SPI_POLARITY_HIGH; // was SPI_POLARITY_LOW;
     hspi_.Init.CLKPhase          = SPI_PHASE_1EDGE;
     hspi_.Init.NSS               = SPI_NSS_SOFT; // was SPI_NSS_HARD_OUTPUT;
-    hspi_.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2; // was SPI_BAUDRATEPRESCALER_8;
+    hspi_.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2; // was SPI_BAUDRATEPRESCALER_8;*/
     // end of hack
 
 

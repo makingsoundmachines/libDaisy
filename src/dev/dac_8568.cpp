@@ -41,9 +41,11 @@ typedef struct
 {
     uint8_t  Initialized;
 } Dac8568_t;
+
 static SpiHandle h_spi;
 static dsy_gpio  pin_sync;
 static Dac8568_t Dac8568_;
+static SpiHandle::Config spi_config;
 
 void Dac8568::Init(dsy_gpio_pin* pin_cfg)
 {
@@ -53,7 +55,7 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     dsy_gpio_init(&pin_sync);
 
     // Initialize SPI
-    SpiHandle::Config spi_config;
+    
     spi_config.periph    = SpiHandle::Config::Peripheral::SPI_1;
     spi_config.mode      = SpiHandle::Config::Mode::MASTER;
     spi_config.direction = SpiHandle::Config::Direction::TWO_LINES_TX_ONLY;
