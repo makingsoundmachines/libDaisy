@@ -7,62 +7,62 @@ using namespace daisy;
 /** MSM modified for use with Heart of Gold */
 
 // Hardware Definitions
-#define PIN_ENC_1_CLICK 0   // HoG Enc 1 Click PB12
-#define PIN_ENC_1_A 11      // HoG Enc 1 Click PB8
-#define PIN_ENC_1_B 12      // HoG Enc 1 Click PB9
+#define PIN_ENC_1_CLICK 0 // HoG Enc 1 Click PB12
+#define PIN_ENC_1_A 11    // HoG Enc 1 Click PB8
+#define PIN_ENC_1_B 12    // HoG Enc 1 Click PB9
 
-#define PIN_ENC_2_CLICK 44  // PC15
-#define PIN_ENC_2_A 30      // PB15
-#define PIN_ENC_2_B 45      // PB13
+#define PIN_ENC_2_CLICK 44 // PC15
+#define PIN_ENC_2_A 30     // PB15
+#define PIN_ENC_2_B 45     // PB13
 
-#define PIN_ENC_3_CLICK 46  // PD13
-#define PIN_ENC_3_A 47      // PD7
-#define PIN_ENC_3_B 48      // PD6
+#define PIN_ENC_3_CLICK 46 // PD13
+#define PIN_ENC_3_A 47     // PD7
+#define PIN_ENC_3_B 48     // PD6
 
-#define PIN_ENC_4_CLICK 49  // PG12
-#define PIN_ENC_4_A 7       // PG10
-#define PIN_ENC_4_B 50      // PG7
+#define PIN_ENC_4_CLICK 49 // PG12
+#define PIN_ENC_4_A 7      // PG10
+#define PIN_ENC_4_B 50     // PG7
 
-#define PIN_MIDI_OUT 13   // HoG MIDI Out PB6
-#define PIN_MIDI_IN 14    // HoG MIDI In PB7
+#define PIN_MIDI_OUT 13 // HoG MIDI Out PB6
+#define PIN_MIDI_IN 14  // HoG MIDI In PB7
 
 #define PIN_GATE_OUT_1 17 // HoG Trig Out 1 PA8
 #define PIN_GATE_OUT_2 39 // PC6
 #define PIN_GATE_OUT_3 40 // PD12
 #define PIN_GATE_OUT_4 41 // PH6
 
-#define PIN_GATE_IN_1 20  // HoG Trig In 1 PB2
-#define PIN_GATE_IN_2 19  // HoG Trig In 2 PB10
-#define PIN_GATE_IN_3 42  // PC13
-#define PIN_GATE_IN_4 43  // PC14
+#define PIN_GATE_IN_1 20 // HoG Trig In 1 PB2
+#define PIN_GATE_IN_2 19 // HoG Trig In 2 PB10
+#define PIN_GATE_IN_3 42 // PC13
+#define PIN_GATE_IN_4 43 // PC14
 
-#define PIN_ROUTE_BUTTON_1 54  // PG13
-#define PIN_ROUTE_BUTTON_2 55  // PH7
-#define PIN_ROUTE_BUTTON_3 56  // PI8
-#define PIN_ROUTE_BUTTON_4 57  // PI11
+#define PIN_ROUTE_BUTTON_1 54 // PG13
+#define PIN_ROUTE_BUTTON_2 55 // PH7
+#define PIN_ROUTE_BUTTON_3 56 // PI8
+#define PIN_ROUTE_BUTTON_4 57 // PI11
 
-#define PIN_SAI_SCK_A 28  // HoG SAI2_SCK_B PA2
-#define PIN_SAI2_FS_A 27  // HoG SAI2_FS_B PG9
-#define PIN_SAI2_SD_A 26  // HoG SAI2_SD_A PD 11
-#define PIN_SAI2_SD_B 25  // HoG SAI2_SD_B PA0
-#define PIN_SAI2_MCLK 24  // HoG SAI2_MCLK_B PA1
+#define PIN_SAI_SCK_A 28 // HoG SAI2_SCK_B PA2
+#define PIN_SAI2_FS_A 27 // HoG SAI2_FS_B PG9
+#define PIN_SAI2_SD_A 26 // HoG SAI2_SD_A PD 11
+#define PIN_SAI2_SD_B 25 // HoG SAI2_SD_B PA0
+#define PIN_SAI2_MCLK 24 // HoG SAI2_MCLK_B PA1
 
 #define PIN_AK4556_RESET 29 // HoG PB14
 
-#define PIN_CTRL_1 21 // PC4
-#define PIN_CTRL_2 31 // PC1
-#define PIN_CTRL_3 32 // PA6
-#define PIN_CTRL_4 18 // PA7
-#define PIN_CTRL_5 33 // PB1
-#define PIN_CTRL_6 16 // PA3
-#define PIN_CTRL_7 15 // PC0
-#define PIN_CTRL_8 34 // PB0
-#define PIN_CTRL_9 35 // PC2 should be 35
+#define PIN_CTRL_1 21  // PC4
+#define PIN_CTRL_2 31  // PC1
+#define PIN_CTRL_3 32  // PA6
+#define PIN_CTRL_4 18  // PA7
+#define PIN_CTRL_5 33  // PB1
+#define PIN_CTRL_6 16  // PA3
+#define PIN_CTRL_7 15  // PC0
+#define PIN_CTRL_8 34  // PB0
+#define PIN_CTRL_9 35  // PC2 should be 35
 #define PIN_CTRL_10 36 // PC3 should be 36
 #define PIN_CTRL_11 37 // PC5 should be 37
 #define PIN_CTRL_12 38 // PH4 should be 38
 
-#define PIN_SR_DATA 51 // PD3
+#define PIN_SR_DATA 51  // PD3
 #define PIN_SR_CLOCK 52 // PD5
 #define PIN_SR_LATCH 53 // PD4
 
@@ -74,13 +74,13 @@ void DaisyHeartOfGold::Init(bool boost)
     seed.Configure();
     seed.Init(boost);
     InitAudio();
-    
+
     InitCvOutputs();
     InitEncoder();
     InitGates();
     InitRouteButtons();
     InitSR595();
-    
+
     InitDAC8568();
     InitMidi();
     InitControls();
@@ -123,7 +123,8 @@ void DaisyHeartOfGold::StopAudio()
     seed.StopAudio();
 }
 
-void DaisyHeartOfGold::SetAudioSampleRate(SaiHandle::Config::SampleRate samplerate)
+void DaisyHeartOfGold::SetAudioSampleRate(
+    SaiHandle::Config::SampleRate samplerate)
 {
     seed.SetAudioSampleRate(samplerate);
     SetHidUpdateRates();
@@ -186,8 +187,8 @@ void DaisyHeartOfGold::ProcessDigitalControls()
 }
 
 
-void DaisyHeartOfGold::InitLEDMatrix() {
-
+void DaisyHeartOfGold::InitLEDMatrix()
+{
     /* static constexpr I2CHandle::Config i2c_config = {
         I2CHandle::Config::Peripheral::I2C_1,
         {{DSY_GPIOB, 8},
@@ -196,22 +197,22 @@ void DaisyHeartOfGold::InitLEDMatrix() {
 
     I2CHandle::Config i2c_config;
 
-    i2c_config.periph             = I2CHandle::Config::Peripheral::I2C_1;
-    i2c_config.pin_config.scl     = {DSY_GPIOB, 8}, 
-    i2c_config.pin_config.sda     = {DSY_GPIOB, 9};
-    i2c_config.speed              = I2CHandle::Config::Speed::I2C_400KHZ;
+    i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
+    i2c_config.pin_config.scl = {DSY_GPIOB, 8},
+    i2c_config.pin_config.sda = {DSY_GPIOB, 9};
+    i2c_config.speed          = I2CHandle::Config::Speed::I2C_400KHZ;
 
-    uint8_t   addr[1] = { 0b01110100 }; // 0x74
+    uint8_t addr[1] = {0b01110100}; // 0x74
 
     I2CHandle i2c;
-    i2c.Init(i2c_config);    
+    i2c.Init(i2c_config);
 
     // init with i2c handle, array of adresses, number of driver chips
     ledmatrix.Init(i2c, addr, 1);
 }
 
-void DaisyHeartOfGold::InitBelaTrill() {
-
+void DaisyHeartOfGold::InitBelaTrill()
+{
     /* static constexpr I2CHandle::Config i2c_config = {
         I2CHandle::Config::Peripheral::I2C_1,
         {{DSY_GPIOB, 8},
@@ -220,21 +221,19 @@ void DaisyHeartOfGold::InitBelaTrill() {
 
     I2CHandle::Config i2c_config;
 
-    i2c_config.periph             = I2CHandle::Config::Peripheral::I2C_1;
-    i2c_config.pin_config.scl     = {DSY_GPIOB, 8}, 
-    i2c_config.pin_config.sda     = {DSY_GPIOB, 9};
-    i2c_config.speed              = I2CHandle::Config::Speed::I2C_400KHZ;
+    i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
+    i2c_config.pin_config.scl = {DSY_GPIOB, 8},
+    i2c_config.pin_config.sda = {DSY_GPIOB, 9};
+    i2c_config.speed          = I2CHandle::Config::Speed::I2C_400KHZ;
 
     uint8_t addr = 0b00101000; // 0x28 - BELA SQUARE
 
     I2CHandle i2c;
-    i2c.Init(i2c_config);    
+    i2c.Init(i2c_config);
 
     // init with i2c handle, array of adresses, number of driver chips
     bela_trill.setup(i2c, Trill::device::SQUARE, addr);
 }
-
-
 
 
 // Private Function Implementations
@@ -321,7 +320,7 @@ void DaisyHeartOfGold::InitControls()
 void DaisyHeartOfGold::InitDAC8568()
 {
     dsy_gpio_pin pincfg[Dac8568::NUM_PINS];
-    pincfg[Dac8568::SYNC] = {DSY_GPIOB, 4};  //seed.GetPin(PIN_DAC8568_SYNC);
+    pincfg[Dac8568::SYNC] = {DSY_GPIOB, 4}; //seed.GetPin(PIN_DAC8568_SYNC);
     dac_8568.Init(pincfg);
 }
 
@@ -344,44 +343,46 @@ void DaisyHeartOfGold::InitCvOutputs()
 
 void DaisyHeartOfGold::InitEncoder()
 {
-    #ifdef HEARTOFGOLD_REV1
+#ifdef HEARTOFGOLD_REV1
 
-    encoder[ENC_1].Init({DSY_GPIOB, 8},   //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOC, 7}
-                        {DSY_GPIOB, 9},   //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOG, 14}
-                        {DSY_GPIOB, 12},  //seed.GetPin(PIN_ENC_1_CLICK),
+    encoder[ENC_1].Init(
+        {DSY_GPIOB, 8},  //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOC, 7}
+        {DSY_GPIOB, 9},  //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOG, 14}
+        {DSY_GPIOB, 12}, //seed.GetPin(PIN_ENC_1_CLICK),
+        AudioCallbackRate());
+
+#else
+
+    encoder[ENC_1].Init(
+        {DSY_GPIOG, 14}, //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOG, 14}
+        {DSY_GPIOC, 7},  //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOC, 7}
+        {DSY_GPIOB, 12}, //seed.GetPin(PIN_ENC_1_CLICK),
+        AudioCallbackRate());
+#endif
+
+    encoder[ENC_2].Init({DSY_GPIOB, 15}, //seed.GetPin(PIN_ENC_2_A)
+                        {DSY_GPIOB, 13}, //seed.GetPin(PIN_ENC_2_B)
+                        {DSY_GPIOC, 15}, //seed.GetPin(PIN_ENC_2_CLICK),
                         AudioCallbackRate());
 
-    #else
-
-    encoder[ENC_1].Init({DSY_GPIOG, 14},  //seed.GetPin(PIN_ENC_1_A), HoG v2 {DSY_GPIOG, 14}
-                        {DSY_GPIOC, 7},   //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOC, 7}
-                        {DSY_GPIOB, 12},  //seed.GetPin(PIN_ENC_1_CLICK),
+    encoder[ENC_3].Init({DSY_GPIOD, 7},  //seed.GetPin(PIN_ENC_3_A)
+                        {DSY_GPIOD, 6},  //seed.GetPin(PIN_ENC_3_B)
+                        {DSY_GPIOD, 13}, //seed.GetPin(PIN_ENC_3_CLICK),
                         AudioCallbackRate());
-    #endif
 
-    encoder[ENC_2].Init({DSY_GPIOB, 15},  //seed.GetPin(PIN_ENC_2_A)
-                        {DSY_GPIOB, 13},  //seed.GetPin(PIN_ENC_2_B)
-                        {DSY_GPIOC, 15},  //seed.GetPin(PIN_ENC_2_CLICK),
-                        AudioCallbackRate()); 
-
-    encoder[ENC_3].Init({DSY_GPIOD, 7},   //seed.GetPin(PIN_ENC_3_A)
-                        {DSY_GPIOD, 6},   //seed.GetPin(PIN_ENC_3_B)
-                        {DSY_GPIOD, 13},  //seed.GetPin(PIN_ENC_3_CLICK),
-                        AudioCallbackRate()); 
-
-    encoder[ENC_4].Init({DSY_GPIOG, 10},  //seed.GetPin(PIN_ENC_4_A)
-                        {DSY_GPIOG, 7},   //seed.GetPin(PIN_ENC_4_B)
-                        {DSY_GPIOG, 12},  //seed.GetPin(PIN_ENC_4_CLICK),
-                        AudioCallbackRate()); 
+    encoder[ENC_4].Init({DSY_GPIOG, 10}, //seed.GetPin(PIN_ENC_4_A)
+                        {DSY_GPIOG, 7},  //seed.GetPin(PIN_ENC_4_B)
+                        {DSY_GPIOG, 12}, //seed.GetPin(PIN_ENC_4_CLICK),
+                        AudioCallbackRate());
 }
 
 void DaisyHeartOfGold::InitSR595()
 {
     num_sr_chained = 4;
 
-    sr_pin_cfg[SR_LATCH] = {DSY_GPIOD, 4};  //seed.GetPin(PIN_SR_LATCH);
-    sr_pin_cfg[SR_CLOCK] = {DSY_GPIOD, 5};  //seed.GetPin(PIN_SR_CLOCK);
-    sr_pin_cfg[SR_DATA]  = {DSY_GPIOD, 3};  //seed.GetPin(PIN_SR_DATA);
+    sr_pin_cfg[SR_LATCH] = {DSY_GPIOD, 4}; //seed.GetPin(PIN_SR_LATCH);
+    sr_pin_cfg[SR_CLOCK] = {DSY_GPIOD, 5}; //seed.GetPin(PIN_SR_CLOCK);
+    sr_pin_cfg[SR_DATA]  = {DSY_GPIOD, 3}; //seed.GetPin(PIN_SR_DATA);
 
     sr_595.Init(sr_pin_cfg, num_sr_chained);
 }
@@ -390,47 +391,48 @@ void DaisyHeartOfGold::InitRouteButtons()
 {
     // Route Buttons
     dsy_gpio_pin pin;
-    pin = {DSY_GPIOG, 13};  //seed.GetPin(PIN_ROUTE_BUTTON_1);
+    pin = {DSY_GPIOG, 13}; //seed.GetPin(PIN_ROUTE_BUTTON_1);
     route_button[ROUTE_BUTTON_1].Init(&pin);
-    pin = {DSY_GPIOH, 7};   //seed.GetPin(PIN_ROUTE_BUTTON_2);
+    pin = {DSY_GPIOH, 7}; //seed.GetPin(PIN_ROUTE_BUTTON_2);
     route_button[ROUTE_BUTTON_2].Init(&pin);
-    pin = {DSY_GPIOI, 8};   //seed.GetPin(PIN_ROUTE_BUTTON_3);
+    pin = {DSY_GPIOI, 8}; //seed.GetPin(PIN_ROUTE_BUTTON_3);
     route_button[ROUTE_BUTTON_3].Init(&pin);
-    pin = {DSY_GPIOI, 11};  //seed.GetPin(PIN_ROUTE_BUTTON_4);
-    route_button[ROUTE_BUTTON_4].Init(&pin);    
+    pin = {DSY_GPIOI, 11}; //seed.GetPin(PIN_ROUTE_BUTTON_4);
+    route_button[ROUTE_BUTTON_4].Init(&pin);
 }
 
 void DaisyHeartOfGold::InitGates()
 {
     // Gate Output
-    gate_output[GATE_OUT_1].pin  = {DSY_GPIOA, 8};  //seed.GetPin(PIN_GATE_OUT_1);
+    gate_output[GATE_OUT_1].pin = {DSY_GPIOA, 8}; //seed.GetPin(PIN_GATE_OUT_1);
     gate_output[GATE_OUT_1].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_1].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_1]);
 
-    gate_output[GATE_OUT_2].pin  = {DSY_GPIOC, 6};  //seed.GetPin(PIN_GATE_OUT_2);
+    gate_output[GATE_OUT_2].pin = {DSY_GPIOC, 6}; //seed.GetPin(PIN_GATE_OUT_2);
     gate_output[GATE_OUT_2].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_2].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_2]);
 
-    gate_output[GATE_OUT_3].pin  = {DSY_GPIOD, 12}; //seed.GetPin(PIN_GATE_OUT_3);
+    gate_output[GATE_OUT_3].pin
+        = {DSY_GPIOD, 12}; //seed.GetPin(PIN_GATE_OUT_3);
     gate_output[GATE_OUT_3].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_3].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_3]);
 
-    gate_output[GATE_OUT_4].pin  = {DSY_GPIOH, 6};  //seed.GetPin(PIN_GATE_OUT_4);
+    gate_output[GATE_OUT_4].pin = {DSY_GPIOH, 6}; //seed.GetPin(PIN_GATE_OUT_4);
     gate_output[GATE_OUT_4].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_4].pull = DSY_GPIO_NOPULL;
-    dsy_gpio_init(&gate_output[GATE_OUT_4]);            
+    dsy_gpio_init(&gate_output[GATE_OUT_4]);
 
     // Gate Inputs
     dsy_gpio_pin pin;
-    pin = {DSY_GPIOB, 2};  //seed.GetPin(PIN_GATE_IN_1);
+    pin = {DSY_GPIOB, 2}; //seed.GetPin(PIN_GATE_IN_1);
     gate_input[GATE_IN_1].Init(&pin);
     pin = {DSY_GPIOB, 10}; //seed.GetPin(PIN_GATE_IN_2);
     gate_input[GATE_IN_2].Init(&pin);
     pin = {DSY_GPIOC, 13}; //seed.GetPin(PIN_GATE_IN_3);
     gate_input[GATE_IN_3].Init(&pin);
     pin = {DSY_GPIOC, 14}; //seed.GetPin(PIN_GATE_IN_4);
-    gate_input[GATE_IN_4].Init(&pin);    
+    gate_input[GATE_IN_4].Init(&pin);
 }
