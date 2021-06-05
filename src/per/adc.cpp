@@ -16,59 +16,59 @@ static void Error_Handler()
 #define PIN_CHN_3    \
     {                \
         DSY_GPIOA, 6 \
-    }                   //ADC12_INP3 - CV3
+    } //ADC12_INP3 - CV3
 #define PIN_CHN_4    \
     {                \
         DSY_GPIOC, 4 \
-    }                   //ADC12_INP4 - CV1
+    } //ADC12_INP4 - CV1
 #define PIN_CHN_5    \
     {                \
         DSY_GPIOB, 1 \
-    }                   //ADC12_INP5 - CV5
+    } //ADC12_INP5 - CV5
 #define PIN_CHN_7    \
     {                \
         DSY_GPIOA, 7 \
-    }                   //ADC12_INP7 - CV4
+    } //ADC12_INP7 - CV4
 #define PIN_CHN_8    \
     {                \
         DSY_GPIOC, 5 \
-    }                   //ADC12_INP8 - CV11
+    } //ADC12_INP8 - CV11
 #define PIN_CHN_9    \
     {                \
         DSY_GPIOB, 0 \
-    }                   //ADC12_INP9 - CV8
+    } //ADC12_INP9 - CV8
 #define PIN_CHN_10   \
     {                \
         DSY_GPIOC, 0 \
-    }                   //ADC123_INP10 - CV7
+    } //ADC123_INP10 - CV7
 #define PIN_CHN_11   \
     {                \
         DSY_GPIOC, 1 \
-    }                   //ADC123_INP11 - CV2
+    } //ADC123_INP11 - CV2
 #define PIN_CHN_14   \
     {                \
         DSY_GPIOA, 2 \
-    }                   //ADC12_INP14 - SAI2_SCK_B
+    } //ADC12_INP14 - SAI2_SCK_B
 #define PIN_CHN_15   \
     {                \
         DSY_GPIOA, 3 \
-    }                   //ADC12_INP15 - CV6
+    } //ADC12_INP15 - CV6
 #define PIN_CHN_16   \
     {                \
         DSY_GPIOA, 0 \
-    }                   //ADC1_INP16 - SAI2_SD_B
+    } //ADC1_INP16 - SAI2_SD_B
 #define PIN_CHN_17   \
     {                \
         DSY_GPIOA, 1 \
-    }                   //ADC1_INP17 - SAI2_MCLK_B
+    } //ADC1_INP17 - SAI2_MCLK_B
 #define PIN_CHN_18   \
     {                \
         DSY_GPIOC, 2 \
-    }                   //ADC3_INP0 PC2_C - ADC123_INP12
+    } //ADC3_INP0 PC2_C - ADC123_INP12
 #define PIN_CHN_19   \
     {                \
         DSY_GPIOC, 3 \
-    }                   //ADC3_INP1 PC3_C - ADC123_INP13
+    } //ADC3_INP1 PC3_C - ADC123_INP13
 
 #define DSY_ADC_MAX_MUX_CHANNELS 8
 #define DSY_ADC_MAX_RESOLUTION 65536.0f
@@ -152,7 +152,7 @@ static int get_num_mux_pins_required(int num_mux_ch)
         return 0;
 }
 static void
-                      write_mux_value(uint8_t chn, uint8_t idx, uint8_t num_mux_pins_to_write);
+write_mux_value(uint8_t chn, uint8_t idx, uint8_t num_mux_pins_to_write);
 static const uint32_t adc_channel_from_pin(dsy_gpio_pin* pin);
 
 static const uint32_t adc_channel_from_pin(dsy_gpio_pin* pin)
@@ -510,8 +510,10 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
         __HAL_RCC_ADC12_CLK_ENABLE();
 
         // MSM Switch PC2 and PC3 for use with ADC 1
-        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC2, SYSCFG_SWITCH_PC2_CLOSE);
-        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC3, SYSCFG_SWITCH_PC3_CLOSE);
+        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC2,
+                                      SYSCFG_SWITCH_PC2_CLOSE);
+        HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PC3,
+                                      SYSCFG_SWITCH_PC3_CLOSE);
 
         adc_init_dma1();
         __HAL_LINKDMA(&adc.hadc1, DMA_Handle, adc.hdma_adc1);

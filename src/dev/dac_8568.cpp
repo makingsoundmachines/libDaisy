@@ -19,18 +19,17 @@
 // CS       SPI1_NSS    PG10      n.c.
 
 
-
 // Commands
 
-#define WRITE_INPUT_REGISTER            0
-#define UPDATE_OUTPUT_REGISTER          1
+#define WRITE_INPUT_REGISTER 0
+#define UPDATE_OUTPUT_REGISTER 1
 #define WRITE_INPUT_REGISTER_UPDATE_ALL 2
-#define WRITE_INPUT_REGISTER_UPDATE_N   3
-#define POWER_DOWN_UP_DAC               4
-#define LOAD_CLEAR_CODE_REGISTER        5
-#define LOAD_LDAC_REGISTER              6
-#define RESET_POWER_ON                  7
-#define SETUP_INTERNAL_REF              8
+#define WRITE_INPUT_REGISTER_UPDATE_N 3
+#define POWER_DOWN_UP_DAC 4
+#define LOAD_CLEAR_CODE_REGISTER 5
+#define LOAD_LDAC_REGISTER 6
+#define RESET_POWER_ON 7
+#define SETUP_INTERNAL_REF 8
 
 
 using namespace daisy;
@@ -39,12 +38,12 @@ using namespace daisy;
 
 typedef struct
 {
-    uint8_t  Initialized;
+    uint8_t Initialized;
 } Dac8568_t;
 
-static SpiHandle h_spi;
-static dsy_gpio  pin_sync;
-static Dac8568_t Dac8568_;
+static SpiHandle         h_spi;
+static dsy_gpio          pin_sync;
+static Dac8568_t         Dac8568_;
 static SpiHandle::Config spi_config;
 
 void Dac8568::Init(dsy_gpio_pin* pin_cfg)
@@ -55,11 +54,11 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     dsy_gpio_init(&pin_sync);
 
     // Initialize SPI
-    
-    spi_config.periph    = SpiHandle::Config::Peripheral::SPI_1;
-    spi_config.mode      = SpiHandle::Config::Mode::MASTER;
-    spi_config.direction = SpiHandle::Config::Direction::TWO_LINES_TX_ONLY;
-    spi_config.datasize  = 8;
+
+    spi_config.periph         = SpiHandle::Config::Peripheral::SPI_1;
+    spi_config.mode           = SpiHandle::Config::Mode::MASTER;
+    spi_config.direction      = SpiHandle::Config::Direction::TWO_LINES_TX_ONLY;
+    spi_config.datasize       = 8;
     spi_config.clock_polarity = SpiHandle::Config::ClockPolarity::HIGH;
     spi_config.clock_phase    = SpiHandle::Config::ClockPhase::ONE_EDGE;
     spi_config.nss            = SpiHandle::Config::NSS::SOFT;
@@ -73,27 +72,38 @@ void Dac8568::Init(dsy_gpio_pin* pin_cfg)
     h_spi.Init(spi_config);
 
 
-
     // initialize DAC8568
     Reset();
     SetClearCode(ClearIgnore);
-    SetInternalRef(false); // was true - External Ref is 1.65V so VDD = FS Out is 3.3V
+    SetInternalRef(
+        false); // was true - External Ref is 1.65V so VDD = FS Out is 3.3V
     WriteDac8568(POWER_DOWN_UP_DAC, 0, 0, 0xff);
 
     Dac8568_.Initialized = 1;
 }
 
-void Dac8568::Write(int channel) {
+void Dac8568::Write(int channel)
+{
     WriteDac8568(WRITE_INPUT_REGISTER_UPDATE_N, channel, _values[channel], 15);
 }
 
-void Dac8568::Write() {
-    for (int channel = 0; channel < Channels; ++channel) {
-        WriteDac8568(channel == 7 ? WRITE_INPUT_REGISTER_UPDATE_ALL : WRITE_INPUT_REGISTER, channel, _values[channel], 0);
+void Dac8568::Write()
+{
+    for(int channel = 0; channel < Channels; ++channel)
+    {
+        WriteDac8568(channel == 7 ? WRITE_INPUT_REGISTER_UPDATE_ALL
+                                  : WRITE_INPUT_REGISTER,
+                     channel,
+                     _values[channel],
+                     0);
     }
 }
 
-void Dac8568::WriteDac8568(uint8_t command, uint8_t address, uint16_t data, uint8_t function) {
+void Dac8568::WriteDac8568(uint8_t  command,
+                           uint8_t  address,
+                           uint16_t data,
+                           uint8_t  function)
+{
     // Shift data by one bit for DAC8568A
     data <<= _dataShift;
 
@@ -123,17 +133,18 @@ void Dac8568::WriteDac8568(uint8_t command, uint8_t address, uint16_t data, uint
     // System::DelayTicks(40);
 }
 
-void Dac8568::Reset() {
+void Dac8568::Reset()
+{
     WriteDac8568(RESET_POWER_ON, 0, 0, 0);
     // hal::Delay::delay_us(50);
 }
 
-void Dac8568::SetInternalRef(bool enabled) {
+void Dac8568::SetInternalRef(bool enabled)
+{
     WriteDac8568(SETUP_INTERNAL_REF, 0, 0, enabled ? 1 : 0);
 }
 
-void Dac8568::SetClearCode(ClearCode code) {
+void Dac8568::SetClearCode(ClearCode code)
+{
     WriteDac8568(LOAD_CLEAR_CODE_REGISTER, 0, 0, code);
 }
-
-

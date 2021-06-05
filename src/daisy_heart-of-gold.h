@@ -28,9 +28,9 @@ class DaisyHeartOfGold
         CTRL_7,    /**< */
         CTRL_8,    /**< */
         CTRL_9,    /**< */
-        CTRL_10,    /**< */
-        CTRL_11,    /**< */
-        CTRL_12,    /**< */
+        CTRL_10,   /**< */
+        CTRL_11,   /**< */
+        CTRL_12,   /**< */
         CTRL_LAST, /**< */
     };
 
@@ -52,8 +52,8 @@ class DaisyHeartOfGold
         GATE_OUT_3,    /** <*/
         GATE_OUT_4,    /** <*/
         GATE_OUT_LAST, /**< */
-    }; 
-    
+    };
+
     /** Daisy patch gate inputs */
     enum RouteButton
     {
@@ -62,7 +62,7 @@ class DaisyHeartOfGold
         ROUTE_BUTTON_3,    /** <*/
         ROUTE_BUTTON_4,    /** <*/
         ROUTE_BUTTON_LAST, /**< */
-    };    
+    };
 
     /** Daisy patch gate inputs */
     enum Enc
@@ -72,15 +72,15 @@ class DaisyHeartOfGold
         ENC_3,    /** <*/
         ENC_4,    /** <*/
         ENC_LAST, /**< */
-    };     
+    };
 
     /** Shift Register Pins */
     enum SR595Pin
     {
-        SR_LATCH,    /**< */
-        SR_CLOCK,    /** <*/
-        SR_DATA,    /** <*/
-        SR_LAST, /**< */
+        SR_LATCH, /**< */
+        SR_CLOCK, /** <*/
+        SR_DATA,  /** <*/
+        SR_LAST,  /**< */
     };
 
 
@@ -163,14 +163,14 @@ class DaisyHeartOfGold
     /* These are exposed for the user to access and manipulate directly
        Helper functions above provide easier access to much of what they are capable of.
     */
-    DaisySeed     seed;                             /**< Seed object */
-    Encoder       encoder[ENC_LAST];                /**< Encoder object */
-    AnalogControl controls[CTRL_LAST];              /**< Array of controls*/
-    GateIn        gate_input[GATE_IN_LAST];         /**< Gate inputs  */
-    GateIn        route_button[ROUTE_BUTTON_LAST];  /**< Route Buttons  */
-    MidiHandler   midi;                             /**< Handles midi*/
-    Dac8568       dac_8568;                         /**< Handles ext DAC*/
-    /** OledDisplay   display; */                   /**< & */
+    DaisySeed     seed;                            /**< Seed object */
+    Encoder       encoder[ENC_LAST];               /**< Encoder object */
+    AnalogControl controls[CTRL_LAST];             /**< Array of controls*/
+    GateIn        gate_input[GATE_IN_LAST];        /**< Gate inputs  */
+    GateIn        route_button[ROUTE_BUTTON_LAST]; /**< Route Buttons  */
+    MidiHandler   midi;                            /**< Handles midi*/
+    Dac8568       dac_8568;                        /**< Handles ext DAC*/
+    /** OledDisplay   display; */                  /**< & */
 
     // TODO: Add class for Gate output
     dsy_gpio gate_output[GATE_OUT_LAST]; /**< Gate outputs  */
@@ -181,11 +181,11 @@ class DaisyHeartOfGold
 
     /**  Init a LED Matrix using an IS31FL3731 chip */
     Is31fl3731 ledmatrix;
-    void InitLEDMatrix();
+    void       InitLEDMatrix();
 
     /**  Init a LED Matrix using an IS31FL3731 chip */
     Trill bela_trill;
-    void InitBelaTrill();
+    void  InitBelaTrill();
 
   private:
     void SetHidUpdateRates();
@@ -202,7 +202,7 @@ class DaisyHeartOfGold
 
     dsy_gpio ak4556_reset_pin_;
     uint32_t screen_update_last_, screen_update_period_;
-    size_t num_sr_chained;
+    size_t   num_sr_chained;
 };
 
 } // namespace daisy

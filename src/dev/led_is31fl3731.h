@@ -27,7 +27,6 @@ namespace daisy
 class Is31fl3731
 {
   public:
-
     Is31fl3731() {}
     ~Is31fl3731() {}
 
@@ -37,8 +36,9 @@ class Is31fl3731
      * \param addresses     An array of addresses for each of the driver chips.
      * \param numDrivers    The number of IS31FL3731 drivers attached to the I2C
      *                      peripheral.
-    */    
-    void Init(const I2CHandle i2c, const uint8_t * addresses, uint8_t numDrivers);
+    */
+    void
+    Init(const I2CHandle i2c, const uint8_t* addresses, uint8_t numDrivers);
 
     /** 
      * @brief Alternate Init (Adafruit) - Initialize hardware and clear display
@@ -47,7 +47,8 @@ class Is31fl3731
      * \param numDrivers    The number of IS31FL3731 drivers attached to the I2C
      *                      peripheral.
     */
-    void Begin(const I2CHandle i2c, const uint8_t * addresses, uint8_t numDrivers);
+    void
+    Begin(const I2CHandle i2c, const uint8_t* addresses, uint8_t numDrivers);
 
     /** 
      *  @brief Test mode from the ISSI code example - LFO-pulses all LEDs
@@ -68,7 +69,8 @@ class Is31fl3731
      *  @param bank The bank/frame we will set the data in
      *  @param pwm brightnes, from 0 (off) to 255 (max on)
     */
-    void SetLEDPWM(uint8_t i2c_address, uint8_t lednum, uint8_t pwm, uint8_t bank);    
+    void
+    SetLEDPWM(uint8_t i2c_address, uint8_t lednum, uint8_t pwm, uint8_t bank);
 
     /** 
      *  @brief Sets a 8-bit PWM pixel value, handles rotation 
@@ -78,7 +80,7 @@ class Is31fl3731
      *  @param y The y position, starting with 0 for top-most side
      *  @param pwm takes 0 (off) to 255 (max on)
     */
-    void DrawPixel(uint8_t i2c_address, int16_t x, int16_t y, uint8_t pwm);    
+    void DrawPixel(uint8_t i2c_address, int16_t x, int16_t y, uint8_t pwm);
 
     /** 
      *  @brief Set's this object's frame tracker (does not talk to the chip)
@@ -93,7 +95,7 @@ class Is31fl3731
      *  @param i2c_adress The I2C adress
      *  @param frame Ranges from 0 - 7 for the 8 frames
     */
-    void DisplayFrame(uint8_t i2c_address, uint8_t frame);    
+    void DisplayFrame(uint8_t i2c_address, uint8_t frame);
 
     /** 
      *  @brief Enable the audio 'sync' for brightness pulsing (untested)
@@ -109,7 +111,10 @@ class Is31fl3731
      *  @param reg the offset into the bank to write
      *  @param data The byte value
     */
-    void WriteRegister8(uint8_t i2c_address, uint8_t bank, uint8_t reg, uint8_t data);
+    void WriteRegister8(uint8_t i2c_address,
+                        uint8_t bank,
+                        uint8_t reg,
+                        uint8_t data);
 
     /** 
      *  @brief Write one byte to a register
@@ -118,7 +123,6 @@ class Is31fl3731
      *  @param data The byte value
     */
     void WriteIs31fl3731(uint8_t address, uint8_t reg, uint8_t data);
-
 
 
     /************************************************************************/
@@ -141,18 +145,16 @@ class Is31fl3731
     void Reset();
     void SetInternalRef(bool enabled);
 
-    uint8_t * addresses_;
-    uint8_t numDrivers_;
+    uint8_t* addresses_;
+    uint8_t  numDrivers_;
 
     uint8_t _frame;
 
-    int16_t WIDTH = 16;    ///< This is the 'raw' display width - never changes
-    int16_t HEIGHT = 9;    ///< This is the 'raw' display height - never changes
-    int16_t _width;        ///< Display width as modified by current rotation
-    int16_t _height;       ///< Display height as modified by current rotation
-    uint8_t rotation = 0;  ///< Display rotation (0 thru 3)
-
-      
+    int16_t WIDTH  = 16;  ///< This is the 'raw' display width - never changes
+    int16_t HEIGHT = 9;   ///< This is the 'raw' display height - never changes
+    int16_t _width;       ///< Display width as modified by current rotation
+    int16_t _height;      ///< Display height as modified by current rotation
+    uint8_t rotation = 0; ///< Display rotation (0 thru 3)
 };
 /** @} */
 } // namespace daisy

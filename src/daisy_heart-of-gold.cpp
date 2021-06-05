@@ -8,23 +8,23 @@ using namespace daisy;
 
 // Hardware Definitions
 #define PIN_ENC_1_CLICK 0 // HoG Enc 1 Click PB12
-#define PIN_ENC_1_A 11    // HoG Enc 1 Click PB8
-#define PIN_ENC_1_B 12    // HoG Enc 1 Click PB9
+#define PIN_ENC_1_A 11 // HoG Enc 1 Click PB8
+#define PIN_ENC_1_B 12 // HoG Enc 1 Click PB9
 
 #define PIN_ENC_2_CLICK 44 // PC15
-#define PIN_ENC_2_A 30     // PB15
-#define PIN_ENC_2_B 45     // PB13
+#define PIN_ENC_2_A 30 // PB15
+#define PIN_ENC_2_B 45 // PB13
 
 #define PIN_ENC_3_CLICK 46 // PD13
-#define PIN_ENC_3_A 47     // PD7
-#define PIN_ENC_3_B 48     // PD6
+#define PIN_ENC_3_A 47 // PD7
+#define PIN_ENC_3_B 48 // PD6
 
 #define PIN_ENC_4_CLICK 49 // PG12
-#define PIN_ENC_4_A 7      // PG10
-#define PIN_ENC_4_B 50     // PG7
+#define PIN_ENC_4_A 7 // PG10
+#define PIN_ENC_4_B 50 // PG7
 
 #define PIN_MIDI_OUT 13 // HoG MIDI Out PB6
-#define PIN_MIDI_IN 14  // HoG MIDI In PB7
+#define PIN_MIDI_IN 14 // HoG MIDI In PB7
 
 #define PIN_GATE_OUT_1 17 // HoG Trig Out 1 PA8
 #define PIN_GATE_OUT_2 39 // PC6
@@ -49,20 +49,20 @@ using namespace daisy;
 
 #define PIN_AK4556_RESET 29 // HoG PB14
 
-#define PIN_CTRL_1 21  // PC4
-#define PIN_CTRL_2 31  // PC1
-#define PIN_CTRL_3 32  // PA6
-#define PIN_CTRL_4 18  // PA7
-#define PIN_CTRL_5 33  // PB1
-#define PIN_CTRL_6 16  // PA3
-#define PIN_CTRL_7 15  // PC0
-#define PIN_CTRL_8 34  // PB0
-#define PIN_CTRL_9 35  // PC2 should be 35
+#define PIN_CTRL_1 21 // PC4
+#define PIN_CTRL_2 31 // PC1
+#define PIN_CTRL_3 32 // PA6
+#define PIN_CTRL_4 18 // PA7
+#define PIN_CTRL_5 33 // PB1
+#define PIN_CTRL_6 16 // PA3
+#define PIN_CTRL_7 15 // PC0
+#define PIN_CTRL_8 34 // PB0
+#define PIN_CTRL_9 35 // PC2 should be 35
 #define PIN_CTRL_10 36 // PC3 should be 36
 #define PIN_CTRL_11 37 // PC5 should be 37
 #define PIN_CTRL_12 38 // PH4 should be 38
 
-#define PIN_SR_DATA 51  // PD3
+#define PIN_SR_DATA 51 // PD3
 #define PIN_SR_CLOCK 52 // PD5
 #define PIN_SR_LATCH 53 // PD4
 

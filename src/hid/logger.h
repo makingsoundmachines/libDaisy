@@ -16,14 +16,14 @@ namespace daisy
 /** Logger configuration
  */
 #define LOGGER_NEWLINE "\r\n" /**< custom newline character sequence */
-#define LOGGER_BUFFER 128     /**< size in bytes */
+#define LOGGER_BUFFER 128 /**< size in bytes */
 
 /** Helper macros for string concatenation and macro expansion
  * @{
  */
-#define PPCAT_NX(A, B) A##B          /**< non-expanding concatenation */
-#define PPCAT(A, B) PPCAT_NX(A, B)   /**< concatenate tokens */
-#define STRINGIZE_NX(A) #A           /**< non-expanding stringize  */
+#define PPCAT_NX(A, B) A##B /**< non-expanding concatenation */
+#define PPCAT(A, B) PPCAT_NX(A, B) /**< concatenate tokens */
+#define STRINGIZE_NX(A) #A /**< non-expanding stringize  */
 #define STRINGIZE(A) STRINGIZE_NX(A) /**< make a string */
 /*
  * @}

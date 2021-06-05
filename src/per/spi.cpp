@@ -188,14 +188,13 @@ SpiHandle::Result SpiHandle::Impl::Init(const Config& config)
     // end of hack
 
 
-
-    hspi_.Init.FirstBit          = SPI_FIRSTBIT_MSB;
-    hspi_.Init.TIMode            = SPI_TIMODE_DISABLE;
-    hspi_.Init.CRCCalculation    = SPI_CRCCALCULATION_DISABLE;
-    hspi_.Init.CRCPolynomial     = 0x0;
-    hspi_.Init.NSSPMode          = SPI_NSS_PULSE_ENABLE;
-    hspi_.Init.NSSPolarity       = SPI_NSS_POLARITY_LOW;
-    hspi_.Init.FifoThreshold     = SPI_FIFO_THRESHOLD_01DATA;
+    hspi_.Init.FirstBit       = SPI_FIRSTBIT_MSB;
+    hspi_.Init.TIMode         = SPI_TIMODE_DISABLE;
+    hspi_.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+    hspi_.Init.CRCPolynomial  = 0x0;
+    hspi_.Init.NSSPMode       = SPI_NSS_PULSE_ENABLE;
+    hspi_.Init.NSSPolarity    = SPI_NSS_POLARITY_LOW;
+    hspi_.Init.FifoThreshold  = SPI_FIFO_THRESHOLD_01DATA;
     hspi_.Init.TxCRCInitializationPattern
         = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
     hspi_.Init.RxCRCInitializationPattern
