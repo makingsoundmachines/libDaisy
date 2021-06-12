@@ -197,18 +197,19 @@ void DaisyHeartOfGold::InitLEDMatrix()
 
     I2CHandle::Config i2c_config;
 
+    i2c_config.mode           = I2CHandle::Config::Mode::I2C_MASTER;
     i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
     i2c_config.pin_config.scl = {DSY_GPIOB, 8},
     i2c_config.pin_config.sda = {DSY_GPIOB, 9};
     i2c_config.speed          = I2CHandle::Config::Speed::I2C_400KHZ;
 
-    uint8_t addr[1] = {0b01110100}; // 0x74
+    uint8_t addr[2] = { 0b01110100, 0b01110101 }; // 0x74, 0x75
 
     I2CHandle i2c;
     i2c.Init(i2c_config);
 
     // init with i2c handle, array of adresses, number of driver chips
-    ledmatrix.Init(i2c, addr, 1);
+    ledmatrix.Init(i2c, addr, 2);
 }
 
 void DaisyHeartOfGold::InitBelaTrill()
