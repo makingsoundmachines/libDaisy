@@ -69,8 +69,9 @@ class Is31fl3731
      *  @param bank The bank/frame we will set the data in
      *  @param pwm brightnes, from 0 (off) to 255 (max on)
     */
-    void
-    SetLEDPWM(uint8_t i2c_address, uint8_t lednum, uint8_t pwm, uint8_t bank);
+    void SetLEDPWM(uint8_t i2c_address, uint8_t lednum, uint8_t pwm, uint8_t bank);
+
+    void Set16(uint8_t i2c_address, uint8_t first_pixel, uint8_t data[16]);
 
     /** 
      *  @brief Sets a 8-bit PWM pixel value, handles rotation 

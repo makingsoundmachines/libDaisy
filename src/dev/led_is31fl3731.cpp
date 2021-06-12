@@ -134,7 +134,7 @@ void Is31fl3731::WriteIs31fl3731(uint8_t i2c_address, uint8_t reg, uint8_t data)
 
 void Is31fl3731::Test_mode()
 {
-    for(uint8_t j = 0x00; j < 0x80; j++) //all LED ramping up
+    for(uint8_t j = 0x00; j < 0xFF; j++) //all LED ramping up
     {
         for(uint8_t i = 0x24; i < 0xB4; i++)
         {
@@ -145,7 +145,7 @@ void Is31fl3731::Test_mode()
         }
     }
 
-    for(uint8_t j = 0x80; j > 0x00; j--) //all LED ramping down
+    for(uint8_t j = 0xFF; j > 0x00; j--) //all LED ramping down
     {
         for(uint8_t i = 0x24; i < 0xB4; i++)
         {
@@ -228,6 +228,29 @@ void Is31fl3731::Clear(uint8_t i2c_address)
 
         i2c_.TransmitBlocking(i2c_address, msg, 25, 1);
     }
+}
+
+void Is31fl3731::Set16(uint8_t i2c_address, uint8_t first_pixel, uint8_t data[16])
+{
+    uint8_t b[2];
+
+    //select Bank (current frame)
+    b[0] = ISSI_COMMANDREGISTER;
+    b[1] = _frame;
+    i2c_.TransmitBlocking(i2c_address, b, 2, 1);
+
+    uint8_t msg[17];
+
+    msg[0] = 0x24 + first_pixel;
+
+    // write 16 bytes at once
+    for(uint8_t i = 0; i < 16; i++)
+    {
+        if( first_pixel + i >= 144) return;
+        msg[i+1] = data[i];
+    }
+
+    i2c_.TransmitBlocking(i2c_address, msg, 17, 1);
 }
 
 void Is31fl3731::SetLEDPWM(uint8_t i2c_address,
