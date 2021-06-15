@@ -105,6 +105,16 @@ void DaisyHeartOfGold::SetHidUpdateRates()
     encoder[ENC_2].SetUpdateRate(AudioCallbackRate());
     encoder[ENC_3].SetUpdateRate(AudioCallbackRate());
     encoder[ENC_4].SetUpdateRate(AudioCallbackRate());
+
+    gate_input[GATE_IN_1].SetUpdateRate(AudioCallbackRate());
+    gate_input[GATE_IN_2].SetUpdateRate(AudioCallbackRate());
+    gate_input[GATE_IN_3].SetUpdateRate(AudioCallbackRate());
+    gate_input[GATE_IN_4].SetUpdateRate(AudioCallbackRate());
+
+    route_button[ROUTE_BUTTON_1].SetUpdateRate(AudioCallbackRate());
+    route_button[ROUTE_BUTTON_2].SetUpdateRate(AudioCallbackRate());
+    route_button[ROUTE_BUTTON_3].SetUpdateRate(AudioCallbackRate());
+    route_button[ROUTE_BUTTON_4].SetUpdateRate(AudioCallbackRate());
 }
 
 
@@ -184,6 +194,16 @@ void DaisyHeartOfGold::ProcessDigitalControls()
     encoder[ENC_2].Debounce();
     encoder[ENC_3].Debounce();
     encoder[ENC_4].Debounce();
+
+    gate_input[GATE_IN_1].Debounce();
+    gate_input[GATE_IN_2].Debounce();
+    gate_input[GATE_IN_3].Debounce();
+    gate_input[GATE_IN_4].Debounce();
+
+    route_button[ROUTE_BUTTON_1].Debounce();
+    route_button[ROUTE_BUTTON_2].Debounce();
+    route_button[ROUTE_BUTTON_3].Debounce();
+    route_button[ROUTE_BUTTON_4].Debounce();
 }
 
 
@@ -391,15 +411,17 @@ void DaisyHeartOfGold::InitSR595()
 void DaisyHeartOfGold::InitRouteButtons()
 {
     // Route Buttons
-    dsy_gpio_pin pin;
-    pin = {DSY_GPIOG, 13}; //seed.GetPin(PIN_ROUTE_BUTTON_1);
-    route_button[ROUTE_BUTTON_1].Init(&pin);
-    pin = {DSY_GPIOH, 7}; //seed.GetPin(PIN_ROUTE_BUTTON_2);
-    route_button[ROUTE_BUTTON_2].Init(&pin);
-    pin = {DSY_GPIOI, 8}; //seed.GetPin(PIN_ROUTE_BUTTON_3);
-    route_button[ROUTE_BUTTON_3].Init(&pin);
-    pin = {DSY_GPIOI, 11}; //seed.GetPin(PIN_ROUTE_BUTTON_4);
-    route_button[ROUTE_BUTTON_4].Init(&pin);
+    // dsy_gpio_pin pin;
+    // float _AudioCallbackRate = AudioCallbackRate();
+
+    //seed.GetPin(PIN_ROUTE_BUTTON_1);
+    route_button[ROUTE_BUTTON_1].Init({DSY_GPIOG, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_ROUTE_BUTTON_2);
+    route_button[ROUTE_BUTTON_2].Init({DSY_GPIOH, 7}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_ROUTE_BUTTON_3);
+    route_button[ROUTE_BUTTON_3].Init({DSY_GPIOI, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_ROUTE_BUTTON_4);
+    route_button[ROUTE_BUTTON_4].Init({DSY_GPIOI, 11}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 }
 
 void DaisyHeartOfGold::InitGates()
@@ -427,13 +449,13 @@ void DaisyHeartOfGold::InitGates()
     dsy_gpio_init(&gate_output[GATE_OUT_4]);
 
     // Gate Inputs
-    dsy_gpio_pin pin;
-    pin = {DSY_GPIOB, 2}; //seed.GetPin(PIN_GATE_IN_1);
-    gate_input[GATE_IN_1].Init(&pin);
-    pin = {DSY_GPIOB, 10}; //seed.GetPin(PIN_GATE_IN_2);
-    gate_input[GATE_IN_2].Init(&pin);
-    pin = {DSY_GPIOC, 13}; //seed.GetPin(PIN_GATE_IN_3);
-    gate_input[GATE_IN_3].Init(&pin);
-    pin = {DSY_GPIOC, 14}; //seed.GetPin(PIN_GATE_IN_4);
-    gate_input[GATE_IN_4].Init(&pin);
+    // dsy_gpio_pin pin;
+    //seed.GetPin(PIN_GATE_IN_1);
+    gate_input[GATE_IN_1].Init({DSY_GPIOB, 2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_GATE_IN_2);
+    gate_input[GATE_IN_2].Init({DSY_GPIOB, 10}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_GATE_IN_3);
+    gate_input[GATE_IN_3].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //seed.GetPin(PIN_GATE_IN_4);
+    gate_input[GATE_IN_4].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 }
