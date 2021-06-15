@@ -49,7 +49,7 @@ var searchData=
   ['ringbuffer_3c_20t_2c_200_20_3e_764',['RingBuffer&lt; T, 0 &gt;',['../classdaisy_1_1_ring_buffer_3_01_t_00_010_01_4.html',1,'daisy']]],
   ['ringled_765',['RingLed',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682',1,'daisy::DaisyPetal']]],
   ['risingedge_766',['RisingEdge',['../classdaisy_1_1_encoder.html#ab501cf73d10d81058b485c48b9eb506f',1,'daisy::Encoder::RisingEdge()'],['../classdaisy_1_1_switch.html#a71f6054840c76ebe3cb2517dc7830d34',1,'daisy::Switch::RisingEdge()']]],
-  ['route_5fbutton_767',['route_button',['../classdaisy_1_1_daisy_heart_of_gold.html#a3751da9441cf7eeab34ec33c2a6ebc27',1,'daisy::DaisyHeartOfGold']]],
+  ['route_5fbutton_767',['route_button',['../classdaisy_1_1_daisy_heart_of_gold.html#a0adad2c22e71aa316c66e3ea1a23c15b',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5f3_768',['ROUTE_BUTTON_3',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ea837efda39d83045b5293504ca13ebee4',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5f4_769',['ROUTE_BUTTON_4',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ead57ed99488b154428f491a61488afceb',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5flast_770',['ROUTE_BUTTON_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2eaf7a78fe806cc5c72241e45a9cfc261dc',1,'daisy::DaisyHeartOfGold']]],

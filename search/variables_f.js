@@ -5,6 +5,6 @@ var searchData=
   ['relcardadd_1494',['RelCardAdd',['../struct_d_s_y___s_d___card_info_type_def.html#a5c530fb4ff9a3032125d75a44e9b0a0a',1,'DSY_SD_CardInfoTypeDef']]],
   ['reset_1495',['reset',['../structdaisy_1_1_s_s_d130x4_wire_spi_transport_1_1_config.html#a3040b9e73290c3c0d562169b5f630c0e',1,'daisy::SSD130x4WireSpiTransport::Config']]],
   ['ring_5fled_1496',['ring_led',['../classdaisy_1_1_daisy_petal.html#a24abaac2327c0057f99b5d5a4f15bd5a',1,'daisy::DaisyPetal']]],
-  ['route_5fbutton_1497',['route_button',['../classdaisy_1_1_daisy_heart_of_gold.html#a3751da9441cf7eeab34ec33c2a6ebc27',1,'daisy::DaisyHeartOfGold']]],
+  ['route_5fbutton_1497',['route_button',['../classdaisy_1_1_daisy_heart_of_gold.html#a0adad2c22e71aa316c66e3ea1a23c15b',1,'daisy::DaisyHeartOfGold']]],
   ['rx_1498',['rx',['../structdaisy_1_1_uart_handler_1_1_config.html#adb318e26f13636e1bee740fa47497392',1,'daisy::UartHandler::Config']]]
 ];
