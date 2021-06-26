@@ -163,13 +163,13 @@ class DaisyHeartOfGold
     /* These are exposed for the user to access and manipulate directly
        Helper functions above provide easier access to much of what they are capable of.
     */
-    DaisySeed     seed;                            /**< Seed object */
-    Encoder       encoder[ENC_LAST];               /**< Encoder object */
-    AnalogControl controls[CTRL_LAST];             /**< Array of controls*/
-    Switch        gate_input[GATE_IN_LAST];        /**< Gate inputs  */
-    Switch        route_button[ROUTE_BUTTON_LAST]; /**< Route Buttons  */
-    MidiHandler   midi;                            /**< Handles midi*/
-    Dac8568       dac_8568;                        /**< Handles ext DAC*/
+    DaisySeed         seed;                            /**< Seed object */
+    Encoder           encoder[ENC_LAST];               /**< Encoder object */
+    AnalogControl     controls[CTRL_LAST];             /**< Array of controls*/
+    Switch            gate_input[GATE_IN_LAST];        /**< Gate inputs  */
+    Switch            route_button[ROUTE_BUTTON_LAST]; /**< Route Buttons  */
+    MidiUartHandler   midi;                            /**< Handles midi*/
+    Dac8568           dac_8568;                        /**< Handles ext DAC*/
     /** OledDisplay   display; */                  /**< & */
 
     // TODO: Add class for Gate output

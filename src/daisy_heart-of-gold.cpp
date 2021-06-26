@@ -347,8 +347,8 @@ void DaisyHeartOfGold::InitDAC8568()
 
 void DaisyHeartOfGold::InitMidi()
 {
-    midi.Init(MidiHandler::MidiInputMode::INPUT_MODE_UART1,
-              MidiHandler::MidiOutputMode::OUTPUT_MODE_UART1);
+    MidiUartHandler::Config midi_config;
+    midi.Init(midi_config);
 }
 
 void DaisyHeartOfGold::InitCvOutputs()
