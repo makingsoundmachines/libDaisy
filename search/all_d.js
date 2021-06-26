@@ -3,7 +3,7 @@ var searchData=
   ['mcu_5fis_5fmaster_604',['mcu_is_master',['../structdaisy_1_1_wm8731_1_1_config.html#a34027e7604b8cfc9649d4eb972665f99',1,'daisy::Wm8731::Config']]],
   ['medium_5fslow_605',['MEDIUM_SLOW',['../classdaisy_1_1_sdmmc_handler.html#a78a654b5e915c05224fb64f0dfbe6bceae8299a925bcf4edf54ee86581f4df53d',1,'daisy::SdmmcHandler']]],
   ['message_5ftype_606',['message_type',['../struct_m_t_c_quarter_frame_event.html#afa769b02eb13269f5fb0e3085f2264dc',1,'MTCQuarterFrameEvent']]],
-  ['midi_607',['midi',['../classdaisy_1_1_daisy_heart_of_gold.html#a80fe1330e4b5e4bc792afdf6c4906eb5',1,'daisy::DaisyHeartOfGold::midi()'],['../classdaisy_1_1_daisy_patch.html#ab0f8c32d52ff82c8e42123eef88fc3ee',1,'daisy::DaisyPatch::midi()']]],
+  ['midi_607',['midi',['../classdaisy_1_1_daisy_heart_of_gold.html#acf50a960e3bdb56a991b7f2cb120d2c9',1,'daisy::DaisyHeartOfGold::midi()'],['../classdaisy_1_1_daisy_patch.html#ab0f8c32d52ff82c8e42123eef88fc3ee',1,'daisy::DaisyPatch::midi()']]],
   ['midievent_608',['MidiEvent',['../struct_midi_event.html',1,'']]],
   ['midihandler_609',['MidiHandler',['../classdaisy_1_1_midi_handler.html',1,'daisy']]],
   ['midihandler_3c_20midiuarttransport_20_3e_610',['MidiHandler&lt; MidiUartTransport &gt;',['../classdaisy_1_1_midi_handler.html',1,'daisy']]],
