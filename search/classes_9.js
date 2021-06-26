@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['noteonevent_1072',['NoteOnEvent',['../structdaisy_1_1_note_on_event.html',1,'daisy']]]
+  ['noteoffevent_1100',['NoteOffEvent',['../struct_note_off_event.html',1,'']]],
+  ['noteonevent_1101',['NoteOnEvent',['../struct_note_on_event.html',1,'']]]
 ];
