@@ -379,6 +379,7 @@ void DaisyHeartOfGold::InitEncoder()
         {DSY_GPIOC, 7},  //seed.GetPin(PIN_ENC_1_B), HoG v2 {DSY_GPIOC, 7}
         {DSY_GPIOB, 12}, //seed.GetPin(PIN_ENC_1_CLICK),
         AudioCallbackRate());
+
 #endif
 
     encoder[ENC_2].Init({DSY_GPIOB, 15}, //seed.GetPin(PIN_ENC_2_A)
