@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outputbuffer_1593',['OutputBuffer',['../classdaisy_1_1_audio_handle.html#aa0728b1916a1a1c569e601f27224a3a1',1,'daisy::AudioHandle']]]
+  ['mode_1912',['Mode',['../classdaisy_1_1_trill.html#a1097267da9ad280293a5c642fb758d42',1,'daisy::Trill']]]
 ];

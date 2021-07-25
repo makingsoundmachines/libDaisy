@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['samplerate_1642',['SampleRate',['../structdaisy_1_1_sai_handle_1_1_config.html#adace22abaff171f0c459cff4a44026fc',1,'daisy::SaiHandle::Config']]],
-  ['speed_1643',['Speed',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469e',1,'daisy::I2CHandle::Config::Speed()'],['../classdaisy_1_1_sdmmc_handler.html#a78a654b5e915c05224fb64f0dfbe6bce',1,'daisy::SdmmcHandler::Speed()']]],
-  ['sr595pin_1644',['SR595Pin',['../classdaisy_1_1_daisy_heart_of_gold.html#a39d82290a68048d2b5615b354f3b0b0a',1,'daisy::DaisyHeartOfGold']]],
-  ['sw_1645',['Sw',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911',1,'daisy::DaisyPetal::Sw()'],['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeb',1,'daisy::DaisyPod::Sw()']]],
-  ['sync_1646',['Sync',['../structdaisy_1_1_sai_handle_1_1_config.html#a269af182475979f6845fb06ffa3c4055',1,'daisy::SaiHandle::Config']]],
-  ['sysclkfreq_1647',['SysClkFreq',['../structdaisy_1_1_system_1_1_config.html#a100d6b1e0b41cf2bf17ecffe28fabfa7',1,'daisy::System::Config']]]
+  ['peripheral_1961',['Peripheral',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3',1,'daisy::I2CHandle::Config::Peripheral()'],['../structdaisy_1_1_sai_handle_1_1_config.html#a68789209ff997e6ca653db010594959b',1,'daisy::SaiHandle::Config::Peripheral()'],['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bca',1,'daisy::TimerHandle::Config::Peripheral()']]],
+  ['pins_1962',['Pins',['../classdaisy_1_1_dac8568.html#a78d5e70343ec59826c486c9b18db9b9f',1,'daisy::Dac8568::Pins()'],['../class_shift_register595.html#a2e0140c5d6cac8821d558b2683f7a134',1,'ShiftRegister595::Pins()']]],
+  ['polarity_1963',['Polarity',['../classdaisy_1_1_switch.html#aef37136dd1b4cd077ef82a0f62bcfa3d',1,'daisy::Switch']]],
+  ['presetcolor_1964',['PresetColor',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40',1,'daisy::Color']]],
+  ['pull_1965',['Pull',['../classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51',1,'daisy::Switch']]]
 ];
