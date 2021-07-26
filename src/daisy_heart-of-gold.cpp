@@ -106,6 +106,8 @@ void DaisyHeartOfGold::SetHidUpdateRates()
     encoder[ENC_3].SetUpdateRate(AudioCallbackRate());
     encoder[ENC_4].SetUpdateRate(AudioCallbackRate());
 
+    // use when declared as switch
+    // do not use when declared as gatein
     gate_input[GATE_IN_1].SetUpdateRate(AudioCallbackRate());
     gate_input[GATE_IN_2].SetUpdateRate(AudioCallbackRate());
     gate_input[GATE_IN_3].SetUpdateRate(AudioCallbackRate());
@@ -195,6 +197,8 @@ void DaisyHeartOfGold::ProcessDigitalControls()
     encoder[ENC_3].Debounce();
     encoder[ENC_4].Debounce();
 
+    // debounce when declared as switch
+    // do not debounce when declared as gatein
     gate_input[GATE_IN_1].Debounce();
     gate_input[GATE_IN_2].Debounce();
     gate_input[GATE_IN_3].Debounce();
@@ -450,13 +454,23 @@ void DaisyHeartOfGold::InitGates()
     dsy_gpio_init(&gate_output[GATE_OUT_4]);
 
     // Gate Inputs
-    // dsy_gpio_pin pin;
-    //seed.GetPin(PIN_GATE_IN_1);
+    // init when declared as switch (with debounce)
     gate_input[GATE_IN_1].Init({DSY_GPIOB, 2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_GATE_IN_2);
     gate_input[GATE_IN_2].Init({DSY_GPIOB, 10}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_GATE_IN_3);
     gate_input[GATE_IN_3].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_GATE_IN_4);
     gate_input[GATE_IN_4].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+
+    // Gate Inputs
+    // init when declared as gatein (no debounce)
+    /*
+    dsy_gpio_pin pin;
+    pin = {DSY_GPIOB, 2};  //seed.GetPin(PIN_GATE_IN_1);
+    gate_input[GATE_IN_1].Init(&pin);
+    pin = {DSY_GPIOB, 10}; //seed.GetPin(PIN_GATE_IN_2);
+    gate_input[GATE_IN_2].Init(&pin);
+    pin = {DSY_GPIOC, 13}; //seed.GetPin(PIN_GATE_IN_3);
+    gate_input[GATE_IN_3].Init(&pin);
+    pin = {DSY_GPIOC, 14}; //seed.GetPin(PIN_GATE_IN_4);
+    gate_input[GATE_IN_4].Init(&pin); 
+    */
 }
