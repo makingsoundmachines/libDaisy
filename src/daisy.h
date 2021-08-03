@@ -48,6 +48,7 @@
 #include "dev/bela_trill.h"
 #include "dev/lcd_hd44780.h"
 #include "dev/led_is31fl3731.h"
+#include "dev/led_is31fl3731_dma.h"
 #include "ui/ButtonMonitor.h"
 #include "ui/PotMonitor.h"
 #include "ui/UI.h"

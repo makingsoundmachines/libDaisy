@@ -236,6 +236,35 @@ void DaisyHeartOfGold::InitLEDMatrix()
     ledmatrix.Init(i2c, addr, 2);
 }
 
+
+static LedDriverIs31fl3731<2, true>::DmaBuffer DMA_BUFFER_MEM_SECTION
+    hog_led_dma_buffer_a,
+    hog_led_dma_buffer_b;
+
+void DaisyHeartOfGold::InitLEDMatrixDMA()
+{
+
+    I2CHandle::Config i2c_config;
+
+    i2c_config.mode           = I2CHandle::Config::Mode::I2C_MASTER;
+    i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
+    i2c_config.pin_config.scl = {DSY_GPIOB, 8},
+    i2c_config.pin_config.sda = {DSY_GPIOB, 9};
+    i2c_config.speed          = I2CHandle::Config::Speed::I2C_400KHZ;
+
+    uint8_t addr[2] = { 0b01110100, 0b01110101 }; // 0x74, 0x75
+
+    I2CHandle i2c;
+    i2c.Init(i2c_config);
+
+    // LEDs
+    // 2x PCA9685 addresses 0x00, and 0x02
+    ledmatrix_dma.Init(i2c, addr, hog_led_dma_buffer_a, hog_led_dma_buffer_b);
+
+}
+
+
+
 void DaisyHeartOfGold::InitBelaTrill()
 {
     /* static constexpr I2CHandle::Config i2c_config = {
