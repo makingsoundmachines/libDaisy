@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['i2c_5f1_2075',['I2C_1',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3ac6fd6f26e2aa63abe2238fab4b47dd79',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f100khz_2076',['I2C_100KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea553b1e80b412bd08e176aac5f3ab4cb9',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f1mhz_2077',['I2C_1MHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469eae8625e0ea19033600b2fe93cf1709250',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f2_2078',['I2C_2',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a4df67eab35d40f92e3e08f3e92c42f07',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f3_2079',['I2C_3',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a953b2c7701d3e795fe6f524ab7ba0966',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f4_2080',['I2C_4',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3acb1bc673df00194e6f8091f5130dd6c1',1,'daisy::I2CHandle::Config']]],
-  ['i2c_5f400khz_2081',['I2C_400KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea18db2d43c0673a83aa3629f1e0bc2d07',1,'daisy::I2CHandle::Config']]]
+  ['i2c_5f1_2082',['I2C_1',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3ac6fd6f26e2aa63abe2238fab4b47dd79',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f100khz_2083',['I2C_100KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea553b1e80b412bd08e176aac5f3ab4cb9',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f1mhz_2084',['I2C_1MHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469eae8625e0ea19033600b2fe93cf1709250',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f2_2085',['I2C_2',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a4df67eab35d40f92e3e08f3e92c42f07',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f3_2086',['I2C_3',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3a953b2c7701d3e795fe6f524ab7ba0966',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f4_2087',['I2C_4',['../structdaisy_1_1_i2_c_handle_1_1_config.html#ad59ff761df0f73062c2e5602fb67e9d3acb1bc673df00194e6f8091f5130dd6c1',1,'daisy::I2CHandle::Config']]],
+  ['i2c_5f400khz_2088',['I2C_400KHZ',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a744f7d6297a06e87fe2e2014f05d469ea18db2d43c0673a83aa3629f1e0bc2d07',1,'daisy::I2CHandle::Config']]]
 ];
