@@ -31,26 +31,12 @@ class LedDriverIs31fl3731
 {
   public:
     /** Buffer Type for a single Is31fl3731 driver chip. */
-    struct __attribute__((packed)) Is31fl3731TransmitBuffer
-    {
-        /** Command Register */
-        uint8_t _reg = 0xFD;
-        /** fixed to first frame for now */
-        uint8_t _frame = 0x00;
+    /** struct __attribute__((packed)) Is31fl3731TransmitBuffer */
 
-        /** register address */
-        uint8_t registerAddr = 0x24; //Is31fl3731_LED0;
-        struct __attribute__((packed))
-        {
-            /** cycle at which to switch on the led */
-            uint8_t pwm;
-            /** cycle at which to switch on the led */
-            //uint16_t on;
-            /** cycle at which to switch off the led */
-            //uint16_t off;
-        } leds[144];
-        /** full size in bytes */
-        static constexpr uint16_t size = 144 + 3;
+    struct Is31fl3731TransmitBuffer
+    {
+        /** data */
+        uint8_t data[147];  // 147
     };
     /** Buffer type for the entire DMA buffer. */
     using DmaBuffer = Is31fl3731TransmitBuffer[Is31fl3731_numDrivers];
@@ -130,8 +116,13 @@ class LedDriverIs31fl3731
     {
         const auto d  = GetDriverForLed(ledIndex);
         const auto ch = GetDriverChannelForLed(ledIndex);
+
+        draw_buffer_[d].data[0]          = 0xFD;
+        draw_buffer_[d].data[1]          = 0x00;
+        draw_buffer_[d].data[2]          = 0x24; //Is31fl3731_LED0;
+
         // clip raw brightness at 0xFF
-        draw_buffer_[d].leds[ch].pwm = rawBrightness & 0xFF;
+        draw_buffer_[d].data[ch+3] = rawBrightness & 0xFF;
     }
 
     /** Swaps the current draw buffer and the current transmit buffer and
@@ -152,9 +143,9 @@ class LedDriverIs31fl3731
         if(Is31fl3731_persistentBufferContents)
         {
             for(int d = 0; d < Is31fl3731_numDrivers; d++)
-                for(int ch = 0; ch < 144; ch++)
-                    draw_buffer_[d].leds[ch].pwm
-                        = transmit_buffer_[d].leds[ch].pwm;
+                for(int ch = 0; ch < 147; ch++)
+                    draw_buffer_[d].data[ch]
+                        = transmit_buffer_[d].data[ch];
         }
 
         // start transmission
@@ -176,7 +167,7 @@ class LedDriverIs31fl3731
         const uint8_t address = Is31fl3731_I2C_BASE_ADDRESS | addresses_[d];
         const auto    status  = i2c_.TransmitDma(address,
                                              (uint8_t*)&transmit_buffer_[d],
-                                             Is31fl3731TransmitBuffer::size,
+                                             147,
                                              &TxCpltCallback,
                                              this);
         if(status != I2CHandle::Result::OK)
@@ -195,11 +186,13 @@ class LedDriverIs31fl3731
 
         // return driver for every 144 LEDs
         
-        int n = ledIndex;
+        /* int n = ledIndex;
         n = n + 0x70;
         n = n & 0xFF;
         n = n >> 8;
-        return n;    
+        return n; */
+
+        return (uint8_t)(ledIndex / 144);    
     }
 
     uint8_t GetDriverChannelForLed(int ledIndex) const
@@ -208,27 +201,27 @@ class LedDriverIs31fl3731
         // int 0    - 143 
         // hex 0x00 - 0x8F
 
-        int n = ledIndex;
+        /* int n = ledIndex;
         n = n + 0x70;
         n = n & 0xFF;
         n = n - 0x70;
-        return n;
+        return n; */
+
+        return ledIndex % 144;
     }
 
     void InitializeBuffers()
     {
-        for(uint8_t d = 0; d < Is31fl3731_numDrivers; d++)
+        for(int d = 0; d < Is31fl3731_numDrivers; d++)
         {
-            draw_buffer_[d]._reg             = 0xFD;
-            draw_buffer_[d]._frame           = 0x00;
-            draw_buffer_[d].registerAddr     = 0x24; //Is31fl3731_LED0;
-
-            transmit_buffer_[d]._reg         = 0xFD;
-            transmit_buffer_[d]._frame       = 0x00;
-            transmit_buffer_[d].registerAddr = 0x24; //Is31fl3731_LED0;
+            for(uint16_t led = 0; led < 147; led++)
+            {
+                draw_buffer_[d].data[led]     = led;
+                transmit_buffer_[d].data[led] = led;
+            }
         }
 
-        for(int led = 0; led < GetNumLeds(); led++)
+        /* for(int led = 0; led < GetNumLeds(); led++)
         {
             const auto d                     = GetDriverForLed(led);
             const auto ch                    = GetDriverChannelForLed(led);
@@ -236,7 +229,7 @@ class LedDriverIs31fl3731
 
             draw_buffer_[d].leds[ch].pwm     = 0x00;
             transmit_buffer_[d].leds[ch].pwm = 0x00;
-        }
+        } */
     }
 
     void InitializeDrivers()
