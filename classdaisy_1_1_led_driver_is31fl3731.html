@@ -66,6 +66,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classdaisy_1_1_led_driver_is31fl3731-members.html">List of all members</a>  </div>
@@ -76,15 +77,18 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="led__is31fl3731__dma_8h_source.html">led_is31fl3731_dma.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdaisy_1_1_led_driver_is31fl3731_1_1_is31fl3731_transmit_buffer.html">Is31fl3731TransmitBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad61a1f04803152b13da1486bb9b85ae4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> = Is31fl3731TransmitBuffer[Is31fl3731_numDrivers]</td></tr>
+<tr class="memitem:ad61a1f04803152b13da1486bb9b85ae4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> = <a class="el" href="structdaisy_1_1_led_driver_is31fl3731_1_1_is31fl3731_transmit_buffer.html">Is31fl3731TransmitBuffer</a>[Is31fl3731_numDrivers]</td></tr>
 <tr class="separator:ad61a1f04803152b13da1486bb9b85ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8fa5a68449ec99889038e86ece3f656"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#aa8fa5a68449ec99889038e86ece3f656">__attribute__</a> ((packed)) Is31fl3731TransmitBuffer</td></tr>
-<tr class="separator:aa8fa5a68449ec99889038e86ece3f656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c74ecdfac076ef685a2003a199aebb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#a8c74ecdfac076ef685a2003a199aebb9">Init</a> (<a class="el" href="classdaisy_1_1_i2_c_handle.html">I2CHandle</a> i2c, const uint8_t(&amp;addresses)[Is31fl3731_numDrivers], <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> dma_buffer_a, <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> dma_buffer_b, <a class="el" href="structdsy__gpio__pin.html">dsy_gpio_pin</a> oe_pin={DSY_GPIOX, 0})</td></tr>
 <tr class="separator:a8c74ecdfac076ef685a2003a199aebb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4904d3e2fd8263bd7105cb26b3debffd"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#a4904d3e2fd8263bd7105cb26b3debffd">GetNumLeds</a> () const</td></tr>
@@ -125,7 +129,7 @@ class daisy::LedDriverIs31fl3731&lt; Is31fl3731_numDrivers, Is31fl3731_persisten
 template&lt;int Is31fl3731_numDrivers, bool Is31fl3731_persistentBufferContents = true&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html">daisy::LedDriverIs31fl3731</a>&lt; Is31fl3731_numDrivers, Is31fl3731_persistentBufferContents &gt;::<a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> =  Is31fl3731TransmitBuffer[Is31fl3731_numDrivers]</td>
+          <td class="memname">using <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html">daisy::LedDriverIs31fl3731</a>&lt; Is31fl3731_numDrivers, Is31fl3731_persistentBufferContents &gt;::<a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#ad61a1f04803152b13da1486bb9b85ae4">DmaBuffer</a> =  <a class="el" href="structdaisy_1_1_led_driver_is31fl3731_1_1_is31fl3731_transmit_buffer.html">Is31fl3731TransmitBuffer</a>[Is31fl3731_numDrivers]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -134,42 +138,6 @@ template&lt;int Is31fl3731_numDrivers, bool Is31fl3731_persistentBufferContents 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa8fa5a68449ec99889038e86ece3f656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8fa5a68449ec99889038e86ece3f656">&#9670;&nbsp;</a></span>__attribute__()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int Is31fl3731_numDrivers, bool Is31fl3731_persistentBufferContents = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html">daisy::LedDriverIs31fl3731</a>&lt; Is31fl3731_numDrivers, Is31fl3731_persistentBufferContents &gt;::__attribute__ </td>
-          <td>(</td>
-          <td class="paramtype">(packed)&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Buffer Type for a single <a class="el" href="classdaisy_1_1_is31fl3731.html">Is31fl3731</a> driver chip. </p>
-<p>Command Register</p>
-<p>fixed to first frame for now</p>
-<p>register address</p>
-<p>cycle at which to switch on the led</p>
-<p>cycle at which to switch on the led</p>
-<p>cycle at which to switch off the led</p>
-<p>full size in bytes</p>
-
-</div>
-</div>
 <a id="a4904d3e2fd8263bd7105cb26b3debffd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4904d3e2fd8263bd7105cb26b3debffd">&#9670;&nbsp;</a></span>GetNumLeds()</h2>
 
