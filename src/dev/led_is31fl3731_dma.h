@@ -36,7 +36,7 @@ class LedDriverIs31fl3731
     struct Is31fl3731TransmitBuffer
     {
         /** data */
-        uint8_t data[147];  // 147
+        uint8_t data[145];  // 147
     };
     /** Buffer type for the entire DMA buffer. */
     using DmaBuffer = Is31fl3731TransmitBuffer[Is31fl3731_numDrivers];
@@ -117,12 +117,12 @@ class LedDriverIs31fl3731
         const auto d  = GetDriverForLed(ledIndex);
         const auto ch = GetDriverChannelForLed(ledIndex);
 
-        draw_buffer_[d].data[0]          = 0xFD;
-        draw_buffer_[d].data[1]          = 0x00;
-        draw_buffer_[d].data[2]          = 0x24; //Is31fl3731_LED0;
+        //draw_buffer_[d].data[0]          = 0xFD;
+        //draw_buffer_[d].data[1]          = 0x00;
+        draw_buffer_[d].data[0]          = 0x24; //Is31fl3731_LED0;
 
         // clip raw brightness at 0xFF
-        draw_buffer_[d].data[ch+3] = rawBrightness & 0xFF;
+        draw_buffer_[d].data[ch+1] = rawBrightness & 0xFF;
     }
 
     /** Swaps the current draw buffer and the current transmit buffer and
@@ -143,7 +143,7 @@ class LedDriverIs31fl3731
         if(Is31fl3731_persistentBufferContents)
         {
             for(int d = 0; d < Is31fl3731_numDrivers; d++)
-                for(int ch = 0; ch < 147; ch++)
+                for(int ch = 0; ch < 145; ch++)
                     draw_buffer_[d].data[ch]
                         = transmit_buffer_[d].data[ch];
         }
@@ -167,7 +167,7 @@ class LedDriverIs31fl3731
         const uint8_t address = Is31fl3731_I2C_BASE_ADDRESS | addresses_[d];
         const auto    status  = i2c_.TransmitDma(address,
                                              (uint8_t*)&transmit_buffer_[d],
-                                             147,
+                                             145,
                                              &TxCpltCallback,
                                              this);
         if(status != I2CHandle::Result::OK)
@@ -214,7 +214,7 @@ class LedDriverIs31fl3731
     {
         for(int d = 0; d < Is31fl3731_numDrivers; d++)
         {
-            for(uint16_t led = 0; led < 147; led++)
+            for(uint16_t led = 0; led < 145; led++)
             {
                 draw_buffer_[d].data[led]     = led;
                 transmit_buffer_[d].data[led] = led;
