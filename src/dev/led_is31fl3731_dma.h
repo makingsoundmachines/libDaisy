@@ -125,6 +125,34 @@ class LedDriverIs31fl3731
         draw_buffer_[d].data[ch+1] = rawBrightness & 0xFF;
     }
 
+    /** Sets a line of 16 LED to a 16 raw 8bit brightness from an array with values between 0x00 and 0xFF */
+    /** clips at the driver's LED limit of 144 leds */
+    void Set16Raw(int8_t driver_id, uint8_t first_pixel, uint8_t data[16])
+    {
+        const auto d  = driver_id;
+        const auto ch = first_pixel + 1; // first byte is 0x24 
+
+        // write 16 bytes at once
+        for(uint8_t i = 0; i < 16; i++)
+        {
+            if( first_pixel + i >= 144) return;
+            // clip raw brightness at 0xFF
+            draw_buffer_[d].data[ch+i] = data[i] & 0xFF;
+        }
+    }    
+
+    void Set1Raw(int8_t driver_id, uint8_t first_pixel, uint8_t data)
+    {
+        const auto d  = driver_id;
+        const auto ch = first_pixel + 1; // first byte is 0x24 
+
+        // write one byte
+        if( ch >= 144) return;
+        // clip raw brightness at 0xFF
+        draw_buffer_[d].data[ch] = data & 0xFF;
+    }
+
+
     /** Swaps the current draw buffer and the current transmit buffer and
      *  starts transmitting the values to all chips.
      */
