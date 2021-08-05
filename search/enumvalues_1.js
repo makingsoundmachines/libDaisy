@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['bar_1994',['BAR',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4a6adae38642347c54f4293736e6a0d168',1,'daisy::Trill']]],
-  ['baseline_1995',['BASELINE',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbba8c4a79517b9217283371cfd1d2aa4f0f',1,'daisy::Trill']]],
-  ['bits_5f1_1996',['BITS_1',['../classdaisy_1_1_sdmmc_handler.html#a146e7b69e3d0c1a0c0fae316040d799ba08670704a035571395ac7232b1bd887b',1,'daisy::SdmmcHandler']]],
-  ['bits_5f4_1997',['BITS_4',['../classdaisy_1_1_sdmmc_handler.html#a146e7b69e3d0c1a0c0fae316040d799bae5692a4697cba5753db569f838c5b47d',1,'daisy::SdmmcHandler']]],
-  ['blue_1998',['BLUE',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a7030ad36aea5814566cd1c9da26afe6d',1,'daisy::Color']]],
-  ['button_5f2_1999',['BUTTON_2',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba8cfd4599497b987ade8a31200ffc941f',1,'daisy::DaisyPod']]],
-  ['button_5flast_2000',['BUTTON_LAST',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba6c27f3526d6d8495c0718eb217e0bbe5',1,'daisy::DaisyPod']]]
+  ['bar_1997',['BAR',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4a6adae38642347c54f4293736e6a0d168',1,'daisy::Trill']]],
+  ['baseline_1998',['BASELINE',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbba8c4a79517b9217283371cfd1d2aa4f0f',1,'daisy::Trill']]],
+  ['bits_5f1_1999',['BITS_1',['../classdaisy_1_1_sdmmc_handler.html#a146e7b69e3d0c1a0c0fae316040d799ba08670704a035571395ac7232b1bd887b',1,'daisy::SdmmcHandler']]],
+  ['bits_5f4_2000',['BITS_4',['../classdaisy_1_1_sdmmc_handler.html#a146e7b69e3d0c1a0c0fae316040d799bae5692a4697cba5753db569f838c5b47d',1,'daisy::SdmmcHandler']]],
+  ['blue_2001',['BLUE',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a7030ad36aea5814566cd1c9da26afe6d',1,'daisy::Color']]],
+  ['button_5f2_2002',['BUTTON_2',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba8cfd4599497b987ade8a31200ffc941f',1,'daisy::DaisyPod']]],
+  ['button_5flast_2003',['BUTTON_LAST',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba6c27f3526d6d8495c0718eb217e0bbe5',1,'daisy::DaisyPod']]]
 ];

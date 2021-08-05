@@ -105,6 +105,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad943b93d5883989b467d0348764538d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489ba29845ca8247ae7535c6d69440f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#a489ba29845ca8247ae7535c6d69440f9">SetLedRaw</a> (int ledIndex, uint8_t rawBrightness)</td></tr>
 <tr class="separator:a489ba29845ca8247ae7535c6d69440f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91df25fb1ae973ea029e32b6232e77e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#a91df25fb1ae973ea029e32b6232e77e7">Set16Raw</a> (int8_t driver_id, uint8_t first_pixel, uint8_t data[16])</td></tr>
+<tr class="separator:a91df25fb1ae973ea029e32b6232e77e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fab10ded6ff5b13a47347186ac863d1"><td class="memItemLeft" align="right" valign="top"><a id="a3fab10ded6ff5b13a47347186ac863d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Set1Raw</b> (int8_t driver_id, uint8_t first_pixel, uint8_t data)</td></tr>
+<tr class="separator:a3fab10ded6ff5b13a47347186ac863d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af363ebf72e9bc985c8c23b054d479db9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html#af363ebf72e9bc985c8c23b054d479db9">SwapBuffersAndTransmit</a> ()</td></tr>
 <tr class="separator:af363ebf72e9bc985c8c23b054d479db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -229,6 +234,51 @@ template&lt;int Is31fl3731_numDrivers, bool Is31fl3731_persistentBufferContents 
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a91df25fb1ae973ea029e32b6232e77e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91df25fb1ae973ea029e32b6232e77e7">&#9670;&nbsp;</a></span>Set16Raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Is31fl3731_numDrivers, bool Is31fl3731_persistentBufferContents = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html">daisy::LedDriverIs31fl3731</a>&lt; Is31fl3731_numDrivers, Is31fl3731_persistentBufferContents &gt;::Set16Raw </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>driver_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>first_pixel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>[16]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets a line of 16 LED to a 16 raw 8bit brightness from an array with values between 0x00 and 0xFF clips at the driver's LED limit of 144 leds </p>
 
 </div>
 </div>
