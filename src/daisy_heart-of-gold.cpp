@@ -239,7 +239,7 @@ void DaisyHeartOfGold::InitLEDMatrix()
 
 static LedDriverIs31fl3731<2, true>::DmaBuffer DMA_BUFFER_MEM_SECTION
     hog_led_dma_buffer_a,
-    hog_led_dma_buffer_b;
+    hog_led_dma_buffer_b; 
 
 void DaisyHeartOfGold::InitLEDMatrixDMA()
 {

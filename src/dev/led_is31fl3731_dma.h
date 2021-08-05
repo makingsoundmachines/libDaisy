@@ -10,10 +10,10 @@
 
 namespace daisy
 {
-/** LED driver for one or multiple Is31fl3731 12bit PWM chips connected to
+/** LED driver for one or multiple Is31fl3731 8it PWM chips connected to
  * a single I2C peripheral.
  * It includes gamma correction from 8bit brightness values but it 
- * can also be supplied with raw 12bit values.
+ * can also be supplied with raw 8bit values.
  * This driver uses two buffers - one for drawing, one for transmitting.
  * Multiple LedDriverIs31fl3731 instances can be used at the same time.
  * \param Is31fl3731_numDrivers    The number of Is31fl3731 driver attached to the I2C
@@ -216,9 +216,12 @@ class LedDriverIs31fl3731
         {
             for(uint16_t led = 0; led < 145; led++)
             {
-                draw_buffer_[d].data[led]     = led;
-                transmit_buffer_[d].data[led] = led;
+                draw_buffer_[d].data[led]     = 0x00;
+                transmit_buffer_[d].data[led] = 0x00;
             }
+
+            draw_buffer_[d].data[0]     = 0x24;
+            transmit_buffer_[d].data[0] = 0x24;
         }
 
         /* for(int led = 0; led < GetNumLeds(); led++)
