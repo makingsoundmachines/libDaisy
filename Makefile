@@ -26,6 +26,7 @@ daisy_seed \
 daisy_pod \
 daisy_patch \
 daisy_heart-of-gold \
+daisy_stolperbeats \
 daisy_petal \
 daisy_field \
 daisy_versio \
