@@ -108,10 +108,10 @@ void DaisyHeartOfGold::SetHidUpdateRates()
 
     // use when declared as switch
     // do not use when declared as gatein
-    gate_input[GATE_IN_1].SetUpdateRate(AudioCallbackRate());
+    /* gate_input[GATE_IN_1].SetUpdateRate(AudioCallbackRate());
     gate_input[GATE_IN_2].SetUpdateRate(AudioCallbackRate());
     gate_input[GATE_IN_3].SetUpdateRate(AudioCallbackRate());
-    gate_input[GATE_IN_4].SetUpdateRate(AudioCallbackRate());
+    gate_input[GATE_IN_4].SetUpdateRate(AudioCallbackRate()); */
 
     route_button[ROUTE_BUTTON_1].SetUpdateRate(AudioCallbackRate());
     route_button[ROUTE_BUTTON_2].SetUpdateRate(AudioCallbackRate());
@@ -199,10 +199,10 @@ void DaisyHeartOfGold::ProcessDigitalControls()
 
     // debounce when declared as switch
     // do not debounce when declared as gatein
-    gate_input[GATE_IN_1].Debounce();
+    /* gate_input[GATE_IN_1].Debounce();
     gate_input[GATE_IN_2].Debounce();
     gate_input[GATE_IN_3].Debounce();
-    gate_input[GATE_IN_4].Debounce();
+    gate_input[GATE_IN_4].Debounce(); */
 
     route_button[ROUTE_BUTTON_1].Debounce();
     route_button[ROUTE_BUTTON_2].Debounce();
@@ -484,14 +484,14 @@ void DaisyHeartOfGold::InitGates()
 
     // Gate Inputs
     // init when declared as switch (with debounce)
-    gate_input[GATE_IN_1].Init({DSY_GPIOB, 2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    gate_input[GATE_IN_2].Init({DSY_GPIOB, 10}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    gate_input[GATE_IN_3].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    gate_input[GATE_IN_4].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // gate_input[GATE_IN_1].Init({DSY_GPIOB, 2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // gate_input[GATE_IN_2].Init({DSY_GPIOB, 10}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // gate_input[GATE_IN_3].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // gate_input[GATE_IN_4].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 
     // Gate Inputs
     // init when declared as gatein (no debounce)
-    /*
+    
     dsy_gpio_pin pin;
     pin = {DSY_GPIOB, 2};  //seed.GetPin(PIN_GATE_IN_1);
     gate_input[GATE_IN_1].Init(&pin);
@@ -501,5 +501,5 @@ void DaisyHeartOfGold::InitGates()
     gate_input[GATE_IN_3].Init(&pin);
     pin = {DSY_GPIOC, 14}; //seed.GetPin(PIN_GATE_IN_4);
     gate_input[GATE_IN_4].Init(&pin); 
-    */
+    
 }

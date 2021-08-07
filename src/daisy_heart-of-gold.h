@@ -166,8 +166,8 @@ class DaisyHeartOfGold
     DaisySeed         seed;                            /**< Seed object */
     Encoder           encoder[ENC_LAST];               /**< Encoder object */
     AnalogControl     controls[CTRL_LAST];             /**< Array of controls*/
-    /* GateIn            gate_input[GATE_IN_LAST]; */        /**< Gate inputs  */
-    Switch            gate_input[GATE_IN_LAST];      /**< Gate inputs  */
+    GateIn            gate_input[GATE_IN_LAST];        /**< Gate inputs  */
+    /* Switch            gate_input[GATE_IN_LAST]; */      /**< Gate inputs  */
     Switch            route_button[ROUTE_BUTTON_LAST]; /**< Route Buttons  */
     MidiUartHandler   midi;                            /**< Handles midi*/
     Dac8568           dac_8568;                        /**< Handles ext DAC*/
