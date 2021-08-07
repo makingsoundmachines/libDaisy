@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['i2chandle_1282',['I2CHandle',['../classdaisy_1_1_i2_c_handle.html',1,'daisy']]],
-  ['is31fl3731_1283',['Is31fl3731',['../classdaisy_1_1_is31fl3731.html',1,'daisy']]],
-  ['is31fl3731transmitbuffer_1284',['Is31fl3731TransmitBuffer',['../structdaisy_1_1_led_driver_is31fl3731_1_1_is31fl3731_transmit_buffer.html',1,'daisy::LedDriverIs31fl3731']]],
-  ['itemconfig_1285',['ItemConfig',['../structdaisy_1_1_abstract_menu_1_1_item_config.html',1,'daisy::AbstractMenu']]]
+  ['i2chandle_1332',['I2CHandle',['../classdaisy_1_1_i2_c_handle.html',1,'daisy']]],
+  ['is31fl3731_1333',['Is31fl3731',['../classdaisy_1_1_is31fl3731.html',1,'daisy']]],
+  ['is31fl3731transmitbuffer_1334',['Is31fl3731TransmitBuffer',['../structdaisy_1_1_led_driver_is31fl3731_1_1_is31fl3731_transmit_buffer.html',1,'daisy::LedDriverIs31fl3731']]],
+  ['itemconfig_1335',['ItemConfig',['../structdaisy_1_1_abstract_menu_1_1_item_config.html',1,'daisy::AbstractMenu']]]
 ];
