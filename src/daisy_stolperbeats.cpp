@@ -37,8 +37,9 @@ void DaisyStolperbeats::Init(bool boost)
     seed.Init(boost);
 
     // dirty - clean this up
+    seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
     _SDRAM_MspDeInit();
-    //seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
+    
     InitAudio();
 
     InitCvOutputs();
@@ -250,7 +251,7 @@ void DaisyStolperbeats::InitBelaTrill()
     i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
     i2c_config.pin_config.scl = {DSY_GPIOB, 8},
     i2c_config.pin_config.sda = {DSY_GPIOB, 9};
-    i2c_config.speed          = I2CHandle::Config::Speed::I2C_400KHZ;
+    i2c_config.speed          = I2CHandle::Config::Speed::I2C_100KHZ; // I2C_400KHZ
 
     uint8_t addr = 0b00101000; // 0x28 - BELA SQUARE
 
