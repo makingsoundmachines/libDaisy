@@ -490,6 +490,18 @@ void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef *sdramHandle)
     /* USER CODE END SDRAM_MspDeInit 1 */
 }
 
+// MSM
+void _SDRAM_MspDeInit()
+{
+    /* USER CODE BEGIN SDRAM_MspDeInit 0 */
+
+    /* USER CODE END SDRAM_MspDeInit 0 */
+    HAL_FMC_MspDeInit();
+    /* USER CODE BEGIN SDRAM_MspDeInit 1 */
+
+    /* USER CODE END SDRAM_MspDeInit 1 */
+}
+
 void __attribute__((constructor)) SDRAM_Init()
 {
     //	extern void *_sisdram_data, *_ssdram_data, *_esdram_data;

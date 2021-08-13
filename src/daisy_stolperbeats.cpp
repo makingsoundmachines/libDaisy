@@ -35,6 +35,10 @@ void DaisyStolperbeats::Init(bool boost)
     // Configure Seed first
     seed.Configure();
     seed.Init(boost);
+
+    // dirty - clean this up
+    _SDRAM_MspDeInit();
+    //seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
     InitAudio();
 
     InitCvOutputs();
@@ -361,16 +365,16 @@ void DaisyStolperbeats::InitEncoder()
 {
 
     // A, B. CLICK
-    encoder[ENC_1].Init({DSY_GPIOF,  4}, {DSY_GPIOF,  3}, {DSY_GPIOC, 15}, AudioCallbackRate()); // ENCODER TEMPO
-    encoder[ENC_2].Init({DSY_GPIOH,  2}, {DSY_GPIOF,  5}, {DSY_GPIOE,  1}, AudioCallbackRate()); // ENCODER KICK
-    encoder[ENC_3].Init({DSY_GPIOG, 15}, {DSY_GPIOG, 12}, {DSY_GPIOD,  6}, AudioCallbackRate()); // ENCODER SNARE
-    encoder[ENC_4].Init({DSY_GPIOD,  8}, {DSY_GPIOB, 13}, {DSY_GPIOE, 13}, AudioCallbackRate()); // ENCODER HIHAT
-    encoder[ENC_5].Init({DSY_GPIOB, 15}, {DSY_GPIOB, 12}, {DSY_GPIOE, 14}, AudioCallbackRate()); // ENCODER HIHAT 2
-    encoder[ENC_6].Init({DSY_GPIOE,  0}, {DSY_GPIOG, 14}, {DSY_GPIOD,  7}, AudioCallbackRate()); // ENCODER SHUFFLE
-    encoder[ENC_7].Init({DSY_GPIOD,  2}, {DSY_GPIOD,  0}, {DSY_GPIOG,  8}, AudioCallbackRate()); // ENCODER PERC 1
-    encoder[ENC_8].Init({DSY_GPIOD,  1}, {DSY_GPIOC,  7}, {DSY_GPIOG,  7}, AudioCallbackRate()); // ENCODER PERC 2
-    encoder[ENC_9].Init({DSY_GPIOE, 11}, {DSY_GPIOE,  9}, {DSY_GPIOE,  7}, AudioCallbackRate()); // ENCODER SUBDIV
-    encoder[ENC_10].Init({DSY_GPIOE, 12}, {DSY_GPIOE, 10}, {DSY_GPIOE, 8}, AudioCallbackRate()); // ENCODER SYNC
+    encoder[ENC_1].Init({DSY_GPIOF,  3}, {DSY_GPIOF,  4},  {DSY_GPIOC, 15}, AudioCallbackRate()); // ENCODER TEMPO
+    encoder[ENC_2].Init({DSY_GPIOF,  5}, {DSY_GPIOH,  2},  {DSY_GPIOE,  1}, AudioCallbackRate()); // ENCODER KICK
+    encoder[ENC_3].Init({DSY_GPIOG, 12}, {DSY_GPIOG, 15},  {DSY_GPIOD,  6}, AudioCallbackRate()); // ENCODER SNARE
+    encoder[ENC_4].Init({DSY_GPIOB, 13}, {DSY_GPIOD,  8},  {DSY_GPIOE, 13}, AudioCallbackRate()); // ENCODER HIHAT
+    encoder[ENC_5].Init({DSY_GPIOB, 12}, {DSY_GPIOB, 15},  {DSY_GPIOE, 14}, AudioCallbackRate()); // ENCODER HIHAT 2
+    encoder[ENC_6].Init({DSY_GPIOG, 14}, {DSY_GPIOE,  0},  {DSY_GPIOD,  7}, AudioCallbackRate()); // ENCODER SHUFFLE
+    encoder[ENC_7].Init({DSY_GPIOD,  0}, {DSY_GPIOD,  2},  {DSY_GPIOG,  8}, AudioCallbackRate()); // ENCODER PERC 1
+    encoder[ENC_8].Init({DSY_GPIOC,  7}, {DSY_GPIOD,  1},  {DSY_GPIOG,  7}, AudioCallbackRate()); // ENCODER PERC 2
+    encoder[ENC_9].Init({DSY_GPIOE,  9}, {DSY_GPIOE, 11},  {DSY_GPIOE,  7}, AudioCallbackRate()); // ENCODER SUBDIV
+    encoder[ENC_10].Init({DSY_GPIOE, 10}, {DSY_GPIOE, 12},  {DSY_GPIOE, 8}, AudioCallbackRate()); // ENCODER SYNC
 }
 
 void DaisyStolperbeats::InitSR595()
@@ -420,84 +424,100 @@ void DaisyStolperbeats::InitGates()
     gate_output[GATE_OUT_1].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_1].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_1]);
+    dsy_gpio_write(&gate_output[0], 1);
 
     gate_output[GATE_OUT_2].pin  = {DSY_GPIOC, 6}; // TRIGGER OUT SNARE
     gate_output[GATE_OUT_2].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_2].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_2]);
+    dsy_gpio_write(&gate_output[1], 1);
 
     gate_output[GATE_OUT_3].pin  = {DSY_GPIOD, 12}; // TRIGGER OUT HIHAT 1
     gate_output[GATE_OUT_3].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_3].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_3]);
+    dsy_gpio_write(&gate_output[2], 1);
 
     gate_output[GATE_OUT_4].pin  = {DSY_GPIOH, 6}; // TRIGGER OUT HIHAT 2
     gate_output[GATE_OUT_4].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_4].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_4]);
+    dsy_gpio_write(&gate_output[3], 1);
 
     
     gate_output[GATE_OUT_5].pin = {DSY_GPIOC, 9}; // TRIGGER OUT PERC 1
     gate_output[GATE_OUT_5].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_5].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_5]);
+    dsy_gpio_write(&gate_output[4], 1);
 
     gate_output[GATE_OUT_6].pin  = {DSY_GPIOC, 10}; // TRIGGER OUT PERC 2
     gate_output[GATE_OUT_6].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_6].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_6]);
+    dsy_gpio_write(&gate_output[5], 1);
 
     gate_output[GATE_OUT_7].pin  = {DSY_GPIOC, 11}; // TRIGGER OUT SUBDIV
     gate_output[GATE_OUT_7].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_7].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_7]);
+    dsy_gpio_write(&gate_output[6], 1);
 
     gate_output[GATE_OUT_8].pin  = {DSY_GPIOC, 12}; // TRIGGER OUT SYNC
     gate_output[GATE_OUT_8].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_8].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_8]);
+    dsy_gpio_write(&gate_output[7], 1);
     
     // Expander
     gate_output[GATE_OUT_9].pin = {DSY_GPIOG, 4}; // TRIGGER OUT EXPANDER 1
     gate_output[GATE_OUT_9].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_9].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_9]);
+    dsy_gpio_write(&gate_output[8], 1);
 
     gate_output[GATE_OUT_10].pin  = {DSY_GPIOG, 2}; // TRIGGER OUT EXPANDER 2
     gate_output[GATE_OUT_10].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_10].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_10]);
+    dsy_gpio_write(&gate_output[9], 1);
 
     gate_output[GATE_OUT_11].pin  = {DSY_GPIOD, 15}; // TRIGGER OUT EXPANDER 3
     gate_output[GATE_OUT_11].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_11].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_11]);
+    dsy_gpio_write(&gate_output[10], 1);
 
     gate_output[GATE_OUT_12].pin  = {DSY_GPIOD, 14}; // TRIGGER OUT EXPANDER 4
     gate_output[GATE_OUT_12].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_12].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_12]);
+    dsy_gpio_write(&gate_output[11], 1);
 
     
     gate_output[GATE_OUT_13].pin = {DSY_GPIOG, 5}; // TRIGGER OUT EXPANDER 5
     gate_output[GATE_OUT_13].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_13].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_13]);
+    dsy_gpio_write(&gate_output[12], 1);
 
     gate_output[GATE_OUT_14].pin  = {DSY_GPIOD, 10}; // TRIGGER OUT EXPANDER 6
     gate_output[GATE_OUT_14].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_14].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_14]);
+    dsy_gpio_write(&gate_output[13], 1);
 
     gate_output[GATE_OUT_15].pin  = {DSY_GPIOD, 9}; // TRIGGER OUT EXPANDER 7
     gate_output[GATE_OUT_15].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_15].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_15]);
+    dsy_gpio_write(&gate_output[14], 1);
 
     gate_output[GATE_OUT_16].pin  = {DSY_GPIOD, 13}; // TRIGGER OUT EXPANDER 8
     gate_output[GATE_OUT_16].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_16].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_16]);
+    dsy_gpio_write(&gate_output[15], 1);
 
     // Gate Inputs
     // init when declared as gatein (no debounce)

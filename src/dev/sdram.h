@@ -125,6 +125,9 @@ extern "C"
     /** Initializes the SDRAM peripheral */
     uint8_t dsy_sdram_init(dsy_sdram_handle *dsy_hsdram);
 
+    /** DeInitializes the SDRAM peripheral - MSM */
+    void _SDRAM_MspDeInit();
+
 #ifdef __cplusplus
 }
 #endif
