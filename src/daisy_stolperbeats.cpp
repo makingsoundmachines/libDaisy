@@ -425,100 +425,100 @@ void DaisyStolperbeats::InitGates()
     gate_output[GATE_OUT_1].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_1].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_1]);
-    dsy_gpio_write(&gate_output[0], 1);
+    //dsy_gpio_write(&gate_output[0], 1);
 
     gate_output[GATE_OUT_2].pin  = {DSY_GPIOC, 6}; // TRIGGER OUT SNARE
     gate_output[GATE_OUT_2].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_2].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_2]);
-    dsy_gpio_write(&gate_output[1], 1);
+    //dsy_gpio_write(&gate_output[1], 1);
 
     gate_output[GATE_OUT_3].pin  = {DSY_GPIOD, 12}; // TRIGGER OUT HIHAT 1
     gate_output[GATE_OUT_3].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_3].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_3]);
-    dsy_gpio_write(&gate_output[2], 1);
+    //dsy_gpio_write(&gate_output[2], 1);
 
     gate_output[GATE_OUT_4].pin  = {DSY_GPIOH, 6}; // TRIGGER OUT HIHAT 2
     gate_output[GATE_OUT_4].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_4].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_4]);
-    dsy_gpio_write(&gate_output[3], 1);
+    //dsy_gpio_write(&gate_output[3], 1);
 
     
     gate_output[GATE_OUT_5].pin = {DSY_GPIOC, 9}; // TRIGGER OUT PERC 1
     gate_output[GATE_OUT_5].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_5].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_5]);
-    dsy_gpio_write(&gate_output[4], 1);
+    //dsy_gpio_write(&gate_output[4], 1);
 
     gate_output[GATE_OUT_6].pin  = {DSY_GPIOC, 10}; // TRIGGER OUT PERC 2
     gate_output[GATE_OUT_6].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_6].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_6]);
-    dsy_gpio_write(&gate_output[5], 1);
+    //dsy_gpio_write(&gate_output[5], 1);
 
-    gate_output[GATE_OUT_7].pin  = {DSY_GPIOC, 11}; // TRIGGER OUT SUBDIV
+    gate_output[GATE_OUT_7].pin  = {DSY_GPIOC, 11}; // TRIGGER OUT SUBDIV // was C11
     gate_output[GATE_OUT_7].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_7].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_7]);
-    dsy_gpio_write(&gate_output[6], 1);
+    //dsy_gpio_write(&gate_output[6], 1);
 
-    gate_output[GATE_OUT_8].pin  = {DSY_GPIOC, 12}; // TRIGGER OUT SYNC
+    gate_output[GATE_OUT_8].pin  = {DSY_GPIOC, 12}; // TRIGGER OUT SYNC //was C12
     gate_output[GATE_OUT_8].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_8].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_8]);
-    dsy_gpio_write(&gate_output[7], 1);
+    //dsy_gpio_write(&gate_output[7], 1);
     
     // Expander
-    gate_output[GATE_OUT_9].pin = {DSY_GPIOG, 4}; // TRIGGER OUT EXPANDER 1
+    gate_output[GATE_OUT_9].pin = {DSY_GPIOG, 4}; // TRIGGER OUT EXPANDER 1 //was G4
     gate_output[GATE_OUT_9].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_9].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_9]);
-    dsy_gpio_write(&gate_output[8], 1);
+    //dsy_gpio_write(&gate_output[8], 1);
 
-    gate_output[GATE_OUT_10].pin  = {DSY_GPIOG, 2}; // TRIGGER OUT EXPANDER 2
+    gate_output[GATE_OUT_10].pin  = {DSY_GPIOG, 2}; // TRIGGER OUT EXPANDER 2 //was G2
     gate_output[GATE_OUT_10].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_10].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_10]);
-    dsy_gpio_write(&gate_output[9], 1);
+    //dsy_gpio_write(&gate_output[9], 1);
 
     gate_output[GATE_OUT_11].pin  = {DSY_GPIOD, 15}; // TRIGGER OUT EXPANDER 3
     gate_output[GATE_OUT_11].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_11].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_11]);
-    dsy_gpio_write(&gate_output[10], 1);
+    //dsy_gpio_write(&gate_output[10], 1);
 
     gate_output[GATE_OUT_12].pin  = {DSY_GPIOD, 14}; // TRIGGER OUT EXPANDER 4
     gate_output[GATE_OUT_12].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_12].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_12]);
-    dsy_gpio_write(&gate_output[11], 1);
+    //sy_gpio_write(&gate_output[11], 1);
 
     
     gate_output[GATE_OUT_13].pin = {DSY_GPIOG, 5}; // TRIGGER OUT EXPANDER 5
     gate_output[GATE_OUT_13].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_13].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_13]);
-    dsy_gpio_write(&gate_output[12], 1);
+    //dsy_gpio_write(&gate_output[12], 1);
 
     gate_output[GATE_OUT_14].pin  = {DSY_GPIOD, 10}; // TRIGGER OUT EXPANDER 6
     gate_output[GATE_OUT_14].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_14].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_14]);
-    dsy_gpio_write(&gate_output[13], 1);
+    //dsy_gpio_write(&gate_output[13], 1);
 
     gate_output[GATE_OUT_15].pin  = {DSY_GPIOD, 9}; // TRIGGER OUT EXPANDER 7
     gate_output[GATE_OUT_15].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_15].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_15]);
-    dsy_gpio_write(&gate_output[14], 1);
+    //dsy_gpio_write(&gate_output[14], 1);
 
     gate_output[GATE_OUT_16].pin  = {DSY_GPIOD, 13}; // TRIGGER OUT EXPANDER 8
     gate_output[GATE_OUT_16].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_16].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_16]);
-    dsy_gpio_write(&gate_output[15], 1);
+    //dsy_gpio_write(&gate_output[15], 1);
 
     // Gate Inputs
     // init when declared as gatein (no debounce)
