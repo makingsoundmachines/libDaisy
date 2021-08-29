@@ -458,26 +458,26 @@ void DaisyStolperbeats::InitGates()
     dsy_gpio_init(&gate_output[GATE_OUT_6]);
     //dsy_gpio_write(&gate_output[5], 1);
 
-    gate_output[GATE_OUT_7].pin  = {DSY_GPIOC, 11}; // TRIGGER OUT SUBDIV // was C11
+    gate_output[GATE_OUT_7].pin  = {DSY_GPIOG, 4}; // TRIGGER OUT SUBDIV // Rev 1 was C11 (not working)
     gate_output[GATE_OUT_7].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_7].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_7]);
     //dsy_gpio_write(&gate_output[6], 1);
 
-    gate_output[GATE_OUT_8].pin  = {DSY_GPIOC, 12}; // TRIGGER OUT SYNC //was C12
+    gate_output[GATE_OUT_8].pin  = {DSY_GPIOG, 2}; // TRIGGER OUT SYNC // Rev 1 was C12 (not working)
     gate_output[GATE_OUT_8].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_8].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_8]);
     //dsy_gpio_write(&gate_output[7], 1);
     
     // Expander
-    gate_output[GATE_OUT_9].pin = {DSY_GPIOG, 4}; // TRIGGER OUT EXPANDER 1 //was G4
+    gate_output[GATE_OUT_9].pin = {DSY_GPIOH, 9}; // TRIGGER OUT EXPANDER 1 // Rev 1 was G4
     gate_output[GATE_OUT_9].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_9].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_9]);
     //dsy_gpio_write(&gate_output[8], 1);
 
-    gate_output[GATE_OUT_10].pin  = {DSY_GPIOG, 2}; // TRIGGER OUT EXPANDER 2 //was G2
+    gate_output[GATE_OUT_10].pin  = {DSY_GPIOH, 10}; // TRIGGER OUT EXPANDER 2 // Rev 1 was G2
     gate_output[GATE_OUT_10].mode = DSY_GPIO_MODE_OUTPUT_PP;
     gate_output[GATE_OUT_10].pull = DSY_GPIO_NOPULL;
     dsy_gpio_init(&gate_output[GATE_OUT_10]);
