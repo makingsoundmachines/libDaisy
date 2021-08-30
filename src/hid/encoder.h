@@ -36,15 +36,21 @@ in Hertz.
 be made at the same rate as the debounce function is being called.
 */
     void Debounce();
+    void Debounce16();
+    void Debounce32();
     /** Returns +1 if the encoder was turned clockwise, -1 if it was turned counter-clockwise, or 0 if it was not just turned.
 */
     inline int32_t Increment() const { return inc_; }
     /** Returns true if the encoder was just pressed.
 */
     inline bool RisingEdge() const { return sw_.RisingEdge(); }
+    inline bool RisingEdge16() const { return sw_.RisingEdge16(); }
+    inline bool RisingEdge32() const { return sw_.RisingEdge32(); }
     /** Returns true if the encoder was just released.
 */
     inline bool FallingEdge() const { return sw_.FallingEdge(); }
+    inline bool FallingEdge16() const { return sw_.FallingEdge16(); }
+    inline bool FallingEdge32() const { return sw_.FallingEdge32(); }
     /** Returns true while the encoder is held down.
 */
     inline bool Pressed() const { return sw_.Pressed(); }
@@ -64,6 +70,8 @@ be made at the same rate as the debounce function is being called.
     Switch   sw_;
     dsy_gpio hw_a_, hw_b_;
     uint8_t  a_, b_;
+    uint16_t  a16_, b16_;
+    uint32_t  a32_, b32_;
     int32_t  inc_;
 };
 } // namespace daisy

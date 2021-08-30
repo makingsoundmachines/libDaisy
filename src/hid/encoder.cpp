@@ -21,6 +21,8 @@ void Encoder::Init(dsy_gpio_pin a,
     // Set initial states, etc.
     inc_ = 0;
     a_ = b_ = 0xff;
+    a16_ = b16_ = 0xFFFF;
+    a32_ = b32_ = 0xFFFFFFFF;
 }
 
 void Encoder::Debounce()
@@ -37,6 +39,44 @@ void Encoder::Debounce()
         inc_ = 1;
     }
     else if((b_ & 0x03) == 0x02 && (a_ & 0x03) == 0x00)
+    {
+        inc_ = -1;
+    }
+}
+
+void Encoder::Debounce16()
+{
+    // Shift Button states to debounce
+    a16_ = (a16_ << 1) | dsy_gpio_read(&hw_a_);
+    b16_ = (b16_ << 1) | dsy_gpio_read(&hw_b_);
+    // Debounce built-in switch
+    sw_.Debounce16();
+    // infer increment direction
+    inc_ = 0; // reset inc_ first
+    if((a16_ & 0x03FF) == 0x0200 && (b16_ & 0x03FF) == 0x0000)
+    {
+        inc_ = 1;
+    }
+    else if((b16_ & 0x03FF) == 0x0200 && (a16_ & 0x03FF) == 0x0000)
+    {
+        inc_ = -1;
+    }
+}
+
+void Encoder::Debounce32()
+{
+    // Shift Button states to debounce
+    a32_ = (a32_ << 1) | dsy_gpio_read(&hw_a_);
+    b32_ = (b32_ << 1) | dsy_gpio_read(&hw_b_);
+    // Debounce built-in switch
+    sw_.Debounce32();
+    // infer increment direction
+    inc_ = 0; // reset inc_ first
+    if((a32_ & 0x03FFFFFF) == 0x02000000 && (b32_ & 0x03FFFFFF) == 0x00000000)
+    {
+        inc_ = 1;
+    }
+    else if((b32_ & 0x03FFFFFF) == 0x02000000 && (a32_ & 0x03FFFFFF) == 0x00000000)
     {
         inc_ = -1;
     }

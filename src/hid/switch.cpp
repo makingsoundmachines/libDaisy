@@ -9,6 +9,8 @@ void Switch::Init(dsy_gpio_pin pin,
 {
     time_per_update_ = 1.0f / update_rate;
     state_           = 0x00;
+    state16_           = 0x0000;
+    state32_           = 0x00000000;
     time_held_       = 0;
     t_               = t;
     // Flip may seem opposite to logical direction,
@@ -40,5 +42,31 @@ void Switch::Debounce()
         time_held_ = 0;
     // Add while held (8-tick delay on hold due to debouncing).
     if(state_ == 0xff)
+        time_held_ += time_per_update_;
+}
+
+void Switch::Debounce16()
+{
+    // shift over, and introduce new state.
+    state16_ = (state16_ << 1)
+             | (flip_ ? !dsy_gpio_read(&hw_gpio_) : dsy_gpio_read(&hw_gpio_));
+    // Reset time held on any edge.
+    if(state16_ == 0x7fff || state16_ == 0x8000)
+        time_held_ = 0;
+    // Add while held (16-tick delay on hold due to debouncing).
+    if(state16_ == 0xffff)
+        time_held_ += time_per_update_;
+}
+
+void Switch::Debounce32()
+{
+    // shift over, and introduce new state.
+    state32_ = (state32_ << 1)
+             | (flip_ ? !dsy_gpio_read(&hw_gpio_) : dsy_gpio_read(&hw_gpio_));
+    // Reset time held on any edge.
+    if(state32_ == 0x7fffffff || state32_ == 0x80000000)
+        time_held_ = 0;
+    // Add while held (32-tick delay on hold due to debouncing).
+    if(state32_ == 0xffffffff)
         time_held_ += time_per_update_;
 }

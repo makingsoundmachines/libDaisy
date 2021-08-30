@@ -64,12 +64,18 @@ class Switch
     be made at the same rate as the debounce function is being called.
     */
     void Debounce();
+    void Debounce16();
+    void Debounce32();
 
     /** \return true if a button was just pressed. */
     inline bool RisingEdge() const { return state_ == 0x7f; }
+    inline bool RisingEdge16() const { return state16_ == 0x7fff; }
+    inline bool RisingEdge32() const { return state32_ == 0x7fffffff; }
 
     /** \return true if the button was just released */
     inline bool FallingEdge() const { return state_ == 0x80; }
+    inline bool FallingEdge16() const { return state16_ == 0x8000; }
+    inline bool FallingEdge32() const { return state32_ == 0x80000000; }
 
     /** \return true if the button is held down (or if the toggle is on) */
     inline bool Pressed() const { return state_ == 0xff; }
@@ -98,6 +104,8 @@ class Switch
     Type     t_;
     dsy_gpio hw_gpio_;
     uint8_t  state_;
+    uint16_t state16_;
+    uint32_t state32_;
     bool     flip_;
     float    time_per_update_, time_held_;
 };

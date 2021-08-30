@@ -162,25 +162,25 @@ float DaisyStolperbeats::GetKnobValue(Ctrl k)
 //ex DaisyStolperbeats::DebounceControls()
 void DaisyStolperbeats::ProcessDigitalControls()
 {
-    encoder[ENC_1].Debounce();
-    encoder[ENC_2].Debounce();
-    encoder[ENC_3].Debounce();
-    encoder[ENC_4].Debounce();
-    encoder[ENC_5].Debounce();
-    encoder[ENC_6].Debounce();
-    encoder[ENC_7].Debounce();
-    encoder[ENC_8].Debounce();
-    encoder[ENC_9].Debounce();
-    encoder[ENC_10].Debounce();
+    encoder[ENC_1].Debounce16();
+    encoder[ENC_2].Debounce16();
+    encoder[ENC_3].Debounce16();
+    encoder[ENC_4].Debounce16();
+    encoder[ENC_5].Debounce16();
+    encoder[ENC_6].Debounce16();
+    encoder[ENC_7].Debounce16();
+    encoder[ENC_8].Debounce16();
+    encoder[ENC_9].Debounce16();
+    encoder[ENC_10].Debounce16();
 
 
-    button[BUTTON_1].Debounce();
-    button[BUTTON_2].Debounce();
-    button[BUTTON_3].Debounce();
-    button[BUTTON_4].Debounce();
-    button[BUTTON_5].Debounce();
-    button[BUTTON_6].Debounce();
-    button[BUTTON_7].Debounce();
+    button[BUTTON_1].Debounce16();
+    button[BUTTON_2].Debounce16();
+    button[BUTTON_3].Debounce16();
+    button[BUTTON_4].Debounce16();
+    button[BUTTON_5].Debounce16();
+    button[BUTTON_6].Debounce16();
+    button[BUTTON_7].Debounce16();
 }
 
 
