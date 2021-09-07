@@ -12,5 +12,6 @@ var searchData=
   ['button_5f5_9',['BUTTON_5',['../classdaisy_1_1_daisy_stolperbeats.html#a6f32417e107f2136a3a36c7d618247b7a925c2b5e6cc58f5ea03ef94e51c31426',1,'daisy::DaisyStolperbeats']]],
   ['button_5f6_10',['BUTTON_6',['../classdaisy_1_1_daisy_stolperbeats.html#a6f32417e107f2136a3a36c7d618247b7a30732a881464070e321691c857677aca',1,'daisy::DaisyStolperbeats']]],
   ['button_5f7_11',['BUTTON_7',['../classdaisy_1_1_daisy_stolperbeats.html#a6f32417e107f2136a3a36c7d618247b7a0ceb44c436ae6f603fbdb70fbc7a0f6f',1,'daisy::DaisyStolperbeats']]],
-  ['button_5flast_12',['BUTTON_LAST',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba6c27f3526d6d8495c0718eb217e0bbe5',1,'daisy::DaisyPod']]]
+  ['button_5f8_12',['BUTTON_8',['../classdaisy_1_1_daisy_stolperbeats.html#a6f32417e107f2136a3a36c7d618247b7a7ae1132cef63c1f0ada4f3e7aeb03951',1,'daisy::DaisyStolperbeats']]],
+  ['button_5flast_13',['BUTTON_LAST',['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeba6c27f3526d6d8495c0718eb217e0bbe5',1,'daisy::DaisyPod']]]
 ];
