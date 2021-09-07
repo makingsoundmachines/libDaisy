@@ -72,12 +72,13 @@ class DaisyStolperbeats
     enum Button
     {
         BUTTON_1,    /**< BUTTON TAP */
-        BUTTON_2,    /**< BUTTON BANK DEC */
-        BUTTON_3,    /**< BUTTON BANK INC */
-        BUTTON_4,    /**< BUTTON SHUFFLE DILLA */
-        BUTTON_5,    /**< BUTTON SHUFFLE SHAKE */
-        BUTTON_6,    /**< BUTTON SHUFFLE PUSH */
-        BUTTON_7,    /**< BUTTON SHUFFLE CLAVE */      
+        BUTTON_2,    /**< BUTTON LINEAR */  
+        BUTTON_3,    /**< BUTTON BANK DEC */
+        BUTTON_4,    /**< BUTTON BANK INC */
+        BUTTON_5,    /**< BUTTON SHUFFLE DILLA */
+        BUTTON_6,    /**< BUTTON SHUFFLE SHAKE */
+        BUTTON_7,    /**< BUTTON SHUFFLE PUSH */
+        BUTTON_8,    /**< BUTTON SHUFFLE CLAVE */            
         BUTTON_LAST, /**< */
     };
 

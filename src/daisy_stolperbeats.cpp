@@ -87,6 +87,7 @@ void DaisyStolperbeats::SetHidUpdateRates()
     button[BUTTON_5].SetUpdateRate(AudioCallbackRate());
     button[BUTTON_6].SetUpdateRate(AudioCallbackRate());
     button[BUTTON_7].SetUpdateRate(AudioCallbackRate());
+    button[BUTTON_8].SetUpdateRate(AudioCallbackRate());
 }
 
 
@@ -181,6 +182,7 @@ void DaisyStolperbeats::ProcessDigitalControls()
     button[BUTTON_5].Debounce16();
     button[BUTTON_6].Debounce16();
     button[BUTTON_7].Debounce16();
+    button[BUTTON_8].Debounce16();
 }
 
 
@@ -397,18 +399,20 @@ void DaisyStolperbeats::InitButtons()
 
     // BUTTON TAP;
     button[BUTTON_1].Init({DSY_GPIOE, 15}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // BUTTON LINEAR
+    button[BUTTON_2].Init({DSY_GPIOF, 12}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON BANK DEC
-    button[BUTTON_2].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_3].Init({DSY_GPIOC, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON BANK INC
-    button[BUTTON_3].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_4].Init({DSY_GPIOC, 14}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON SHUFFLE DILLA
-    button[BUTTON_4].Init({DSY_GPIOG, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_5].Init({DSY_GPIOG, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON SHUFFLE SHAKE
-    button[BUTTON_5].Init({DSY_GPIOC, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_6].Init({DSY_GPIOC, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON SHUFFLE PUSH
-    button[BUTTON_6].Init({DSY_GPIOI, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_7].Init({DSY_GPIOI, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON SHUFFLE CLAVE
-    button[BUTTON_7].Init({DSY_GPIOI, 11}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_8].Init({DSY_GPIOI, 11}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 
 }
 
