@@ -113,10 +113,12 @@ void DaisyHeartOfGold::SetHidUpdateRates()
     gate_input[GATE_IN_3].SetUpdateRate(AudioCallbackRate());
     gate_input[GATE_IN_4].SetUpdateRate(AudioCallbackRate()); */
 
-    route_button[ROUTE_BUTTON_1].SetUpdateRate(AudioCallbackRate());
+    // use when declared as switch
+    // do not use when declared as gatein
+    /* route_button[ROUTE_BUTTON_1].SetUpdateRate(AudioCallbackRate());
     route_button[ROUTE_BUTTON_2].SetUpdateRate(AudioCallbackRate());
     route_button[ROUTE_BUTTON_3].SetUpdateRate(AudioCallbackRate());
-    route_button[ROUTE_BUTTON_4].SetUpdateRate(AudioCallbackRate());
+    route_button[ROUTE_BUTTON_4].SetUpdateRate(AudioCallbackRate()); */
 }
 
 
@@ -204,10 +206,12 @@ void DaisyHeartOfGold::ProcessDigitalControls()
     gate_input[GATE_IN_3].Debounce();
     gate_input[GATE_IN_4].Debounce(); */
 
-    route_button[ROUTE_BUTTON_1].Debounce();
+    // debounce when declared as switch
+    // do not debounce when declared as gatein
+    /* route_button[ROUTE_BUTTON_1].Debounce();
     route_button[ROUTE_BUTTON_2].Debounce();
     route_button[ROUTE_BUTTON_3].Debounce();
-    route_button[ROUTE_BUTTON_4].Debounce();
+    route_button[ROUTE_BUTTON_4].Debounce(); */
 }
 
 
@@ -445,17 +449,22 @@ void DaisyHeartOfGold::InitSR595()
 void DaisyHeartOfGold::InitRouteButtons()
 {
     // Route Buttons
-    // dsy_gpio_pin pin;
-    // float _AudioCallbackRate = AudioCallbackRate();
+    dsy_gpio_pin pin;
+    pin = {DSY_GPIOG, 13};
+    route_button[ROUTE_BUTTON_1].Init(&pin);
+    pin = {DSY_GPIOH, 7};
+    route_button[ROUTE_BUTTON_2].Init(&pin);
+    pin = {DSY_GPIOI, 8};
+    route_button[ROUTE_BUTTON_3].Init(&pin);
+    pin = {DSY_GPIOI, 11};
+    route_button[ROUTE_BUTTON_4].Init(&pin);
 
-    //seed.GetPin(PIN_ROUTE_BUTTON_1);
-    route_button[ROUTE_BUTTON_1].Init({DSY_GPIOG, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_ROUTE_BUTTON_2);
-    route_button[ROUTE_BUTTON_2].Init({DSY_GPIOH, 7}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_ROUTE_BUTTON_3);
-    route_button[ROUTE_BUTTON_3].Init({DSY_GPIOI, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
-    //seed.GetPin(PIN_ROUTE_BUTTON_4);
-    route_button[ROUTE_BUTTON_4].Init({DSY_GPIOI, 11}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    // Gate Inputs
+    // init when declared as switch (with debounce)
+    //route_button[ROUTE_BUTTON_1].Init({DSY_GPIOG, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //route_button[ROUTE_BUTTON_2].Init({DSY_GPIOH, 7}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //route_button[ROUTE_BUTTON_3].Init({DSY_GPIOI, 8}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    //route_button[ROUTE_BUTTON_4].Init({DSY_GPIOI, 11}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 }
 
 void DaisyHeartOfGold::InitGates()
