@@ -10,7 +10,7 @@ var searchData=
   ['menuencoderid_7',['menuEncoderId',['../structdaisy_1_1_u_i_1_1_special_control_ids.html#acd6212fa0072616b591c9b6093ea70b6',1,'daisy::UI::SpecialControlIds']]],
   ['message_5ftype_8',['message_type',['../structdaisy_1_1_m_t_c_quarter_frame_event.html#a31b934d70fcc769db539a0e282a98340',1,'daisy::MTCQuarterFrameEvent']]],
   ['messagelast_9',['MessageLast',['../namespacedaisy.html#aaf09bb687034c8776ca0c68ed3ed4179a462782a09a7554ea61fcf5a901b745e1',1,'daisy']]],
-  ['midi_10',['midi',['../classdaisy_1_1_daisy_heart_of_gold.html#acf50a960e3bdb56a991b7f2cb120d2c9',1,'daisy::DaisyHeartOfGold::midi()'],['../classdaisy_1_1_daisy_patch.html#ab0f8c32d52ff82c8e42123eef88fc3ee',1,'daisy::DaisyPatch::midi()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae95bef411e7a071e56dbffc554755c59',1,'daisy::DaisyStolperbeats::midi()']]],
+  ['midi_10',['midi',['../classdaisy_1_1_daisy_heart_of_gold.html#acf50a960e3bdb56a991b7f2cb120d2c9',1,'daisy::DaisyHeartOfGold::midi()'],['../classdaisy_1_1_daisy_patch.html#ab0f8c32d52ff82c8e42123eef88fc3ee',1,'daisy::DaisyPatch::midi()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae95bef411e7a071e56dbffc554755c59',1,'daisy::DaisyStolperbeats::midi()'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#acbcd6d9423356ea459e88d5bf11a2350',1,'daisy::DaisyStolperbeatsRev3::midi()']]],
   ['midievent_11',['MidiEvent',['../structdaisy_1_1_midi_event.html',1,'daisy']]],
   ['midihandler_12',['MidiHandler',['../classdaisy_1_1_midi_handler.html',1,'daisy']]],
   ['midihandler_3c_20midiuarttransport_20_3e_13',['MidiHandler&lt; MidiUartTransport &gt;',['../classdaisy_1_1_midi_handler.html',1,'daisy']]],

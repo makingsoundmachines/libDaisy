@@ -8,11 +8,13 @@ var searchData=
   ['daisypetal_5',['DaisyPetal',['../classdaisy_1_1_daisy_petal.html',1,'daisy']]],
   ['daisypod_6',['DaisyPod',['../classdaisy_1_1_daisy_pod.html',1,'daisy']]],
   ['daisyseed_7',['DaisySeed',['../classdaisy_1_1_daisy_seed.html',1,'daisy']]],
-  ['daisystolperbeats_8',['DaisyStolperbeats',['../classdaisy_1_1_daisy_stolperbeats.html',1,'daisy']]],
-  ['daisyversio_9',['DaisyVersio',['../classdaisy_1_1_daisy_versio.html',1,'daisy']]],
-  ['dsy_5fgpio_10',['dsy_gpio',['../structdsy__gpio.html',1,'']]],
-  ['dsy_5fgpio_5fpin_11',['dsy_gpio_pin',['../structdsy__gpio__pin.html',1,'']]],
-  ['dsy_5fqspi_5fhandle_12',['dsy_qspi_handle',['../structdsy__qspi__handle.html',1,'']]],
-  ['dsy_5fsd_5fcardinfotypedef_13',['DSY_SD_CardInfoTypeDef',['../struct_d_s_y___s_d___card_info_type_def.html',1,'']]],
-  ['dsy_5fsdram_5fhandle_14',['dsy_sdram_handle',['../structdsy__sdram__handle.html',1,'']]]
+  ['daisyseedstolperbeats_8',['DaisySeedStolperbeats',['../classdaisy_1_1_daisy_seed_stolperbeats.html',1,'daisy']]],
+  ['daisystolperbeats_9',['DaisyStolperbeats',['../classdaisy_1_1_daisy_stolperbeats.html',1,'daisy']]],
+  ['daisystolperbeatsrev3_10',['DaisyStolperbeatsRev3',['../classdaisy_1_1_daisy_stolperbeats_rev3.html',1,'daisy']]],
+  ['daisyversio_11',['DaisyVersio',['../classdaisy_1_1_daisy_versio.html',1,'daisy']]],
+  ['dsy_5fgpio_12',['dsy_gpio',['../structdsy__gpio.html',1,'']]],
+  ['dsy_5fgpio_5fpin_13',['dsy_gpio_pin',['../structdsy__gpio__pin.html',1,'']]],
+  ['dsy_5fqspi_5fhandle_14',['dsy_qspi_handle',['../structdsy__qspi__handle.html',1,'']]],
+  ['dsy_5fsd_5fcardinfotypedef_15',['DSY_SD_CardInfoTypeDef',['../struct_d_s_y___s_d___card_info_type_def.html',1,'']]],
+  ['dsy_5fsdram_5fhandle_16',['dsy_sdram_handle',['../structdsy__sdram__handle.html',1,'']]]
 ];
