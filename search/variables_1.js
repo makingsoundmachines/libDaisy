@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['bela_5ftrill_0',['bela_trill',['../classdaisy_1_1_daisy_heart_of_gold.html#af79fa570421f02c347996f7e6083749b',1,'daisy::DaisyHeartOfGold::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae14655b713d7033f299483c5850c3054',1,'daisy::DaisyStolperbeats::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#a401ec386d2ce6214a4d429a7791b82d5',1,'daisy::DaisyStolperbeatsRev3::bela_trill()']]],
+  ['bela_5ftrill_0',['bela_trill',['../classdaisy_1_1_daisy_heart_of_gold.html#af79fa570421f02c347996f7e6083749b',1,'daisy::DaisyHeartOfGold::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae14655b713d7033f299483c5850c3054',1,'daisy::DaisyStolperbeats::bela_trill()']]],
   ['bitpersample_1',['BitPerSample',['../structdaisy_1_1_w_a_v___format_type_def.html#ad504435ae2f2f6767f43b131e2ffd9b5',1,'daisy::WAV_FormatTypeDef']]],
   ['blockalign_2',['BlockAlign',['../structdaisy_1_1_w_a_v___format_type_def.html#a088662aadfb9d39a43eea4450611711d',1,'daisy::WAV_FormatTypeDef']]],
   ['blocknbr_3',['BlockNbr',['../struct_d_s_y___s_d___card_info_type_def.html#a1955247be547523e0a16fd37c288b918',1,'DSY_SD_CardInfoTypeDef']]],

@@ -4,7 +4,7 @@ var searchData=
   ['bar_1',['BAR',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4a6adae38642347c54f4293736e6a0d168',1,'daisy::Trill']]],
   ['baseline_2',['BASELINE',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbba8c4a79517b9217283371cfd1d2aa4f0f',1,'daisy::Trill']]],
   ['begin_3',['Begin',['../classdaisy_1_1_is31fl3731.html#a2bdc18c39527e6c61b0d84c8008e2585',1,'daisy::Is31fl3731']]],
-  ['bela_5ftrill_4',['bela_trill',['../classdaisy_1_1_daisy_heart_of_gold.html#af79fa570421f02c347996f7e6083749b',1,'daisy::DaisyHeartOfGold::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae14655b713d7033f299483c5850c3054',1,'daisy::DaisyStolperbeats::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#a401ec386d2ce6214a4d429a7791b82d5',1,'daisy::DaisyStolperbeatsRev3::bela_trill()']]],
+  ['bela_5ftrill_4',['bela_trill',['../classdaisy_1_1_daisy_heart_of_gold.html#af79fa570421f02c347996f7e6083749b',1,'daisy::DaisyHeartOfGold::bela_trill()'],['../classdaisy_1_1_daisy_stolperbeats.html#ae14655b713d7033f299483c5850c3054',1,'daisy::DaisyStolperbeats::bela_trill()']]],
   ['bitdepth_5',['BitDepth',['../classdaisy_1_1_dac_handle.html#a0c969b1aa7f8549756e6309b3922e902',1,'daisy::DacHandle::BitDepth()'],['../structdaisy_1_1_sai_handle_1_1_config.html#aafe336101d7c50dd68e2611ccce7c808',1,'daisy::SaiHandle::Config::BitDepth()']]],
   ['bitpersample_6',['BitPerSample',['../structdaisy_1_1_w_a_v___format_type_def.html#ad504435ae2f2f6767f43b131e2ffd9b5',1,'daisy::WAV_FormatTypeDef']]],
   ['bits_5f1_7',['BITS_1',['../classdaisy_1_1_sdmmc_handler.html#a146e7b69e3d0c1a0c0fae316040d799ba08670704a035571395ac7232b1bd887b',1,'daisy::SdmmcHandler']]],
