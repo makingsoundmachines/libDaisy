@@ -177,7 +177,6 @@ class DaisyStolperbeatsRev3
     GateIn                 gate_input[GATE_IN_LAST];        /**< Gate inputs  */
     Switch                 button[BUTTON_LAST];             /**<  Buttons  */
     MidiUartHandler        midi;                            /**< Handles midi*/
-    Dac8568                dac_8568;                        /**< Handles ext DAC*/
 
     // TODO: Add class for Gate output
     dsy_gpio gate_output[GATE_OUT_LAST]; /**< Gate outputs  */
@@ -194,11 +193,6 @@ class DaisyStolperbeatsRev3
     LedDriverIs31fl3731<2, true>                ledmatrix_dma;
     void       InitLEDMatrixDMA();
 
-
-    /**  Init a Bela Trill */
-    Trill bela_trill;
-    void  InitBelaTrill();
-
   private:
     void SetHidUpdateRates();
     void InitAudio();
@@ -210,7 +204,6 @@ class DaisyStolperbeatsRev3
     void InitGates();
     void InitButtons();
     void InitSR595();
-    void InitDAC8568();
 
     dsy_gpio ak4556_reset_pin_;
     uint32_t screen_update_last_, screen_update_period_;

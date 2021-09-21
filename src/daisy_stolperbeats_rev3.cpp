@@ -37,8 +37,8 @@ void DaisyStolperbeatsRev3::Init(bool boost)
     seed.Init(boost);
 
     // dirty - clean this up
-    seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
-    _SDRAM_MspDeInit();
+    // seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
+    // _SDRAM_MspDeInit();
     
     InitAudio();
 
@@ -48,13 +48,8 @@ void DaisyStolperbeatsRev3::Init(bool boost)
     InitButtons();
     InitSR595();
 
-    //InitDAC8568();
     InitMidi();
     InitControls();
-    // Reset AK4556
-    /* dsy_gpio_write(&ak4556_reset_pin_, 0);
-    DelayMs(10);
-    dsy_gpio_write(&ak4556_reset_pin_, 1); */
 }
 
 void DaisyStolperbeatsRev3::DelayMs(size_t del)
@@ -239,40 +234,14 @@ void DaisyStolperbeatsRev3::InitLEDMatrixDMA()
 }
 
 
-
-void DaisyStolperbeatsRev3::InitBelaTrill()
-{
-    /* static constexpr I2CHandle::Config i2c_config = {
-        I2CHandle::Config::Peripheral::I2C_1,
-        {{DSY_GPIOB, 8},
-         {DSY_GPIOB, 9}}, 
-        I2CHandle::Config::Speed::I2C_400KHZ}; */
-
-    I2CHandle::Config i2c_config;
-
-    i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
-    i2c_config.pin_config.scl = {DSY_GPIOB, 8},
-    i2c_config.pin_config.sda = {DSY_GPIOB, 9};
-    i2c_config.speed          = I2CHandle::Config::Speed::I2C_100KHZ; // I2C_400KHZ
-
-    uint8_t addr = 0b00101000; // 0x28 - BELA SQUARE
-
-    I2CHandle i2c;
-    i2c.Init(i2c_config);
-
-    // init with i2c handle, array of adresses, number of driver chips
-    bela_trill.setup(i2c, Trill::device::SQUARE, addr);
-}
-
-
 // Private Function Implementations
 // set SAI2 stuff -- run this between seed configure and init
 void DaisyStolperbeatsRev3::InitAudio()
 {
     // Handle Seed Audio as-is and then
-    SaiHandle::Config sai_config;
+    // SaiHandle::Config sai_config;
     // Internal Codec
-    sai_config.periph          = SaiHandle::Config::Peripheral::SAI_1;
+    /* sai_config.periph          = SaiHandle::Config::Peripheral::SAI_1;
     sai_config.sr              = SaiHandle::Config::SampleRate::SAI_48KHZ;
     sai_config.bit_depth       = SaiHandle::Config::BitDepth::SAI_24BIT;
     sai_config.a_sync          = SaiHandle::Config::Sync::MASTER;
@@ -286,19 +255,19 @@ void DaisyStolperbeatsRev3::InitAudio()
     sai_config.pin_config.sb   = {DSY_GPIOE, 3};
 
     SaiHandle sai_1_handle;
-    sai_1_handle.Init(sai_config);
+    sai_1_handle.Init(sai_config); */
 
     // Reset Pin for AK4556
     // Built-in AK4556 was reset during Seed Init
-    dsy_gpio_pin codec_reset_pin = seed.GetPin(29);
-    Ak4556::Init(codec_reset_pin);
+    /* dsy_gpio_pin codec_reset_pin = seed.GetPin(29);
+    Ak4556::Init(codec_reset_pin);  */
 
     // Audio
-    AudioHandle::Config audio_config;
+    /* AudioHandle::Config audio_config;
     audio_config.blocksize  = 48;
     audio_config.samplerate = SaiHandle::Config::SampleRate::SAI_48KHZ;
     audio_config.postgain   = 1.f;
-    seed.audio_handle.Init(audio_config, sai_1_handle);
+    seed.audio_handle.Init(audio_config, sai_1_handle); */
 }
 
 void DaisyStolperbeatsRev3::InitControls()
@@ -323,13 +292,6 @@ void DaisyStolperbeatsRev3::InitControls()
     {
         controls[i].Init(seed.adc.GetPtr(i), AudioCallbackRate(), true);
     }
-}
-
-void DaisyStolperbeatsRev3::InitDAC8568()
-{
-    dsy_gpio_pin pincfg[Dac8568::NUM_PINS];
-    pincfg[Dac8568::SYNC] = {DSY_GPIOB, 4}; //seed.GetPin(PIN_DAC8568_SYNC);
-    dac_8568.Init(pincfg);
 }
 
 void DaisyStolperbeatsRev3::InitMidi()

@@ -58,7 +58,7 @@ void DaisySeedStolperbeats::Configure()
 {
     // Configure internal peripherals
     // ConfigureSdram(); // Stolperbeats has no SDRAM
-    ConfigureQspi();
+    //ConfigureQspi();
     //ConfigureDac();
 
     // Configure the built-in GPIOs.
@@ -78,7 +78,7 @@ void DaisySeedStolperbeats::Init(bool boost)
     system.Init(syscfg);
 
     // dsy_sdram_init(&sdram_handle);
-    dsy_qspi_init(&qspi_handle);
+    // dsy_qspi_init(&qspi_handle);
     // dsy_gpio_init(&led);
     // dsy_gpio_init(&testpoint);
     ConfigureAudio();
