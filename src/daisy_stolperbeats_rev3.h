@@ -193,6 +193,9 @@ class DaisyStolperbeatsRev3
     LedDriverIs31fl3731<2, true>                ledmatrix_dma;
     void       InitLEDMatrixDMA();
 
+    /**  Init a Timer */
+    TimerHandle tim5_;
+
   private:
     void SetHidUpdateRates();
     void InitAudio();
@@ -204,6 +207,7 @@ class DaisyStolperbeatsRev3
     void InitGates();
     void InitButtons();
     void InitSR595();
+    void InitTimer();    
 
     dsy_gpio ak4556_reset_pin_;
     uint32_t screen_update_last_, screen_update_period_;

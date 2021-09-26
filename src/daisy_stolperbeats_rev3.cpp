@@ -36,11 +36,13 @@ void DaisyStolperbeatsRev3::Init(bool boost)
     seed.Configure();
     seed.Init(boost);
 
+    InitTimer();
+
     // dirty - clean this up
     // seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
     // _SDRAM_MspDeInit();
     
-    InitAudio();
+    InitAudio();    
 
     InitCvOutputs();
     InitEncoder();
@@ -178,6 +180,41 @@ void DaisyStolperbeatsRev3::ProcessDigitalControls()
     button[BUTTON_6].Debounce16();
     button[BUTTON_7].Debounce16();
     button[BUTTON_8].Debounce16();
+}
+
+
+void DaisyStolperbeatsRev3::InitTimer()
+{
+    
+        
+    // Configure and start highspeed timer.
+    // TIM 5 is a 32-bit counter on APB1 Clock (RM0433 Rev7 - pg 458)
+    // TIM 5 counter UP (defaults to fastest tick/longest period).
+    TimerHandle::Config tim5_cfg;
+    tim5_cfg.periph = TimerHandle::Config::Peripheral::TIM_5;
+    tim5_cfg.dir    = TimerHandle::Config::CounterDir::UP;
+    tim5_.Init(tim5_cfg);
+    tim5_.Start();
+
+    // Sets the period of the Timer.
+    // This is the number of ticks it takes before it wraps back around.
+    // For self-managed timing, this can be left at the default. (0xffff for 16-bit
+    // and 0xffffffff for 32-bit timers). 
+    // This can be changed "on-the-fly" 
+     
+    //uint32_t _ticks;
+    //tim5_.SetPeriod(_ticks);
+
+    // Sets the Prescalar applied to the TIM peripheral. 
+    // This can be any number up to 0xffff 
+    // This will adjust the rate of ticks:
+    // Calculated as APBN_Freq / prescalar per tick
+    // where APBN is APB1 for Most general purpose timers,
+    // and APB2 for HRTIM,a nd the advanced timers. 
+    // This can be changed "on-the-fly" 
+
+    //uint32_t _val = 0xBB7F; // 47.999 - 480 MHz / 48000 = 10 kHz -> 1 tick every 0.0001 sec
+    //tim5_.SetPrescaler(_val);
 }
 
 
