@@ -5,10 +5,8 @@ MODULE_DIR=src
 C_MODULES = \
 sys/dma \
 hid/audio \
-dev/sdram \
 sys/fatfs \
 per/gpio \
-per/qspi \
 per/sai \
 per/sdmmc \
 util/bsp_sd_diskio \
@@ -32,6 +30,7 @@ daisy_stolperbeats_rev3 \
 daisy_petal \
 daisy_field \
 daisy_versio \
+daisy_patch_sm \
 sys/system \
 dev/sr_595 \
 dev/codec_ak4556 \
@@ -41,6 +40,7 @@ dev/dac_8568 \
 dev/lcd_hd44780 \
 dev/led_is31fl3731 \
 dev/bela_trill \
+dev/sdram \
 hid/ctrl \
 hid/encoder \
 hid/gatein \
@@ -53,7 +53,10 @@ hid/wavplayer \
 hid/logger \
 per/adc \
 per/dac \
+per/gpio \
 per/i2c \
+per/rng \
+per/qspi \
 per/spi \
 per/tim \
 per/uart \
@@ -273,7 +276,9 @@ C_DEFS =  \
 -Dflash_layout \
 -DHSE_VALUE=16000000 \
 -DUSE_HAL_DRIVER \
--DUSE_FULL_LL_DRIVER 
+-DUSE_FULL_LL_DRIVER \
+-DDATA_IN_D2_SRAM 
+# ^ added for easy startup access
 
 
 C_INCLUDES = \
@@ -320,7 +325,7 @@ C_STANDARD = -std=gnu11
 CPP_STANDARD += -std=gnu++14
 
 # default action: build all
-all: $(BUILD_DIR)/$(TARGET).a 
+all: $(BUILD_DIR)/$(TARGET).a
 
 #######################################
 # build the application
@@ -349,7 +354,7 @@ $(BUILD_DIR)/%.o: %.cpp Makefile | $(BUILD_DIR)
 
 $(BUILD_DIR)/%.o: %.s Makefile | $(BUILD_DIR)
 	mkdir -p $(@D)
-	$(AS) -c $(CFLAGS) $< -o $@ -MD -MP -MF $(BUILD_DIR)/$(notdir $(<:.s =.dep))
+	$(AS) -c $(ASFLAGS) $< -o $@ -MD -MP -MF $(BUILD_DIR)/$(notdir $(<:.s =.dep))
 
 $(BUILD_DIR)/$(TARGET).a: $(SORTED_OBJECTS) Makefile
 	$(AR) -r $@ $(SORTED_OBJECTS)
