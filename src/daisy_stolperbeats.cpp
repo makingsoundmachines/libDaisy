@@ -37,8 +37,7 @@ void DaisyStolperbeats::Init(bool boost)
     seed.Init(boost);
 
     // dirty - clean this up
-    seed.sdram_handle.state = DSY_SDRAM_STATE_DISABLE;
-    _SDRAM_MspDeInit();
+    seed.sdram_handle.DeInit();
     
     InitAudio();
 
