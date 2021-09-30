@@ -16,8 +16,8 @@ var searchData=
   ['read_5fserial_5fflash_5fdisco_5fparam_5fcmd_13',['READ_SERIAL_FLASH_DISCO_PARAM_CMD',['../group__flash.html#ga216fff040d8bab7b5df5591ebfc2c5d6',1,'READ_SERIAL_FLASH_DISCO_PARAM_CMD():&#160;flash_IS25LP080D.h'],['../group__flash.html#ga216fff040d8bab7b5df5591ebfc2c5d6',1,'READ_SERIAL_FLASH_DISCO_PARAM_CMD():&#160;flash_IS25LP064A.h']]],
   ['read_5fstatus_5freg_5fcmd_14',['READ_STATUS_REG_CMD',['../group__flash.html#gaa3c6b4a899c5b0875dfcf503f1e41b63',1,'READ_STATUS_REG_CMD():&#160;flash_IS25LP064A.h'],['../group__flash.html#gaa3c6b4a899c5b0875dfcf503f1e41b63',1,'READ_STATUS_REG_CMD():&#160;flash_IS25LP080D.h']]],
   ['read_5funique_5fid_15',['READ_UNIQUE_ID',['../group__flash.html#gab326593933b21da8d3fb2765aca1d282',1,'READ_UNIQUE_ID():&#160;flash_IS25LP064A.h'],['../group__flash.html#gab326593933b21da8d3fb2765aca1d282',1,'READ_UNIQUE_ID():&#160;flash_IS25LP080D.h']]],
-  ['readable_16',['readable',['../classdaisy_1_1_ring_buffer_3_01_t_00_010_01_4.html#af813b904145707cef9794fbd8346f066',1,'daisy::RingBuffer&lt; T, 0 &gt;::readable()'],['../classdaisy_1_1_ring_buffer.html#a7055d8829240337fc8979fa3eba2341c',1,'daisy::RingBuffer::readable()']]],
-  ['readable_17',['Readable',['../classdaisy_1_1_uart_handler.html#a4b8cad10b4f9a9520d2248c567babcc1',1,'daisy::UartHandler']]],
+  ['readable_16',['Readable',['../classdaisy_1_1_uart_handler.html#a4b8cad10b4f9a9520d2248c567babcc1',1,'daisy::UartHandler']]],
+  ['readable_17',['readable',['../classdaisy_1_1_ring_buffer_3_01_t_00_010_01_4.html#af813b904145707cef9794fbd8346f066',1,'daisy::RingBuffer&lt; T, 0 &gt;::readable()'],['../classdaisy_1_1_ring_buffer.html#a7055d8829240337fc8979fa3eba2341c',1,'daisy::RingBuffer::readable()']]],
   ['readdataataddress_18',['ReadDataAtAddress',['../classdaisy_1_1_i2_c_handle.html#a2a7a2bcf654a383c6032a86a13645ea3',1,'daisy::I2CHandle']]],
   ['readi2c_19',['readI2C',['../classdaisy_1_1_trill.html#a3bd744397d6c7b493ee8f06900a14e31',1,'daisy::Trill']]],
   ['receive_20',['RECEIVE',['../classdaisy_1_1_i2_c_handle.html#a8f815f7a77948286f0fa0065a1f7c54ca42ddaaef1ffd16ad35901150add8f8f2',1,'daisy::I2CHandle']]],
@@ -64,7 +64,7 @@ var searchData=
   ['route_5fbutton_5f4_61',['ROUTE_BUTTON_4',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ead57ed99488b154428f491a61488afceb',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5flast_62',['ROUTE_BUTTON_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2eaf7a78fe806cc5c72241e45a9cfc261dc',1,'daisy::DaisyHeartOfGold']]],
   ['routebutton_63',['RouteButton',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2e',1,'daisy::DaisyHeartOfGold']]],
-  ['rx_64',['rx',['../structdaisy_1_1_uart_handler_1_1_config.html#adb318e26f13636e1bee740fa47497392',1,'daisy::UartHandler::Config']]],
-  ['rx_65',['RX',['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daaf9c24782c24c237d16e79f18e2fa9046',1,'daisy::SpiHandle']]],
+  ['rx_64',['RX',['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daaf9c24782c24c237d16e79f18e2fa9046',1,'daisy::SpiHandle']]],
+  ['rx_65',['rx',['../structdaisy_1_1_uart_handler_1_1_config.html#adb318e26f13636e1bee740fa47497392',1,'daisy::UartHandler::Config']]],
   ['rxactive_66',['RxActive',['../classdaisy_1_1_uart_handler.html#aeeb804c58c2ccf574142b2a030d2d83b',1,'daisy::UartHandler']]]
 ];

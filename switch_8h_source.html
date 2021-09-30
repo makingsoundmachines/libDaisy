@@ -119,44 +119,56 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> FallingEdge32()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state32_ == 0x80000000; }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#abe39a637bc58c3f5cbbaf5ffaaece7a9">   81</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#abe39a637bc58c3f5cbbaf5ffaaece7a9">Pressed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state_ == 0xff; }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">   84</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">RawState</a>()</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> flip_ ? !<a class="code hl_function" href="group__other.html#ga4ffc8add3d336195e96d111ed56531a9">dsy_gpio_read</a>(&amp;hw_gpio_) : <a class="code hl_function" href="group__other.html#ga4ffc8add3d336195e96d111ed56531a9">dsy_gpio_read</a>(&amp;hw_gpio_);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">   90</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">TimeHeldMs</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#abe39a637bc58c3f5cbbaf5ffaaece7a9">Pressed</a>() ? time_held_ * 1000.0f : 0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">   98</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">SetUpdateRate</a>(<span class="keywordtype">float</span> update_rate)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        time_per_update_ = 1.0f / update_rate;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_enumeration" href="classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483">Type</a>     t_;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_struct" href="structdsy__gpio.html">dsy_gpio</a> hw_gpio_;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    uint8_t  state_;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    uint16_t state16_;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    uint32_t state32_;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">bool</span>     flip_;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">float</span>    time_per_update_, time_held_;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">// namespace daisy</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> Pressed16()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state16_ == 0xffff; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> Pressed32()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state32_ == 0xffffffff; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">   86</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">RawState</a>()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> flip_ ? !<a class="code hl_function" href="group__other.html#ga4ffc8add3d336195e96d111ed56531a9">dsy_gpio_read</a>(&amp;hw_gpio_) : <a class="code hl_function" href="group__other.html#ga4ffc8add3d336195e96d111ed56531a9">dsy_gpio_read</a>(&amp;hw_gpio_);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">   92</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">TimeHeldMs</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#abe39a637bc58c3f5cbbaf5ffaaece7a9">Pressed</a>() ? time_held_ * 1000.0f : 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> TimeHeldMs16()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> Pressed16() ? time_held_ * 1000.0f : 0;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> TimeHeldMs32()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> Pressed32() ? time_held_ * 1000.0f : 0;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">  110</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">SetUpdateRate</a>(<span class="keywordtype">float</span> update_rate)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        time_per_update_ = 1.0f / update_rate;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_enumeration" href="classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483">Type</a>     t_;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_struct" href="structdsy__gpio.html">dsy_gpio</a> hw_gpio_;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    uint8_t  state_;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    uint16_t state16_;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    uint32_t state32_;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">bool</span>     flip_;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">float</span>    time_per_update_, time_held_;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>} <span class="comment">// namespace daisy</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html"><div class="ttname"><a href="classdaisy_1_1_switch.html">daisy::Switch</a></div><div class="ttdef"><b>Definition:</b> switch.h:17</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a564849b2de31395dda3cb464a65c5a24"><div class="ttname"><a href="classdaisy_1_1_switch.html#a564849b2de31395dda3cb464a65c5a24">daisy::Switch::Debounce</a></div><div class="ttdeci">void Debounce()</div></div>
-<div class="ttc" id="aclassdaisy_1_1_switch_html_a648bd3fc767286b3efd56daa7f15ace6"><div class="ttname"><a href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">daisy::Switch::TimeHeldMs</a></div><div class="ttdeci">float TimeHeldMs() const</div><div class="ttdef"><b>Definition:</b> switch.h:90</div></div>
+<div class="ttc" id="aclassdaisy_1_1_switch_html_a648bd3fc767286b3efd56daa7f15ace6"><div class="ttname"><a href="classdaisy_1_1_switch.html#a648bd3fc767286b3efd56daa7f15ace6">daisy::Switch::TimeHeldMs</a></div><div class="ttdeci">float TimeHeldMs() const</div><div class="ttdef"><b>Definition:</b> switch.h:92</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a71f6054840c76ebe3cb2517dc7830d34"><div class="ttname"><a href="classdaisy_1_1_switch.html#a71f6054840c76ebe3cb2517dc7830d34">daisy::Switch::RisingEdge</a></div><div class="ttdeci">bool RisingEdge() const</div><div class="ttdef"><b>Definition:</b> switch.h:71</div></div>
-<div class="ttc" id="aclassdaisy_1_1_switch_html_a77496bb98f169ba613821e2f1b7fc243"><div class="ttname"><a href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">daisy::Switch::RawState</a></div><div class="ttdeci">bool RawState()</div><div class="ttdef"><b>Definition:</b> switch.h:84</div></div>
+<div class="ttc" id="aclassdaisy_1_1_switch_html_a77496bb98f169ba613821e2f1b7fc243"><div class="ttname"><a href="classdaisy_1_1_switch.html#a77496bb98f169ba613821e2f1b7fc243">daisy::Switch::RawState</a></div><div class="ttdeci">bool RawState()</div><div class="ttdef"><b>Definition:</b> switch.h:86</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a8ca509a85dbe09f1d27bcc4ae03fc17a"><div class="ttname"><a href="classdaisy_1_1_switch.html#a8ca509a85dbe09f1d27bcc4ae03fc17a">daisy::Switch::Init</a></div><div class="ttdeci">void Init(dsy_gpio_pin pin, float update_rate, Type t, Polarity pol, Pull pu)</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a944058682bae079439ddddd42302b483"><div class="ttname"><a href="classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483">daisy::Switch::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> switch.h:21</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a944058682bae079439ddddd42302b483a5c6a5cc5d4fbe03be97b81244e669038"><div class="ttname"><a href="classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483a5c6a5cc5d4fbe03be97b81244e669038">daisy::Switch::TYPE_TOGGLE</a></div><div class="ttdeci">@ TYPE_TOGGLE</div><div class="ttdef"><b>Definition:</b> switch.h:22</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_a944058682bae079439ddddd42302b483aaddc897d9c79b39b2024829bebb336a1"><div class="ttname"><a href="classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483aaddc897d9c79b39b2024829bebb336a1">daisy::Switch::TYPE_MOMENTARY</a></div><div class="ttdeci">@ TYPE_MOMENTARY</div><div class="ttdef"><b>Definition:</b> switch.h:23</div></div>
-<div class="ttc" id="aclassdaisy_1_1_switch_html_a9b690946462b81edba1feace3625bc64"><div class="ttname"><a href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">daisy::Switch::SetUpdateRate</a></div><div class="ttdeci">void SetUpdateRate(float update_rate)</div><div class="ttdef"><b>Definition:</b> switch.h:98</div></div>
+<div class="ttc" id="aclassdaisy_1_1_switch_html_a9b690946462b81edba1feace3625bc64"><div class="ttname"><a href="classdaisy_1_1_switch.html#a9b690946462b81edba1feace3625bc64">daisy::Switch::SetUpdateRate</a></div><div class="ttdeci">void SetUpdateRate(float update_rate)</div><div class="ttdef"><b>Definition:</b> switch.h:110</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_aa6c26cb923638a248a1d8d3cb1755e51"><div class="ttname"><a href="classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51">daisy::Switch::Pull</a></div><div class="ttdeci">Pull</div><div class="ttdef"><b>Definition:</b> switch.h:34</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_aa6c26cb923638a248a1d8d3cb1755e51a1f6f843c9fc60e6d00e2cbcbe97bbe8d"><div class="ttname"><a href="classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51a1f6f843c9fc60e6d00e2cbcbe97bbe8d">daisy::Switch::PULL_UP</a></div><div class="ttdeci">@ PULL_UP</div><div class="ttdef"><b>Definition:</b> switch.h:35</div></div>
 <div class="ttc" id="aclassdaisy_1_1_switch_html_aa6c26cb923638a248a1d8d3cb1755e51a2ea8b603f1a3f5864f2f5a40a09be347"><div class="ttname"><a href="classdaisy_1_1_switch.html#aa6c26cb923638a248a1d8d3cb1755e51a2ea8b603f1a3f5864f2f5a40a09be347">daisy::Switch::PULL_NONE</a></div><div class="ttdeci">@ PULL_NONE</div><div class="ttdef"><b>Definition:</b> switch.h:37</div></div>
