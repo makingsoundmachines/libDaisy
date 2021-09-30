@@ -54,9 +54,13 @@ be made at the same rate as the debounce function is being called.
     /** Returns true while the encoder is held down.
 */
     inline bool Pressed() const { return sw_.Pressed(); }
+    inline bool Pressed16() const { return sw_.Pressed16(); }
+    inline bool Pressed32() const { return sw_.Pressed32(); }
     /** Returns the time in milliseconds that the encoder has been held down.
 */
     inline float TimeHeldMs() const { return sw_.TimeHeldMs(); }
+    inline float TimeHeldMs16() const { return sw_.TimeHeldMs16(); }
+    inline float TimeHeldMs32() const { return sw_.TimeHeldMs32(); }
 
     /** Call this with the new update rate if you change the block size or sample rate after init'ing the switch
      * \param update_rate the rate at which the Debounce() function will be called. (used for timing).

@@ -79,6 +79,8 @@ class Switch
 
     /** \return true if the button is held down (or if the toggle is on) */
     inline bool Pressed() const { return state_ == 0xff; }
+    inline bool Pressed16() const { return state16_ == 0xffff; }
+    inline bool Pressed32() const { return state32_ == 0xffffffff; }
 
     /** \return true if the button is held down, without debouncing */
     inline bool RawState()
@@ -90,6 +92,16 @@ class Switch
     inline float TimeHeldMs() const
     {
         return Pressed() ? time_held_ * 1000.0f : 0;
+    }
+
+    inline float TimeHeldMs16() const
+    {
+        return Pressed16() ? time_held_ * 1000.0f : 0;
+    }
+
+    inline float TimeHeldMs32() const
+    {
+        return Pressed32() ? time_held_ * 1000.0f : 0;
     }
 
     /** Call this with the new update rate if you change the block size or sample rate after init'ing the switch
