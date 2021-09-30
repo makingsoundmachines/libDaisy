@@ -352,16 +352,16 @@ void DaisyStolperbeatsRev3::InitEncoder()
 {
 
     // A, B. CLICK
-    encoder[ENC_1].Init({DSY_GPIOE,  4}, {DSY_GPIOB,  5},  {DSY_GPIOC, 15}, AudioCallbackRate()); // ENCODER TEMPO
-    encoder[ENC_2].Init({DSY_GPIOB, 11}, {DSY_GPIOA, 10},  {DSY_GPIOE,  1}, AudioCallbackRate()); // ENCODER KICK
-    encoder[ENC_3].Init({DSY_GPIOC, 12}, {DSY_GPIOD, 14},  {DSY_GPIOD,  5}, AudioCallbackRate()); // ENCODER SNARE
-    encoder[ENC_4].Init({DSY_GPIOD,  8}, {DSY_GPIOB, 13},  {DSY_GPIOE, 13}, AudioCallbackRate()); // ENCODER HIHAT
-    encoder[ENC_5].Init({DSY_GPIOB, 15}, {DSY_GPIOB, 12},  {DSY_GPIOE, 14}, AudioCallbackRate()); // ENCODER HIHAT 2
-    encoder[ENC_6].Init({DSY_GPIOE,  0}, {DSY_GPIOC, 11},  {DSY_GPIOD,  6}, AudioCallbackRate()); // ENCODER SHUFFLE
-    encoder[ENC_7].Init({DSY_GPIOD,  1}, {DSY_GPIOA,  8},  {DSY_GPIOD,  9}, AudioCallbackRate()); // ENCODER PERC 1
-    encoder[ENC_8].Init({DSY_GPIOD,  7}, {DSY_GPIOC,  7},  {DSY_GPIOD, 10}, AudioCallbackRate()); // ENCODER PERC 2
-    encoder[ENC_9].Init({DSY_GPIOE, 11}, {DSY_GPIOE,  9},  {DSY_GPIOE,  7}, AudioCallbackRate()); // ENCODER SUBDIV
-    encoder[ENC_10].Init({DSY_GPIOE, 12}, {DSY_GPIOE, 10},  {DSY_GPIOE, 8}, AudioCallbackRate()); // ENCODER SYNC
+    encoder[ENC_1].Init({DSY_GPIOB,  5}, {DSY_GPIOD, 11},  {DSY_GPIOC, 15}, AudioCallbackRate()); // ENCODER TEMPO
+    encoder[ENC_2].Init({DSY_GPIOA, 10}, {DSY_GPIOD, 12},  {DSY_GPIOE,  1}, AudioCallbackRate()); // ENCODER KICK
+    encoder[ENC_3].Init({DSY_GPIOD, 14}, {DSY_GPIOC, 12},  {DSY_GPIOD,  5}, AudioCallbackRate()); // ENCODER SNARE
+    encoder[ENC_4].Init({DSY_GPIOB, 13}, {DSY_GPIOD,  8},  {DSY_GPIOE, 13}, AudioCallbackRate()); // ENCODER HIHAT
+    encoder[ENC_5].Init({DSY_GPIOB, 12}, {DSY_GPIOB, 15},  {DSY_GPIOE, 14}, AudioCallbackRate()); // ENCODER HIHAT 2
+    encoder[ENC_6].Init({DSY_GPIOC, 11}, {DSY_GPIOE,  0},  {DSY_GPIOD,  6}, AudioCallbackRate()); // ENCODER SHUFFLE
+    encoder[ENC_7].Init({DSY_GPIOA,  8}, {DSY_GPIOD,  1},  {DSY_GPIOD,  9}, AudioCallbackRate()); // ENCODER PERC 1
+    encoder[ENC_8].Init({DSY_GPIOC,  7}, {DSY_GPIOD,  7},  {DSY_GPIOD, 10}, AudioCallbackRate()); // ENCODER PERC 2
+    encoder[ENC_9].Init({DSY_GPIOE,  9}, {DSY_GPIOE, 11},  {DSY_GPIOE,  7}, AudioCallbackRate()); // ENCODER SUBDIV
+    encoder[ENC_10].Init({DSY_GPIOE, 10}, {DSY_GPIOE, 12},  {DSY_GPIOE, 8}, AudioCallbackRate()); // ENCODER SYNC
 }
 
 void DaisyStolperbeatsRev3::InitSR595()
@@ -396,7 +396,7 @@ void DaisyStolperbeatsRev3::InitButtons()
     // BUTTON SHUFFLE PUSH
     button[BUTTON_7].Init({DSY_GPIOC, 2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON SHUFFLE CLAVE
-    button[BUTTON_8].Init({DSY_GPIOE, 6}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+    button[BUTTON_8].Init({DSY_GPIOD, 13}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
 
 }
 
@@ -462,7 +462,7 @@ void DaisyStolperbeatsRev3::InitGates()
     // init when declared as gatein (no debounce)
 
     dsy_gpio_pin pin;
-    pin = {DSY_GPIOE,  5}; gate_input[GATE_IN_1].Init(&pin);  // TAP
-    pin = {DSY_GPIOE,  3}; gate_input[GATE_IN_2].Init(&pin);  // LINEAR DRUMMING 
+    pin = {DSY_GPIOB,  2}; gate_input[GATE_IN_1].Init(&pin);  // TAP
+    pin = {DSY_GPIOB, 10}; gate_input[GATE_IN_2].Init(&pin);  // LINEAR DRUMMING 
 
 }
