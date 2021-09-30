@@ -5,7 +5,7 @@ var searchData=
   ['periph_2',['periph',['../structdaisy_1_1_i2_c_handle_1_1_config.html#aa56d0330fdf37d13b2fea52f02c8f616',1,'daisy::I2CHandle::Config']]],
   ['pin_3',['pin',['../structdsy__gpio__pin.html#a1edd34504a6d4d701bde32ae664afebd',1,'dsy_gpio_pin::pin()'],['../structdsy__gpio.html#a92d61fa4d53b923b328e7e1ca8a67100',1,'dsy_gpio::pin()']]],
   ['pin_5f_4',['pin_',['../structdaisy_1_1_adc_channel_config.html#aaa26b95be3383f04543b4525ab04389a',1,'daisy::AdcChannelConfig']]],
-  ['pin_5fconfig_5',['pin_config',['../structdsy__sdram__handle.html#a8f4d548fed45826d2600699877e75c19',1,'dsy_sdram_handle::pin_config()'],['../structdaisy_1_1_i2_c_handle_1_1_config.html#a0dddf51964f462c483121f27b81239ba',1,'daisy::I2CHandle::Config::pin_config()'],['../structdsy__qspi__handle.html#ad73f408ea07209c351c098c3f6e362e4',1,'dsy_qspi_handle::pin_config()'],['../structdaisy_1_1_uart_handler_1_1_config.html#ad1d964fe1b45852c9fc565a7af23a53c',1,'daisy::UartHandler::Config::pin_config()']]],
+  ['pin_5fconfig_5',['pin_config',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a01c988b6266c0c9b97b8970ac9ade89e',1,'daisy::I2CHandle::Config::pin_config()'],['../structdaisy_1_1_uart_handler_1_1_config.html#a956318353adaa01c9794b8d1469a71a9',1,'daisy::UartHandler::Config::pin_config()']]],
   ['port_6',['port',['../structdsy__gpio__pin.html#a1f18b0d77c637dde2a3febf5edf31237',1,'dsy_gpio_pin']]],
   ['position_7',['position',['../structdaisy_1_1_song_position_pointer_event.html#ab1bc48e1adf7a2ab0ff9451be4d7fe72',1,'daisy::SongPositionPointerEvent']]],
   ['prescalermax_8',['prescalerMax',['../classdaisy_1_1_trill.html#ac3d9d1b85882a0df72388033a820e469',1,'daisy::Trill']]],
