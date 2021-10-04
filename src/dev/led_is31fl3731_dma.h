@@ -147,7 +147,7 @@ class LedDriverIs31fl3731
         const auto ch = first_pixel + 1; // first byte is 0x24 
 
         // write one byte
-        if( ch >= 144) return;
+        if( ch > 144) return;
         // clip raw brightness at 0xFF
         draw_buffer_[d].data[ch] = data & 0xFF;
     }
