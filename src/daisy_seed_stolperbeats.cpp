@@ -54,19 +54,10 @@ const dsy_gpio_pin seedgpio[31] = {
 
 // Public Initialization
 
-void DaisySeedStolperbeats::Configure()
-{
-    // Configure internal peripherals
-    //ConfigureQspi();   // Stolperbeats has no QSPI
-    //ConfigureDac();
-    // Configure the built-in GPIOs.
-    /* led.pin.port       = SEED_LED_PORT;
-    led.pin.pin        = SEED_LED_PIN;
-    led.mode           = DSY_GPIO_MODE_OUTPUT_PP;
-    testpoint.pin.port = SEED_TEST_POINT_PORT;
-    testpoint.pin.pin  = SEED_TEST_POINT_PIN;
-    testpoint.mode     = DSY_GPIO_MODE_OUTPUT_PP; */
-}
+/** Vestigial function body for old function
+ *  This is no longer in use.
+ */
+void DaisySeedStolperbeats::Configure() {}
 
 void DaisySeedStolperbeats::Init(bool boost)
 {
