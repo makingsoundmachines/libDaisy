@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -82,6 +83,13 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="daisy__seed__stolperbeats_8h_source.html">daisy_seed_stolperbeats.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ababbd609b700e88f511437f2f96f5ac8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8">BoardVersion</a> { <a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8ac113cc49a549c400b771fceba91db4ea">DAISY_SEED</a>
+, <a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8a361e807a05cc81f75a417932d23ea9ea">DAISY_SEED_1_1</a>
+ }</td></tr>
+<tr class="separator:ababbd609b700e88f511437f2f96f5ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa50207f308f8f52b3c0796c4a3a5873a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#aa50207f308f8f52b3c0796c4a3a5873a">Configure</a> ()</td></tr>
@@ -116,6 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2f492173c547c08aac3715dfde6cc619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb22d5855b58d911911788742f2e844c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#abb22d5855b58d911911788742f2e844c">SetTestPoint</a> (bool state)</td></tr>
 <tr class="separator:abb22d5855b58d911911788742f2e844c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9f62b597d68a941bc2f7a5ebd477f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8">BoardVersion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#abc9f62b597d68a941bc2f7a5ebd477f3">CheckBoardVersion</a> ()</td></tr>
+<tr class="separator:abc9f62b597d68a941bc2f7a5ebd477f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -163,7 +173,37 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p >This is the higher-level interface for the Daisy board. <br  />
  All basic peripheral configuration/initialization is setup here. <br  />
 . </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ababbd609b700e88f511437f2f96f5ac8" name="ababbd609b700e88f511437f2f96f5ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababbd609b700e88f511437f2f96f5ac8">&#9670;&nbsp;</a></span>BoardVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8">daisy::DaisySeedStolperbeats::BoardVersion</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Internal indices for DaisySeed-equivalent devices This shouldn't have any effect on user-facing code, and only needs to be checked to properly initialize the onboard-circuits. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ababbd609b700e88f511437f2f96f5ac8ac113cc49a549c400b771fceba91db4ea" name="ababbd609b700e88f511437f2f96f5ac8ac113cc49a549c400b771fceba91db4ea"></a>DAISY_SEED&#160;</td><td class="fielddoc"><p >Daisy Seed Rev4 This is the original Daisy Seed </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ababbd609b700e88f511437f2f96f5ac8a361e807a05cc81f75a417932d23ea9ea" name="ababbd609b700e88f511437f2f96f5ac8a361e807a05cc81f75a417932d23ea9ea"></a>DAISY_SEED_1_1&#160;</td><td class="fielddoc"><p >Daisy Seed 1.1 (aka Daisy Seed Rev5) This is a pin-compatible version of the Daisy Seed that uses the WM8731 codec instead of the AK4430 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a66e12629acb68dd1e94650afdde12a00" name="a66e12629acb68dd1e94650afdde12a00"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66e12629acb68dd1e94650afdde12a00">&#9670;&nbsp;</a></span>AudioBlockSize()</h2>
 
@@ -253,6 +293,24 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Changes to a new interleaved callback </p>
+
+</div>
+</div>
+<a id="abc9f62b597d68a941bc2f7a5ebd477f3" name="abc9f62b597d68a941bc2f7a5ebd477f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9f62b597d68a941bc2f7a5ebd477f3">&#9670;&nbsp;</a></span>CheckBoardVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdaisy_1_1_daisy_seed_stolperbeats.html#ababbd609b700e88f511437f2f96f5ac8">BoardVersion</a> daisy::DaisySeedStolperbeats::CheckBoardVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the BoardVersion detected during intiialization </p>
 
 </div>
 </div>
