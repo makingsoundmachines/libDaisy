@@ -84,10 +84,9 @@ void DaisyHeartOfGold::Init(bool boost)
     InitDAC8568();
     InitMidi();
     InitControls();
-    // Reset AK4556
-    /* dsy_gpio_write(&ak4556_reset_pin_, 0);
-    DelayMs(10);
-    dsy_gpio_write(&ak4556_reset_pin_, 1); */
+    // Set Screen update vars
+    screen_update_period_ = 17; // roughly 60Hz
+    screen_update_last_   = seed.system.GetNow();
 }
 
 void DaisyHeartOfGold::DelayMs(size_t del)
@@ -293,6 +292,42 @@ void DaisyHeartOfGold::InitBelaTrill()
     bela_trill.setup(i2c, Trill::device::SQUARE, addr);
 }
 
+// This will render the display with the controls as vertical bars
+void DaisyHeartOfGold::DisplayControls(bool invert)
+{
+    bool on, off;
+    on  = invert ? false : true;
+    off = invert ? true : false;
+    if(seed.system.GetNow() - screen_update_last_ > screen_update_period_)
+    {
+        // Graph Knobs
+        size_t barwidth, barspacing;
+        size_t curx, cury;
+        screen_update_last_ = seed.system.GetNow();
+        barwidth            = 15;
+        barspacing          = 20;
+        display.Fill(off);
+        // Bars for all four knobs.
+        for(size_t i = 0; i < 11; i++) // (size_t i = 0; i < DaisyHeartOfGold::CTRL_LAST; i++)
+        {
+            float  v;
+            size_t dest;
+            curx = (barspacing * i + 1) + (barwidth * i);
+            cury = display.Height();
+            v    = GetKnobValue(static_cast<DaisyHeartOfGold::Ctrl>(i));
+            dest = (v * display.Height());
+            for(size_t j = dest; j > 0; j--)
+            {
+                for(size_t k = 0; k < barwidth; k++)
+                {
+                    display.DrawPixel(curx + k, cury - j, on);
+                }
+            }
+        }
+        display.Update();
+    }
+}
+
 
 // Private Function Implementations
 // set SAI2 stuff -- run this between seed configure and init
@@ -381,6 +416,23 @@ void DaisyHeartOfGold::InitDAC8568()
     pincfg[Dac8568::SYNC] = {DSY_GPIOB, 4}; //seed.GetPin(PIN_DAC8568_SYNC);
     dac_8568.Init(pincfg);
 }
+
+
+void DaisyHeartOfGold::InitDisplay()
+{
+
+    OledDisplay<SSD130xI2c128x64Driver>::Config display_config;
+
+    display_config.driver_config.transport_config.i2c_config.periph         = I2CHandle::Config::Peripheral::I2C_1;
+    display_config.driver_config.transport_config.i2c_config.speed          = I2CHandle::Config::Speed::I2C_1MHZ;
+    display_config.driver_config.transport_config.i2c_config.mode           = I2CHandle::Config::Mode::I2C_MASTER;
+    display_config.driver_config.transport_config.i2c_config.pin_config.scl = {DSY_GPIOB, 8};
+    display_config.driver_config.transport_config.i2c_config.pin_config.sda = {DSY_GPIOB, 9};
+    display_config.driver_config.transport_config.i2c_address               = 0x3C;
+
+    display.Init(display_config);
+}
+
 
 void DaisyHeartOfGold::InitMidi()
 {

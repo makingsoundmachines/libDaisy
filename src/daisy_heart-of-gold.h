@@ -2,6 +2,7 @@
 #ifndef DSY_HEARTOFGOLD_BSP_H
 #define DSY_HEARTOFGOLD_H
 #include "daisy_seed.h"
+#include "dev/oled_ssd130x.h"
 
 namespace daisy
 {
@@ -171,7 +172,6 @@ class DaisyHeartOfGold
     GateIn            route_button[ROUTE_BUTTON_LAST]; /**< Route Buttons  */
     MidiUartHandler   midi;                            /**< Handles midi*/
     Dac8568           dac_8568;                        /**< Handles ext DAC*/
-    /** OledDisplay   display; */                  /**< & */
 
     // TODO: Add class for Gate output
     dsy_gpio gate_output[GATE_OUT_LAST]; /**< Gate outputs  */
@@ -179,6 +179,10 @@ class DaisyHeartOfGold
     dsy_gpio_pin sr_pin_cfg[SR_LAST];
 
     ShiftRegister595 sr_595;
+
+    /**  Init a SSD1306/SSD1309 128x64 OLED displays connected via I2C */
+    OledDisplay<SSD130xI2c128x64Driver> display;       
+    void       InitDisplay();
 
     /**  Init a LED Matrix using an IS31FL3731 chip */
     Is31fl3731 ledmatrix;
@@ -197,7 +201,6 @@ class DaisyHeartOfGold
     void SetHidUpdateRates();
     void InitAudio();
     void InitControls();
-    /** void InitDisplay(); */
     void InitMidi();
     void InitCvOutputs();
     void InitEncoder();
