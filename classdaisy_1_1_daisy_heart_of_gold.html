@@ -190,6 +190,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8c29c5ac7ade9b9dddb25a3de398f201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c03a4b1532c4eba98dfd4da936e8801"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_heart_of_gold.html#a4c03a4b1532c4eba98dfd4da936e8801">DisplayControls</a> (bool invert=true)</td></tr>
 <tr class="separator:a4c03a4b1532c4eba98dfd4da936e8801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d33b557fbbb6ab800026d41ca447df1"><td class="memItemLeft" align="right" valign="top"><a id="a7d33b557fbbb6ab800026d41ca447df1" name="a7d33b557fbbb6ab800026d41ca447df1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitDisplay</b> ()</td></tr>
+<tr class="separator:a7d33b557fbbb6ab800026d41ca447df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327cde7a61d5ca5cf9e2af4b4c108364"><td class="memItemLeft" align="right" valign="top"><a id="a327cde7a61d5ca5cf9e2af4b4c108364" name="a327cde7a61d5ca5cf9e2af4b4c108364"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>InitLEDMatrix</b> ()</td></tr>
 <tr class="separator:a327cde7a61d5ca5cf9e2af4b4c108364"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,6 +227,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aea309f247cf53112fa7a1ffeaf7c6200"><td class="memItemLeft" align="right" valign="top"><a id="aea309f247cf53112fa7a1ffeaf7c6200" name="aea309f247cf53112fa7a1ffeaf7c6200"></a>
 <a class="el" href="class_shift_register595.html">ShiftRegister595</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sr_595</b></td></tr>
 <tr class="separator:aea309f247cf53112fa7a1ffeaf7c6200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7c69ba8be6b85dcd9ea521b73e267f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdaisy_1_1_oled_display.html">OledDisplay</a>&lt; <a class="el" href="namespacedaisy.html#a4af84459e74f4102d36054751f93e570">SSD130xI2c128x64Driver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_heart_of_gold.html#a3d7c69ba8be6b85dcd9ea521b73e267f">display</a></td></tr>
+<tr class="separator:a3d7c69ba8be6b85dcd9ea521b73e267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5129eb8d70cf6c9b54b5f83fabd12cf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdaisy_1_1_is31fl3731.html">Is31fl3731</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_heart_of_gold.html#a5129eb8d70cf6c9b54b5f83fabd12cf7">ledmatrix</a></td></tr>
 <tr class="separator:a5129eb8d70cf6c9b54b5f83fabd12cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fde42f433ae2d2b6213a2c30eca79a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdaisy_1_1_led_driver_is31fl3731.html">LedDriverIs31fl3731</a>&lt; 2, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdaisy_1_1_daisy_heart_of_gold.html#a69fde42f433ae2d2b6213a2c30eca79a">ledmatrix_dma</a></td></tr>
@@ -807,6 +812,21 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3d7c69ba8be6b85dcd9ea521b73e267f" name="a3d7c69ba8be6b85dcd9ea521b73e267f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7c69ba8be6b85dcd9ea521b73e267f">&#9670;&nbsp;</a></span>display</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdaisy_1_1_oled_display.html">OledDisplay</a>&lt;<a class="el" href="namespacedaisy.html#a4af84459e74f4102d36054751f93e570">SSD130xI2c128x64Driver</a>&gt; daisy::DaisyHeartOfGold::display</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Init a SSD1306/SSD1309 128x64 OLED displays connected via I2C </p>
+
+</div>
+</div>
 <a id="a93fd54f56b33da453093e3f512f89161" name="a93fd54f56b33da453093e3f512f89161"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93fd54f56b33da453093e3f512f89161">&#9670;&nbsp;</a></span>encoder</h2>
 
@@ -849,7 +869,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p ><a class="el" href="classdaisy_1_1_oled_display.html">OledDisplay</a> display; &lt; &amp; Gate outputs <br  />
+<p >Gate outputs <br  />
  </p>
 
 </div>

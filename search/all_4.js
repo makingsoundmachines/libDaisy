@@ -45,7 +45,7 @@ var searchData=
   ['devicetype_42',['deviceType',['../classdaisy_1_1_trill.html#ad153d9e6c0145eba9027209f222a6463',1,'daisy::Trill']]],
   ['diff_43',['DIFF',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbba49fa5bc47ef951d59ae3164367993615',1,'daisy::Trill']]],
   ['direction_44',['Direction',['../structdaisy_1_1_sai_handle_1_1_config.html#a80ffb7d40b82652f1550e8cf6ca56f81',1,'daisy::SaiHandle::Config::Direction()'],['../classdaisy_1_1_i2_c_handle.html#a8f815f7a77948286f0fa0065a1f7c54c',1,'daisy::I2CHandle::Direction()']]],
-  ['display_45',['display',['../classdaisy_1_1_daisy_patch.html#a206e53b9a4a8576f87949fd98fd6d522',1,'daisy::DaisyPatch']]],
+  ['display_45',['display',['../classdaisy_1_1_daisy_heart_of_gold.html#a3d7c69ba8be6b85dcd9ea521b73e267f',1,'daisy::DaisyHeartOfGold::display()'],['../classdaisy_1_1_daisy_patch.html#a206e53b9a4a8576f87949fd98fd6d522',1,'daisy::DaisyPatch::display()']]],
   ['displaycontrols_46',['DisplayControls',['../classdaisy_1_1_daisy_heart_of_gold.html#a4c03a4b1532c4eba98dfd4da936e8801',1,'daisy::DaisyHeartOfGold::DisplayControls()'],['../classdaisy_1_1_daisy_patch.html#a92c7dc12ffda2fff994a19935cd251e1',1,'daisy::DaisyPatch::DisplayControls()'],['../classdaisy_1_1_daisy_stolperbeats.html#a00ef29ad1a8543746358ae1c7aa9bc1f',1,'daisy::DaisyStolperbeats::DisplayControls()'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#a5afecaf3a3914564dda0b4dcc46426dd',1,'daisy::DaisyStolperbeatsRev3::DisplayControls()']]],
   ['displayframe_47',['DisplayFrame',['../classdaisy_1_1_is31fl3731.html#a826c8322093e153bfa7f23a68658639a',1,'daisy::Is31fl3731']]],
   ['dma_5fbuffer_5fmem_5fsection_48',['DMA_BUFFER_MEM_SECTION',['../group__utility.html#ga42cc36a89607437fe4bc26d3f7d57043',1,'daisy_core.h']]],
