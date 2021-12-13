@@ -173,6 +173,8 @@ class DaisyHeartOfGold
     MidiUartHandler   midi;                            /**< Handles midi*/
     Dac8568           dac_8568;                        /**< Handles ext DAC*/
 
+    SdramHandle       sdram_handle; /**< & */
+
     // TODO: Add class for Gate output
     dsy_gpio gate_output[GATE_OUT_LAST]; /**< Gate outputs  */
 

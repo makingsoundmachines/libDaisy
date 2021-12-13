@@ -73,6 +73,7 @@ void DaisyHeartOfGold::Init(bool boost)
     // Configure Seed first
     seed.Configure();
     seed.Init(boost);
+    sdram_handle.Init();
     InitAudio();
 
     InitCvOutputs();
