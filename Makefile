@@ -28,6 +28,7 @@ daisy_patch \
 daisy_heart-of-gold \
 daisy_stolperbeats \
 daisy_stolperbeats_rev3 \
+daisy_stolperbeats_rev4 \
 daisy_petal \
 daisy_field \
 daisy_versio \
