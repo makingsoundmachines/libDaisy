@@ -366,7 +366,7 @@ $(function() {
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            buffer[0] = 0x0A;</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            buffer[1] = 0x01;</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            i2c_.<a class="code hl_function" href="classdaisy_1_1_i2_c_handle.html#acf279a20fe8338672cbfa7f3e0e720ae">TransmitBlocking</a>(address, buffer, 2, 1);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            <span class="comment">//System::Delay(20);</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            <a class="code hl_function" href="classdaisy_1_1_system.html#a760572ff8248511b8b5825c8085d33c6">System::Delay</a>(20);</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="comment">// 0xFD, 0x00  write first frame</span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            buffer[0] = 0xFD;</div>
@@ -383,7 +383,7 @@ $(function() {
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment">                i2c_.TransmitBlocking(address, buffer, 2, 1);</span></div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">            }*/</span></div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            <a class="code hl_function" href="classdaisy_1_1_system.html#a74cb8753b9a5b8c36be56bf92378dd39">System::DelayUs</a>(20);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            <a class="code hl_function" href="classdaisy_1_1_system.html#a74cb8753b9a5b8c36be56bf92378dd39">System::DelayUs</a>(80);</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        }</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    }</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
@@ -481,6 +481,7 @@ $(function() {
 <div class="ttc" id="aclassdaisy_1_1_led_driver_is31fl3731_html_ad943b93d5883989b467d0348764538d9"><div class="ttname"><a href="classdaisy_1_1_led_driver_is31fl3731.html#ad943b93d5883989b467d0348764538d9">daisy::LedDriverIs31fl3731::SetLed</a></div><div class="ttdeci">void SetLed(int ledIndex, uint8_t brightness)</div><div class="ttdef"><b>Definition:</b> led_is31fl3731_dma.h:108</div></div>
 <div class="ttc" id="aclassdaisy_1_1_led_driver_is31fl3731_html_af363ebf72e9bc985c8c23b054d479db9"><div class="ttname"><a href="classdaisy_1_1_led_driver_is31fl3731.html#af363ebf72e9bc985c8c23b054d479db9">daisy::LedDriverIs31fl3731::SwapBuffersAndTransmit</a></div><div class="ttdeci">void SwapBuffersAndTransmit()</div><div class="ttdef"><b>Definition:</b> led_is31fl3731_dma.h:159</div></div>
 <div class="ttc" id="aclassdaisy_1_1_system_html_a74cb8753b9a5b8c36be56bf92378dd39"><div class="ttname"><a href="classdaisy_1_1_system.html#a74cb8753b9a5b8c36be56bf92378dd39">daisy::System::DelayUs</a></div><div class="ttdeci">static void DelayUs(uint32_t delay_us)</div></div>
+<div class="ttc" id="aclassdaisy_1_1_system_html_a760572ff8248511b8b5825c8085d33c6"><div class="ttname"><a href="classdaisy_1_1_system.html#a760572ff8248511b8b5825c8085d33c6">daisy::System::Delay</a></div><div class="ttdeci">static void Delay(uint32_t delay_ms)</div></div>
 <div class="ttc" id="agroup__other_html_ga05d023b1e65d46f0d1be16e38d3c6db5"><div class="ttname"><a href="group__other.html#ga05d023b1e65d46f0d1be16e38d3c6db5">dsy_gpio_write</a></div><div class="ttdeci">void dsy_gpio_write(const dsy_gpio *p, uint8_t state)</div></div>
 <div class="ttc" id="agroup__other_html_ga2fa512c8eff950e56bb2206955fc7483"><div class="ttname"><a href="group__other.html#ga2fa512c8eff950e56bb2206955fc7483">dsy_gpio_init</a></div><div class="ttdeci">void dsy_gpio_init(const dsy_gpio *p)</div></div>
 <div class="ttc" id="agroup__other_html_gga0edc3fcaf729346c5251d263d732666eacc5f2bbce0cc1ad14d973f8480c7f377"><div class="ttname"><a href="group__other.html#gga0edc3fcaf729346c5251d263d732666eacc5f2bbce0cc1ad14d973f8480c7f377">DSY_GPIO_MODE_OUTPUT_PP</a></div><div class="ttdeci">@ DSY_GPIO_MODE_OUTPUT_PP</div><div class="ttdef"><b>Definition:</b> gpio.h:144</div></div>
