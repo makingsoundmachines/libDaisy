@@ -341,7 +341,7 @@ class LedDriverIs31fl3731
             buffer[0] = 0x0A;
             buffer[1] = 0x01;
             i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
+            System::Delay(20);
 
             // 0xFD, 0x00  write first frame
             buffer[0] = 0xFD;
@@ -358,7 +358,7 @@ class LedDriverIs31fl3731
                 i2c_.TransmitBlocking(address, buffer, 2, 1);
             }*/
 
-            System::DelayUs(20);
+            System::DelayUs(80);
         }
     }
 
