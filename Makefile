@@ -40,6 +40,7 @@ dev/codec_ak4556 \
 dev/codec_pcm3060 \
 dev/codec_wm8731 \
 dev/dac_8568 \
+dev/dac_7554 \
 dev/lcd_hd44780 \
 dev/led_is31fl3731 \
 dev/bela_trill \
