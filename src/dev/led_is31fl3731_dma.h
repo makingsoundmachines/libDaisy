@@ -282,23 +282,55 @@ class LedDriverIs31fl3731
             const uint8_t address = Is31fl3731_I2C_BASE_ADDRESS | addresses_[d];
             uint8_t       buffer[2];
 
+            // shutdown
             // 0xFD, 0x0B  write function register
             buffer[0] = 0xFD;
             buffer[1] = 0x0B;
             i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
-
             // 0x0A, 0x00  enter software shutdown mode
             buffer[0] = 0x0A;
             buffer[1] = 0x00;
             i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
 
-            // 0xFD, 0x00  write first frame
+            System::Delay(10);
+
+            // out of shutdown
+            // 0xFD, 0x0B  write function register
             buffer[0] = 0xFD;
+            buffer[1] = 0x0B;
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
+            // 0x0A, 0x00  exit software shutdown mode
+            buffer[0] = 0x0A;
+            buffer[1] = 0x01;
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
+
+            // picture mode
+            // 0xFD, 0x0B  write function register
+            buffer[0] = 0xFD;
+            buffer[1] = 0x0B;
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
+            // 0x00, 0x00  picture mode
+            buffer[0] = 0x00;
+            buffer[1] = 0x00;
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
+
+            // display first Frame
+            // 0xFD, 0x0B  write function register
+            buffer[0] = 0xFD;
+            buffer[1] = 0x0B;
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
+            // 0x01, 0x00  select first frame
+            buffer[0] = 0x01;
             buffer[1] = 0x00;
             i2c_.TransmitBlocking(address, buffer, 2, 1);
             //System::Delay(20);
+
+
+            // 0xFD, 0x00 select Bank
+            buffer[0] = 0xFD;
+            buffer[1] = 0x00;
+            
+            i2c_.TransmitBlocking(address, buffer, 2, 1);
 
             //turn on all LED
             for(uint8_t k = 0; k < 0x12; k++)
@@ -309,6 +341,9 @@ class LedDriverIs31fl3731
                 i2c_.TransmitBlocking(address, buffer, 2, 1);
             }
 
+            // 0xFD, 0x00 select Bank
+            buffer[0] = 0xFD;
+            buffer[1] = 0x00;
             //Need to turn off the position where LED is not mounted
             //write all PWM set 0x00
             for(uint8_t k = 0x24; k < 0xB4; k++)
@@ -319,29 +354,11 @@ class LedDriverIs31fl3731
                 i2c_.TransmitBlocking(address, buffer, 2, 1);
             }
 
-            // 0xFD, 0x0B  write function register
-            buffer[0] = 0xFD;
-            buffer[1] = 0x0B;
-            i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
-
-            // 0x00, 0x00  picture mode
-            buffer[0] = 0x00;
-            buffer[1] = 0x00;
-            i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
-
-            // 0x01, 0x00  select first frame
-            buffer[0] = 0x01;
-            buffer[1] = 0x00;
-            i2c_.TransmitBlocking(address, buffer, 2, 1);
-            //System::Delay(20);
-
             // 0x0A, 0x01  normal operation
-            buffer[0] = 0x0A;
-            buffer[1] = 0x01;
-            i2c_.TransmitBlocking(address, buffer, 2, 1);
-            System::Delay(20);
+            //buffer[0] = 0x0A;
+            //buffer[1] = 0x01;
+            //i2c_.TransmitBlocking(address, buffer, 2, 1);
+            //System::Delay(20);
 
             // 0xFD, 0x00  write first frame
             buffer[0] = 0xFD;
@@ -358,7 +375,7 @@ class LedDriverIs31fl3731
                 i2c_.TransmitBlocking(address, buffer, 2, 1);
             }*/
 
-            System::DelayUs(80);
+            //System::DelayUs(80);
         }
     }
 
