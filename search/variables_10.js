@@ -12,7 +12,7 @@ var searchData=
   ['speed_9',['speed',['../structdaisy_1_1_i2_c_handle_1_1_config.html#a7795ab9b3b85bd2f51950b6985a31b97',1,'daisy::I2CHandle::Config']]],
   ['speedvalues_10',['speedValues',['../classdaisy_1_1_trill.html#a2e4e048dc7bfae3bccec22e5cb7123ff',1,'daisy::Trill']]],
   ['spi_5fconfig_11',['spi_config',['../group__dac.html#ga61d2e79b899930fc55cd7b897506b15e',1,'daisy::BlockingSpiTransport::Config']]],
-  ['sr_5f4021_12',['sr_4021',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#a19fc8baa165bf849cabfa835b4d32100',1,'daisy::DaisyStolperbeatsRev4']]],
+  ['sr_5f4021_12',['sr_4021',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#af5879eb34f12bb44ba461e970836c612',1,'daisy::DaisyStolperbeatsRev4']]],
   ['sr_5f4021_5fstate_5f_13',['sr_4021_state_',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#a48633abc96221612e958a841f3f9281c',1,'daisy::DaisyStolperbeatsRev4']]],
   ['sr_5fpin_5fcfg_14',['sr_pin_cfg',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#a4311af2eff7430b4c828e9cde020de4f',1,'daisy::DaisyStolperbeatsRev4']]],
   ['subchunk1id_15',['SubChunk1ID',['../structdaisy_1_1_w_a_v___format_type_def.html#a027b8307b27f1648d55fbcc9be8fa02f',1,'daisy::WAV_FormatTypeDef']]],
