@@ -71,14 +71,14 @@ class DaisyStolperbeatsRev4
         SR_4021_BUTTON_7,    /**< BUTTON LINEAR */  
         SR_4021_BUTTON_8,    /**< ENCODER SHUFFLE CLICK */ 
 
-        SR_4021_BUTTON_9,    /**< EXPANDER BUTTON */   
-        SR_4021_BUTTON_10,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_11,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_12,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_13,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_14,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_15,   /**< EXPANDER BUTTON */ 
-        SR_4021_BUTTON_16,   /**< EXPANDER BUTTON */ 
+        SR_4021_BUTTON_9,    /**< EXPANDER BUTTON HIHAT 1 */   
+        SR_4021_BUTTON_10,   /**< EXPANDER BUTTON KICK */ 
+        SR_4021_BUTTON_11,   /**< EXPANDER BUTTON SNARE */ 
+        SR_4021_BUTTON_12,   /**< EXPANDER BUTTON LINEAR */ 
+        SR_4021_BUTTON_13,   /**< EXPANDER BUTTON HIHAT 2 */ 
+        SR_4021_BUTTON_14,   /**< EXPANDER BUTTON PERC 2*/ 
+        SR_4021_BUTTON_15,   /**< EXPANDER BUTTON PERC 1 */ 
+        SR_4021_BUTTON_16,   /**< EXPANDER BUTTON SUBDIV */ 
 
         SR_4021_BUTTON_LAST, /**< */
     };    
@@ -219,9 +219,9 @@ class DaisyStolperbeatsRev4
     ShiftRegister595 sr_595;
 
     /**  Shift Register for Button inputs, Enc 6 click and Expander (input) */
-    ShiftRegister4021<1> sr_4021;                           /**< Two 4021s daisy-chained. */
-    uint16_t             sr_4021_state_[16];                /**< Save the state of an input on the SR 4021 */
-    float                sr_4021_time_held_[16];
+    ShiftRegister4021<2, 1> sr_4021;                           /**< Two 4021s daisy-chained. */
+    uint16_t                sr_4021_state_[16];                /**< Save the state of an input on the SR 4021 */
+    float                   sr_4021_time_held_[16];
 
 
     /**  Init a LED Matrix using an IS31FL3731 chip */

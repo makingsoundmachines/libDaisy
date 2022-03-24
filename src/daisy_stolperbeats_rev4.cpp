@@ -371,26 +371,28 @@ void DaisyStolperbeatsRev4::InitSR595()
 
 void DaisyStolperbeatsRev4::InitSR4021() 
 {
-    ShiftRegister4021<1>::Config SR_4021_cfg;
+    ShiftRegister4021<2, 1>::Config SR_4021_cfg;
     SR_4021_cfg.clk     = {DSY_GPIOA, 2};  // PA2
     SR_4021_cfg.latch   = {DSY_GPIOD, 12}; // PD12
     SR_4021_cfg.data[0] = {DSY_GPIOD, 11}; // PD11
     sr_4021.Init(SR_4021_cfg);
 }
 
+
 void DaisyStolperbeatsRev4::UpdateSR4021() 
 {
     sr_4021.Update();
-    for(size_t i = 0; i < 8; i++)
+    for(size_t i = 0; i < 16; i++)
     {
-        uint8_t idx_, offset_;
-        offset_ = i > 7 ? 8 : 0;
-        idx_    = (7 - (i % 8)) + offset_;
+        uint16_t idx_, offset_;
+        offset_ = i > 15 ? 16 : 0;
+        idx_    = (15 - (i % 16)) + offset_;
         
         sr_4021_state_[idx_]
             = sr_4021.State(i) | (sr_4021_state_[idx_] << 1);
     }
 }
+
 
 /** Process SR 4021 */
 bool DaisyStolperbeatsRev4::SR_4021State(size_t idx) const
