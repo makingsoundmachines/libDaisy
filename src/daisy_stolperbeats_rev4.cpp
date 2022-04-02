@@ -371,6 +371,11 @@ void DaisyStolperbeatsRev4::InitSR595()
 
 void DaisyStolperbeatsRev4::InitSR4021() 
 {
+    for(size_t i = 0; i < 16; i++)
+    {
+        sr_4021_state_[i] = 0xFFFF;
+    }
+
     ShiftRegister4021<2, 1>::Config SR_4021_cfg;
     SR_4021_cfg.clk     = {DSY_GPIOA, 2};  // PA2
     SR_4021_cfg.latch   = {DSY_GPIOD, 12}; // PD12
