@@ -23,6 +23,10 @@ class OledDisplay : public OneBitGraphicsDisplayImpl<OledDisplay<DisplayDriver>>
 
     void Init(Config config) { driver_.Init(config.driver_config); }
 
+    // Dirty, dirty hack
+    void Init_OLED_1(Config config) { driver_.Init_OLED_1(config.driver_config); }
+    void Init_OLED_2(Config config) { driver_.Init_OLED_2(config.driver_config); }
+
     uint16_t Height() const override { return driver_.Height(); }
     uint16_t Width() const override { return driver_.Width(); }
 

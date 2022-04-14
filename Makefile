@@ -23,12 +23,14 @@ usbh/usbh_conf
 CPP_MODULES = \
 daisy_seed \
 daisy_seed_stolperbeats \
+daisy_seed_percussive \
 daisy_pod \
 daisy_patch \
 daisy_heart-of-gold \
 daisy_stolperbeats \
 daisy_stolperbeats_rev3 \
 daisy_stolperbeats_rev4 \
+daisy_percussive_maintenance \
 daisy_petal \
 daisy_field \
 daisy_versio \
