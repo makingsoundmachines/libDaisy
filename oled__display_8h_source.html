@@ -90,32 +90,36 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> Init(<a class="code hl_struct" href="structdaisy_1_1_oled_display_1_1_config.html">Config</a> config) { driver_.Init(config.driver_config); }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    uint16_t Height()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> driver_.Height(); }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    uint16_t Width()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> driver_.Width(); }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">Fill</a>(<span class="keywordtype">bool</span> on)<span class="keyword"> override </span>{ driver_.Fill(on); }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">   41</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">DrawPixel</a>(uint_fast8_t x, uint_fast8_t y, <span class="keywordtype">bool</span> on)<span class="keyword"> override</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        driver_.DrawPixel(x, y, on);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">Update</a>()<span class="keyword"> override </span>{ driver_.Update(); }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    DisplayDriver driver_;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> Reset() { driver_.Reset(); };</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> SendCommand(uint8_t cmd) { driver_.SendCommand(cmd); };</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> SendData(uint8_t* buff, <span class="keywordtype">size_t</span> size) { driver_.SendData(buff, size); };</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>} <span class="comment">// namespace daisy</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Dirty, dirty hack</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> Init_OLED_1(Config config) { driver_.Init_OLED_1(config.driver_config); }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> Init_OLED_2(Config config) { driver_.Init_OLED_2(config.driver_config); }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    uint16_t Height()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> driver_.Height(); }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    uint16_t Width()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> driver_.Width(); }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">Fill</a>(<span class="keywordtype">bool</span> on)<span class="keyword"> override </span>{ driver_.Fill(on); }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">   45</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">DrawPixel</a>(uint_fast8_t x, uint_fast8_t y, <span class="keywordtype">bool</span> on)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        driver_.DrawPixel(x, y, on);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">Update</a>()<span class="keyword"> override </span>{ driver_.Update(); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    DisplayDriver driver_;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> Reset() { driver_.Reset(); };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> SendCommand(uint8_t cmd) { driver_.SendCommand(cmd); };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> SendData(uint8_t* buff, <span class="keywordtype">size_t</span> size) { driver_.SendData(buff, size); };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>} <span class="comment">// namespace daisy</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassdaisy_1_1_oled_display_html"><div class="ttname"><a href="classdaisy_1_1_oled_display.html">daisy::OledDisplay</a></div><div class="ttdef"><b>Definition:</b> oled_display.h:14</div></div>
-<div class="ttc" id="aclassdaisy_1_1_oled_display_html_a0502509e0a15e5546131121e6ef38819"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">daisy::OledDisplay::Fill</a></div><div class="ttdeci">void Fill(bool on) override</div><div class="ttdef"><b>Definition:</b> oled_display.h:33</div></div>
-<div class="ttc" id="aclassdaisy_1_1_oled_display_html_acbb5c0e9f3c63b5892c4501361a9268d"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">daisy::OledDisplay::DrawPixel</a></div><div class="ttdeci">void DrawPixel(uint_fast8_t x, uint_fast8_t y, bool on) override</div><div class="ttdef"><b>Definition:</b> oled_display.h:41</div></div>
-<div class="ttc" id="aclassdaisy_1_1_oled_display_html_aea1796db0121368cff3d760ed7bc8548"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">daisy::OledDisplay::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> oled_display.h:50</div></div>
+<div class="ttc" id="aclassdaisy_1_1_oled_display_html_a0502509e0a15e5546131121e6ef38819"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#a0502509e0a15e5546131121e6ef38819">daisy::OledDisplay::Fill</a></div><div class="ttdeci">void Fill(bool on) override</div><div class="ttdef"><b>Definition:</b> oled_display.h:37</div></div>
+<div class="ttc" id="aclassdaisy_1_1_oled_display_html_acbb5c0e9f3c63b5892c4501361a9268d"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#acbb5c0e9f3c63b5892c4501361a9268d">daisy::OledDisplay::DrawPixel</a></div><div class="ttdeci">void DrawPixel(uint_fast8_t x, uint_fast8_t y, bool on) override</div><div class="ttdef"><b>Definition:</b> oled_display.h:45</div></div>
+<div class="ttc" id="aclassdaisy_1_1_oled_display_html_aea1796db0121368cff3d760ed7bc8548"><div class="ttname"><a href="classdaisy_1_1_oled_display.html#aea1796db0121368cff3d760ed7bc8548">daisy::OledDisplay::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> oled_display.h:54</div></div>
 <div class="ttc" id="aclassdaisy_1_1_one_bit_graphics_display_impl_html"><div class="ttname"><a href="classdaisy_1_1_one_bit_graphics_display_impl.html">daisy::OneBitGraphicsDisplayImpl</a></div><div class="ttdef"><b>Definition:</b> display.h:216</div></div>
 <div class="ttc" id="anamespacedaisy_html"><div class="ttname"><a href="namespacedaisy.html">daisy</a></div><div class="ttdoc">Hardware defines and helpers for daisy field platform.</div><div class="ttdef"><b>Definition:</b> daisy_core.h:241</div></div>
 <div class="ttc" id="astructdaisy_1_1_oled_display_1_1_config_html"><div class="ttname"><a href="structdaisy_1_1_oled_display_1_1_config.html">daisy::OledDisplay::Config</a></div><div class="ttdef"><b>Definition:</b> oled_display.h:20</div></div>
