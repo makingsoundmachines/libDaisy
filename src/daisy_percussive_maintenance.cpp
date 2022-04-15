@@ -40,8 +40,9 @@ void DaisyPercussiveMaintenance::Init(bool boost)
     InitCvOutputs();
     InitEncoder();
     InitGates();
+    InitButtons();
 
-    //InitDisplay();
+    InitDisplay();
     InitMidi();
     InitControls();
     // Set Screen update vars
@@ -66,8 +67,8 @@ void DaisyPercussiveMaintenance::SetHidUpdateRates()
     encoder[ENC_3].SetUpdateRate(AudioCallbackRate());
     encoder[ENC_4].SetUpdateRate(AudioCallbackRate());
 
-    button[BUTTON_1].SetUpdateRate(AudioCallbackRate());  
-    button[BUTTON_2].SetUpdateRate(AudioCallbackRate()); 
+    //button[BUTTON_1].SetUpdateRate(AudioCallbackRate());  
+    //button[BUTTON_2].SetUpdateRate(AudioCallbackRate()); 
 }
 
 void DaisyPercussiveMaintenance::StartAudio(AudioHandle::AudioCallback cb)
@@ -123,7 +124,6 @@ void DaisyPercussiveMaintenance::StopAdc()
     seed.adc.Stop();
 }
 
-
 void DaisyPercussiveMaintenance::ProcessAnalogControls()
 {
     for(size_t i = 0; i < CTRL_LAST; i++)
@@ -131,6 +131,7 @@ void DaisyPercussiveMaintenance::ProcessAnalogControls()
         controls[i].Process();
     }
 }
+
 float DaisyPercussiveMaintenance::GetKnobValue(Ctrl k)
 {
     return (controls[k].Value());
@@ -139,12 +140,12 @@ float DaisyPercussiveMaintenance::GetKnobValue(Ctrl k)
 void DaisyPercussiveMaintenance::ProcessDigitalControls()
 {
     encoder[ENC_1].Debounce();
-    encoder[ENC_2].Debounce();
-    encoder[ENC_3].Debounce();
-    encoder[ENC_4].Debounce();
+    encoder[ENC_2].Debounce16();
+    encoder[ENC_3].Debounce16();
+    encoder[ENC_4].Debounce16();
 
     button[BUTTON_1].Debounce();
-    button[BUTTON_1].Debounce();
+    button[BUTTON_2].Debounce();
 }
 
 // This will render the display with the controls as vertical bars
@@ -159,8 +160,8 @@ void DaisyPercussiveMaintenance::DisplayControls(bool invert)
         size_t barwidth, barspacing;
         size_t curx, cury;
         screen_update_last_ = seed.system.GetNow();
-        barwidth            = 15;
-        barspacing          = 20;
+        barwidth            = 4;
+        barspacing          = 8;
 
         display[0].Fill(off);
         display[1].Fill(off);
@@ -173,20 +174,18 @@ void DaisyPercussiveMaintenance::DisplayControls(bool invert)
             curx = (barspacing * i + 1) + (barwidth * i);
 
             cury = display[0].Height();
-            cury = display[1].Height();
 
             v    = GetKnobValue(static_cast<DaisyPercussiveMaintenance::Ctrl>(i));
 
-            for(size_t n = 0; n < 2; n++)
-            {
-                dest = (v * display[n].Height());
 
-                for(size_t j = dest; j > 0; j--)
+            dest = (v * display[0].Height());
+
+            for(size_t j = dest; j > 0; j--)
+            {
+                for(size_t k = 0; k < barwidth; k++)
                 {
-                    for(size_t k = 0; k < barwidth; k++)
-                    {
-                        display[n].DrawPixel(curx + k, cury - j, on);
-                    }
+                    display[0].DrawPixel(curx + k, cury - j, on);
+                    display[1].DrawPixel(curx + k, cury - j, on);
                 }
             }
         }
@@ -309,8 +308,8 @@ void DaisyPercussiveMaintenance::InitDisplay()
     pin_oled_2_dc    = {DSY_GPIOB, 14};
     pin_oled_2_reset = {DSY_GPIOA, 1};
 
-    display_config[1].driver_config.transport_config.pin_config.dc = pin_oled_1_dc; // 
-    display_config[1].driver_config.transport_config.pin_config.reset = pin_oled_1_reset;
+    display_config[1].driver_config.transport_config.pin_config.dc = pin_oled_2_dc; // 
+    display_config[1].driver_config.transport_config.pin_config.reset = pin_oled_2_reset;
 
     display[0].Init_OLED_1(display_config[0]);
     display[1].Init_OLED_2(display_config[1]);
@@ -349,6 +348,10 @@ void DaisyPercussiveMaintenance::InitButtons()
     button[BUTTON_1].Init({DSY_GPIOA,  2}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
     // BUTTON Cherry 2
     button[BUTTON_2].Init({DSY_GPIOD, 10}, AudioCallbackRate(), Switch::Type::TYPE_MOMENTARY, Switch::Polarity::POLARITY_INVERTED, Switch::Pull::PULL_NONE);
+
+    //dsy_gpio_pin pin;
+    //pin = {DSY_GPIOA,  2}; button[BUTTON_1].Init(&pin);  // Trig 1
+    //pin = {DSY_GPIOD, 10}; button[BUTTON_2].Init(&pin);  // Trig 2 
 
 }
 

@@ -608,14 +608,15 @@ static pin_alt_spi spi1_pins_nss[] = {{{DSY_GPIOG, 10}, GPIO_AF5_SPI1},
                                       pins_none_spi};
 
 /* ============== spi2 ============== */
+/* added AF Pins MSM */
 static pin_alt_spi spi2_pins_sclk[]
-    = {pins_none_spi, pins_none_spi, pins_none_spi};
+    = {{{DSY_GPIOB, 13}, GPIO_AF5_SPI2}, pins_none_spi, pins_none_spi};
 
 static pin_alt_spi spi2_pins_miso[]
     = {{{DSY_GPIOB, 14}, GPIO_AF5_SPI2}, pins_none_spi, pins_none_spi};
 
-static pin_alt_spi spi2_pins_mosi[] = {{{DSY_GPIOC, 1}, GPIO_AF5_SPI2},
-                                       {{DSY_GPIOB, 15}, GPIO_AF5_SPI2},
+static pin_alt_spi spi2_pins_mosi[] = {{{DSY_GPIOB, 15}, GPIO_AF5_SPI2},
+                                       {{DSY_GPIOC, 1}, GPIO_AF5_SPI2},
                                        pins_none_spi};
 
 static pin_alt_spi spi2_pins_nss[] = {{{DSY_GPIOB, 12}, GPIO_AF5_SPI2},
@@ -638,17 +639,18 @@ static pin_alt_spi spi3_pins_nss[]
     = {{{DSY_GPIOA, 4}, GPIO_AF6_SPI3}, pins_none_spi, pins_none_spi};
 
 /* ============== spi4 ============== */
+/* added AF Pins MSM */
 static pin_alt_spi spi4_pins_sclk[]
-    = {pins_none_spi, pins_none_spi, pins_none_spi};
+    = {{{DSY_GPIOE, 12}, GPIO_AF5_SPI4}, pins_none_spi, pins_none_spi};
 
 static pin_alt_spi spi4_pins_miso[]
-    = {pins_none_spi, pins_none_spi, pins_none_spi};
+    = {{{DSY_GPIOE, 13}, GPIO_AF5_SPI4}, pins_none_spi, pins_none_spi};
 
 static pin_alt_spi spi4_pins_mosi[]
-    = {pins_none_spi, pins_none_spi, pins_none_spi};
+    = {{{DSY_GPIOE, 14}, GPIO_AF5_SPI4}, pins_none_spi, pins_none_spi};
 
 static pin_alt_spi spi4_pins_nss[]
-    = {pins_none_spi, pins_none_spi, pins_none_spi};
+    = {{{DSY_GPIOE, 11}, GPIO_AF5_SPI4}, pins_none_spi, pins_none_spi};
 
 /* ============== spi5 ============== */
 static pin_alt_spi spi5_pins_sclk[]

@@ -149,7 +149,7 @@ class DaisyPercussiveMaintenance
     Encoder                   encoder[ENC_LAST];               /**< Encoder object */
     AnalogControl             controls[CTRL_LAST];              /**< Array of controls*/
     GateIn                    gate_input[GATE_IN_LAST];         /**< Gate inputs  */
-    Switch                    button[BUTTON_LAST];              /**<  Buttons  */
+    Switch                    button[BUTTON_LAST];              /**< Buttons  */
     MidiUartHandler           midi;                             /**< Handles midi*/
     OledDisplay<SSD130x4WireSpi128x64Driver> display[2]; /**< & */
 
