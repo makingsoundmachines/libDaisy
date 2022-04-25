@@ -140,9 +140,9 @@ float DaisyPercussiveMaintenance::GetKnobValue(Ctrl k)
 void DaisyPercussiveMaintenance::ProcessDigitalControls()
 {
     encoder[ENC_1].Debounce();
-    encoder[ENC_2].Debounce16();
-    encoder[ENC_3].Debounce16();
-    encoder[ENC_4].Debounce16();
+    encoder[ENC_2].Debounce();
+    encoder[ENC_3].Debounce();
+    encoder[ENC_4].Debounce();
 
     button[BUTTON_1].Debounce();
     button[BUTTON_2].Debounce();

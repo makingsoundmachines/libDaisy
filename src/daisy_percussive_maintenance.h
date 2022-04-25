@@ -59,10 +59,10 @@ class DaisyPercussiveMaintenance
     /** Percussive Maintenance Encoder inputs */
     enum Enc
     {
-        ENC_1,    /**< ENCODER TEMPO */
-        ENC_2,    /**< ENCODER KICK */
-        ENC_3,    /**< ENCODER SNARE */
-        ENC_4,    /**< ENCODER HIHAT 1 */      
+        ENC_1,    /**< ENCODER MODE 1 */
+        ENC_2,    /**< ENCODER FX 1 */
+        ENC_3,    /**< ENCODER MODE 2 */
+        ENC_4,    /**< ENCODER FX 2 */      
         ENC_LAST, /**< */
     };
 
