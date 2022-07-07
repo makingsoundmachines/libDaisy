@@ -37,6 +37,31 @@ class GateIn
     */
     bool Trig();
 
+
+    /** RisingEdge
+    Checks current state of gate input.
+
+    @return True if the GPIO just transitioned - RisingEdge.
+    */
+    bool RisingEdge();
+
+
+    /** FallingEdge
+    Checks current state of gate input.
+
+    @return True if the GPIO just transitioned - FallingEdge.
+    */
+    bool FallingEdge();
+
+
+    /** StateChange
+    Checks current state of gate input.
+
+    @return True if the GPIO just transitioned - FallingEdge.
+    */
+    bool StateChange();
+
+
     /** State
     Checks current state of gate input (no state required)
 
