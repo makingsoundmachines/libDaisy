@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['device_0',['Device',['../structdaisy_1_1_q_s_p_i_handle_1_1_config.html#a0723bf91a7658cc79e54a28a030472e6',1,'daisy::QSPIHandle::Config']]],
-  ['device_1',['device',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4',1,'daisy::Trill']]],
+  ['device_0',['device',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4',1,'daisy::Trill']]],
+  ['device_1',['Device',['../structdaisy_1_1_q_s_p_i_handle_1_1_config.html#a0723bf91a7658cc79e54a28a030472e6',1,'daisy::QSPIHandle::Config']]],
   ['direction_2',['Direction',['../classdaisy_1_1_i2_c_handle.html#a8f815f7a77948286f0fa0065a1f7c54c',1,'daisy::I2CHandle::Direction()'],['../structdaisy_1_1_sai_handle_1_1_config.html#a80ffb7d40b82652f1550e8cf6ca56f81',1,'daisy::SaiHandle::Config::Direction()']]],
-  ['dmadirection_3',['DmaDirection',['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4da',1,'daisy::SpiHandle']]],
+  ['dmadirection_3',['DmaDirection',['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00',1,'daisy::UartHandler::DmaDirection()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00',1,'daisy::UartHandler::DmaDirection()'],['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4da',1,'daisy::SpiHandle::DmaDirection()']]],
   ['dsy_5fgpio_5fmode_4',['dsy_gpio_mode',['../group__other.html#ga0edc3fcaf729346c5251d263d732666e',1,'gpio.h']]],
   ['dsy_5fgpio_5fport_5',['dsy_gpio_port',['../group__utility.html#ga3f3543798ae410cae1cade28cd0fc14a',1,'daisy_core.h']]],
   ['dsy_5fgpio_5fpull_6',['dsy_gpio_pull',['../group__other.html#gad8a85223f8dbcdf2c2cfc9302b3451b8',1,'gpio.h']]]

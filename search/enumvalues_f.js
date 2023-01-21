@@ -3,8 +3,8 @@ var searchData=
   ['raw_0',['RAW',['../classdaisy_1_1_trill.html#a4c3e5ee8663f3a968f1f64341c552fbbac8df584062df5174a3186d3801adfecc',1,'daisy::Trill']]],
   ['receive_1',['RECEIVE',['../classdaisy_1_1_i2_c_handle.html#a8f815f7a77948286f0fa0065a1f7c54ca42ddaaef1ffd16ad35901150add8f8f2',1,'daisy::I2CHandle']]],
   ['red_2',['RED',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a8b805ea394bedf4786fd371ea10283b8',1,'daisy::Color']]],
-  ['reset_3',['Reset',['../namespacedaisy.html#a3069be23e98a0299bbfa8f1759754d45a51ff911624e8d6e5a76ce0433d00130f',1,'daisy']]],
-  ['resetallcontrollers_4',['ResetAllControllers',['../namespacedaisy.html#af9da54b73be4dec526670bd6c53ad98aa16372b6654282e39482508fd9dd45752',1,'daisy']]],
+  ['reset_3',['Reset',['../group__midi__events.html#gga3069be23e98a0299bbfa8f1759754d45a0dd4204dee9744133765cb5c69e55526',1,'daisy']]],
+  ['resetallcontrollers_4',['ResetAllControllers',['../group__midi__events.html#ggaf9da54b73be4dec526670bd6c53ad98aa4af832747a8a7352053a9dc749f4ab45',1,'daisy']]],
   ['right_5',['right',['../namespacedaisy.html#ac734c565c1dc55cbf6b74ea942f40c1ca7c4f29407893c334a6cb7a87bf045c0d',1,'daisy']]],
   ['ring_6',['RING',['../classdaisy_1_1_trill.html#a9fa673b36c888280663d90c660f009c4a71378fad8ad8795c258e6c28f2b82f1e',1,'daisy::Trill']]],
   ['ring_5fled_5f1_7',['RING_LED_1',['../classdaisy_1_1_daisy_petal.html#a6b6b85167d6938e7b4d151599773d682a4868bead6b4bb7b6d1e15ce3f6a34edf',1,'daisy::DaisyPetal']]],
@@ -19,5 +19,5 @@ var searchData=
   ['route_5fbutton_5f3_16',['ROUTE_BUTTON_3',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ea837efda39d83045b5293504ca13ebee4',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5f4_17',['ROUTE_BUTTON_4',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2ead57ed99488b154428f491a61488afceb',1,'daisy::DaisyHeartOfGold']]],
   ['route_5fbutton_5flast_18',['ROUTE_BUTTON_LAST',['../classdaisy_1_1_daisy_heart_of_gold.html#a72aed565f34113ca129f916f3ce2ca2eaf7a78fe806cc5c72241e45a9cfc261dc',1,'daisy::DaisyHeartOfGold']]],
-  ['rx_19',['RX',['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daaf9c24782c24c237d16e79f18e2fa9046',1,'daisy::SpiHandle']]]
+  ['rx_19',['RX',['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00af9c24782c24c237d16e79f18e2fa9046',1,'daisy::UartHandler::RX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00af9c24782c24c237d16e79f18e2fa9046',1,'daisy::UartHandler::RX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00af9c24782c24c237d16e79f18e2fa9046',1,'daisy::UartHandler::RX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00af9c24782c24c237d16e79f18e2fa9046',1,'daisy::UartHandler::RX()'],['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daaf9c24782c24c237d16e79f18e2fa9046',1,'daisy::SpiHandle::RX()']]]
 ];

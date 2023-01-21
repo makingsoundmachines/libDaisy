@@ -20,6 +20,6 @@ var searchData=
   ['subchunk2id_17',['SubChunk2ID',['../structdaisy_1_1_w_a_v___format_type_def.html#ae31021692b18b35a7f33e9e5e8d0a3f1',1,'daisy::WAV_FormatTypeDef']]],
   ['subchunk2size_18',['SubCHunk2Size',['../structdaisy_1_1_w_a_v___format_type_def.html#a93968350c8f1abcd287e79ded8b6a81d',1,'daisy::WAV_FormatTypeDef']]],
   ['switches_19',['switches',['../classdaisy_1_1_daisy_petal.html#a4c23c5086d0620b98c2d4a86fde53af2',1,'daisy::DaisyPetal']]],
-  ['sysex_5fdata_20',['sysex_data',['../structdaisy_1_1_midi_event.html#a3832d8ac412e42359eff562b56362cbb',1,'daisy::MidiEvent']]],
+  ['sysex_5fdata_20',['sysex_data',['../structdaisy_1_1_midi_event.html#a2054e2a610e47057abaa47e69bbdb9ef',1,'daisy::MidiEvent']]],
   ['system_21',['system',['../classdaisy_1_1patch__sm_1_1_daisy_patch_s_m.html#aee9989e96b489f7726676140ac0b9c26',1,'daisy::patch_sm::DaisyPatchSM']]]
 ];

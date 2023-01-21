@@ -9,6 +9,6 @@ var searchData=
   ['sw_6',['Sw',['../classdaisy_1_1_daisy_petal.html#a2651bb58e6ae33c0bd4bc770df3c7911',1,'daisy::DaisyPetal::Sw()'],['../classdaisy_1_1_daisy_pod.html#a148bfabd288f0b4d20a26b1d0e3bdeeb',1,'daisy::DaisyPod::Sw()']]],
   ['sync_7',['Sync',['../structdaisy_1_1_sai_handle_1_1_config.html#a269af182475979f6845fb06ffa3c4055',1,'daisy::SaiHandle::Config']]],
   ['sysclkfreq_8',['SysClkFreq',['../structdaisy_1_1_system_1_1_config.html#a100d6b1e0b41cf2bf17ecffe28fabfa7',1,'daisy::System::Config']]],
-  ['systemcommontype_9',['SystemCommonType',['../namespacedaisy.html#a4f648ead175d62e97ceb4d3b49f692f5',1,'daisy']]],
-  ['systemrealtimetype_10',['SystemRealTimeType',['../namespacedaisy.html#a3069be23e98a0299bbfa8f1759754d45',1,'daisy']]]
+  ['systemcommontype_9',['SystemCommonType',['../namespacedaisy.html#a4f648ead175d62e97ceb4d3b49f692f5',1,'daisy::SystemCommonType()'],['../group__midi__events.html#ga4f648ead175d62e97ceb4d3b49f692f5',1,'daisy::SystemCommonType()']]],
+  ['systemrealtimetype_10',['SystemRealTimeType',['../namespacedaisy.html#a3069be23e98a0299bbfa8f1759754d45',1,'daisy::SystemRealTimeType()'],['../group__midi__events.html#ga3069be23e98a0299bbfa8f1759754d45',1,'daisy::SystemRealTimeType()']]]
 ];

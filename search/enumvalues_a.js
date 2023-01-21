@@ -32,7 +32,7 @@ var searchData=
   ['leftrightselectupdownmodify_29',['leftRightSelectUpDownModify',['../classdaisy_1_1_abstract_menu.html#a888073f41ded25c2aff52aed3506470fa766a44b3aa25f8503fffba9d99e78601',1,'daisy::AbstractMenu']]],
   ['lin_30',['lin',['../classdaisy_1_1_mapped_float_value.html#a641cdb1b535573e06e3d4f7048562437ac93169f1eb9be7246f990690b5e66b2d',1,'daisy::MappedFloatValue']]],
   ['linear_31',['LINEAR',['../classdaisy_1_1_parameter.html#a2fcb1b7095721f0de77594aabb9594daa6e2ebdc42215e85fccee70a22145e357',1,'daisy::Parameter']]],
-  ['localcontrol_32',['LocalControl',['../namespacedaisy.html#af9da54b73be4dec526670bd6c53ad98aa23556bee1ab5fc77a407e9c4c62c743a',1,'daisy']]],
+  ['localcontrol_32',['LocalControl',['../group__midi__events.html#ggaf9da54b73be4dec526670bd6c53ad98aaab3e2c4fa628598e330e9dfc37716c73',1,'daisy']]],
   ['log_33',['log',['../classdaisy_1_1_mapped_float_value.html#a641cdb1b535573e06e3d4f7048562437adc1d71bbb5c4d2a5e936db79ef10c19f',1,'daisy::MappedFloatValue']]],
   ['logarithmic_34',['LOGARITHMIC',['../classdaisy_1_1_parameter.html#a2fcb1b7095721f0de77594aabb9594daaab531abbd03c5a2fc2290daa5a1f39c0',1,'daisy::Parameter']]],
   ['logger_5fexternal_35',['LOGGER_EXTERNAL',['../namespacedaisy.html#a1c3b206bedb5432fc7b46e4f1cbce8f9a514faa079167bd6603fdc2f5fdbc9e31',1,'daisy']]],

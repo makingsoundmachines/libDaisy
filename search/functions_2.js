@@ -2,8 +2,8 @@ var searchData=
 [
   ['back_0',['Back',['../classdaisy_1_1_f_i_f_o_base.html#a8b541afcf88dfb8c77692a3ac006f69e',1,'daisy::FIFOBase::Back() const'],['../classdaisy_1_1_f_i_f_o_base.html#a764e49d0b92d74bb96c945f26301d885',1,'daisy::FIFOBase::Back()']]],
   ['begin_1',['Begin',['../classdaisy_1_1_is31fl3731.html#a2bdc18c39527e6c61b0d84c8008e2585',1,'daisy::Is31fl3731']]],
-  ['blockingreceive_2',['BlockingReceive',['../classdaisy_1_1_spi_handle.html#a91106fe656c12d5b7be7858bcb2c6d16',1,'daisy::SpiHandle']]],
-  ['blockingtransmit_3',['BlockingTransmit',['../classdaisy_1_1_spi_handle.html#a89ccde60807d2681bc96425c0600c82d',1,'daisy::SpiHandle']]],
+  ['blockingreceive_2',['BlockingReceive',['../classdaisy_1_1_uart_handler.html#aae17dba49d39995a4aa3eaa3c809b66d',1,'daisy::UartHandler::BlockingReceive(uint8_t *buffer, uint16_t size, uint32_t timeout=100)'],['../classdaisy_1_1_uart_handler.html#aae17dba49d39995a4aa3eaa3c809b66d',1,'daisy::UartHandler::BlockingReceive(uint8_t *buffer, uint16_t size, uint32_t timeout=100)'],['../classdaisy_1_1_spi_handle.html#a91106fe656c12d5b7be7858bcb2c6d16',1,'daisy::SpiHandle::BlockingReceive()']]],
+  ['blockingtransmit_3',['BlockingTransmit',['../classdaisy_1_1_uart_handler.html#a1c5ad164edfdc32a8f01d9044657b9ed',1,'daisy::UartHandler::BlockingTransmit(uint8_t *buff, size_t size, uint32_t timeout=100)'],['../classdaisy_1_1_uart_handler.html#a1c5ad164edfdc32a8f01d9044657b9ed',1,'daisy::UartHandler::BlockingTransmit(uint8_t *buff, size_t size, uint32_t timeout=100)'],['../classdaisy_1_1_spi_handle.html#a89ccde60807d2681bc96425c0600c82d',1,'daisy::SpiHandle::BlockingTransmit(uint8_t *buff, size_t size, uint32_t timeout=100)']]],
   ['blockingtransmitandreceive_4',['BlockingTransmitAndReceive',['../classdaisy_1_1_spi_handle.html#a106ff23028e560dad08ea62900e26229',1,'daisy::SpiHandle']]],
   ['blue_5',['Blue',['../classdaisy_1_1_color.html#a9270f936191af9fcd59dad58a8ab0387',1,'daisy::Color']]],
   ['boost_6',['Boost',['../structdaisy_1_1_system_1_1_config.html#abba756da586d15e0a603a661721c86d6',1,'daisy::System::Config']]],
