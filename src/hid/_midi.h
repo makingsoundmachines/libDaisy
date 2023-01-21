@@ -15,10 +15,10 @@
 
 namespace daisy
 {
-/** @addtogroup external 
-    @{ 
+/** @brief   Transport layer for sending and receiving MIDI data over UART 
+ *  @details This is the mode of communication used for TRS and DIN MIDI
+ *  @ingroup midi
 */
-
 class MidiUartTransport
 {
   public:
@@ -75,6 +75,7 @@ class MidiUartTransport
     The MidiEvents fill a FIFO queue that the user can pop messages from.
     @author shensley
     @date March 2020
+    @ingroup midi
 */
 template <typename Transport>
 class MidiHandler
@@ -89,8 +90,7 @@ class MidiHandler
     };
 
     /** Initializes the MidiHandler 
-    \param in_mode Input mode
-    \param out_mode Output mode
+     *  \param config Configuration structure used to define specifics to the MIDI Handler.
      */
     void Init(Config config)
     {
@@ -147,8 +147,6 @@ class MidiHandler
         transport_.Tx(bytes, size);
     }
 
-
-
     /** Feed in bytes to state machine from a queue.
     Populates internal FIFO queue with MIDI Messages
     For example with uart:
@@ -157,114 +155,65 @@ class MidiHandler
     */
     void Parse(uint8_t byte)
     {
-        uint8_t type_ = 0;
-        uint8_t ch_ = 0;
-
         // reset parser when status byte is received
         if((byte & kStatusByteMask) && pstate_ != ParserSysEx)
         {
             pstate_ = ParserEmpty;
-
-            type_ = byte & 0xF0;
-            ch_ = byte & 0x0F;
         }
         switch(pstate_)
         {
             case ParserEmpty:
 
-                switch(type_)
+                switch(byte)
                 {
-                    case 0xF0: { // System Common
+                    case 0xFA: { // Start
+                        incoming_message_.type = SystemRealTime;
+                        running_status_        = SystemRealTime;
+                        incoming_message_.srt_type
+                            = static_cast<SystemRealTimeType>(
+                                byte & kSystemRealTimeMask);
 
-                        switch(byte)
-                        {
-                            case 0xF8:   // TimingClock
-                            case 0xFA:   // Start
-                            case 0xFB:   // Continue
-                            case 0xFC: { // Stop
-                                incoming_message_.type = SystemRealTime;
-                                running_status_        = SystemRealTime;
-                                incoming_message_.srt_type
-                                    = static_cast<SystemRealTimeType>(
-                                        byte & kSystemRealTimeMask);
-
-                                //short circuit to start
-                                pstate_ = ParserEmpty;
-                                event_q_.Write(incoming_message_);
-                            } break;
-                            default: pstate_ = ParserEmpty; break;
-                        }
-
+                        //short circuit to start
+                        pstate_ = ParserEmpty;
+                        event_q_.Write(incoming_message_);
                     } break;
-                    case 0x80: { // Note Off
+                    case 0xFB: { // Continue
+                        incoming_message_.type = SystemRealTime;
+                        running_status_        = SystemRealTime;
+                        incoming_message_.srt_type
+                            = static_cast<SystemRealTimeType>(
+                                byte & kSystemRealTimeMask);
 
-                        incoming_message_.type = NoteOff;
-                        incoming_message_.channel = ch_;
-
-                        pstate_ = ParserHasStatus;
-                        running_status_ = NoteOff;                        
-
+                        //short circuit to start
+                        pstate_ = ParserEmpty;
+                        event_q_.Write(incoming_message_);
                     } break;
-                    case 0x90: { // Note On
+                    case 0xFC: { // Stop
+                        incoming_message_.type = SystemRealTime;
+                        running_status_        = SystemRealTime;
+                        incoming_message_.srt_type
+                            = static_cast<SystemRealTimeType>(
+                                byte & kSystemRealTimeMask);
 
-                        incoming_message_.type = NoteOn;
-                        incoming_message_.channel = ch_;
+                        //short circuit to start
+                        pstate_ = ParserEmpty;
+                        event_q_.Write(incoming_message_);
+                    } break;
+                    case 0xF8: { // TimingClock
+                        incoming_message_.type = SystemRealTime;
+                        running_status_        = SystemRealTime;
+                        incoming_message_.srt_type
+                            = static_cast<SystemRealTimeType>(
+                                byte & kSystemRealTimeMask);
 
-                        pstate_ = ParserHasStatus;
-                        running_status_ = NoteOn;                        
-
+                        //short circuit to start
+                        pstate_ = ParserEmpty;
+                        event_q_.Write(incoming_message_);
                     } break;
                     default: pstate_ = ParserEmpty; break;
                 }
                     // Else we'll keep waiting for a valid incoming status byte
 
-            break;
-            case ParserHasStatus:
-
-                switch(running_status_)
-                {
-                    case NoteOff: { // Note Off
-                        incoming_message_.data[0] = byte & kDataByteMask;
-
-                        pstate_ = ParserHasData0;
-                    } break;
-                    case NoteOn: { // Note On
-                        incoming_message_.data[0] = byte & kDataByteMask;
-
-                        pstate_ = ParserHasData0;
-                    } break;
-                    default: pstate_ = ParserEmpty; break;
-                }
-
-            break;
-            case ParserHasData0:
-
-                switch(running_status_)
-                {
-                    case NoteOff: { // Note Off
-                        incoming_message_.data[1] = byte & kDataByteMask;
-
-                        event_q_.Write(incoming_message_);
-
-                        //back to start
-                        pstate_ = ParserEmpty;
-                    } break;
-                    case NoteOn: { // Note On
-                        incoming_message_.data[1] = byte & kDataByteMask;
-
-                        //velocity 0 NoteOns are NoteOffs
-                        if(incoming_message_.data[1] == 0) {
-                            incoming_message_.type = running_status_ = NoteOff;
-                        }
-
-                        event_q_.Write(incoming_message_);
-
-                        //back to start
-                        pstate_ = ParserEmpty;
-                    } break;
-                    default: pstate_ = ParserEmpty; break;
-                }
-                
             break;
             default: break;
         }
@@ -278,8 +227,13 @@ class MidiHandler
     midi.Parse(uart.PopRx());
     \param byte &
     */
-    void ParseX(uint8_t byte)
+    void Parse_bckp(uint8_t byte)
     {
+        // reset parser when status byte is received
+        if((byte & kStatusByteMask) && pstate_ != ParserSysEx)
+        {
+            pstate_ = ParserEmpty;
+        }
         switch(pstate_)
         {
             case ParserEmpty:
@@ -290,6 +244,12 @@ class MidiHandler
                     incoming_message_.channel = byte & kChannelMask;
                     incoming_message_.type    = static_cast<MidiMessageType>(
                         (byte & kMessageMask) >> 4);
+
+                    // Invalidate CCs
+                    if(running_status_ == ControlChange) {
+                        //transport_.FlushRx();
+                        pstate_ = ParserEmpty;
+                    }
 
                     // Validate, and move on.
                     if(incoming_message_.type < MessageLast)
@@ -342,7 +302,21 @@ class MidiHandler
                     // Handle as running status
                     incoming_message_.type    = running_status_;
                     incoming_message_.data[0] = byte & kDataByteMask;
-                    pstate_                   = ParserHasData0;
+                    //check for single byte running status, really this only applies to channel pressure though
+                    if(running_status_ == ChannelPressure
+                       || running_status_ == ProgramChange
+                       || incoming_message_.sc_type == MTCQuarterFrame
+                       || incoming_message_.sc_type == SongSelect)
+                    {
+                        //Send the single byte update
+                        pstate_ = ParserEmpty;
+                        event_q_.Write(incoming_message_);
+                    }
+                    else
+                    {
+                        pstate_
+                            = ParserHasData0; //we need to get the 2nd byte yet.
+                    }
                 }
                 break;
             case ParserHasStatus:
@@ -389,11 +363,16 @@ class MidiHandler
                     if(running_status_ == NoteOn
                        && incoming_message_.data[1] == 0)
                     {
-                        incoming_message_.type = running_status_ = NoteOff;
+                        incoming_message_.type = NoteOff;
                     }
 
                     // At this point the message is valid, and we can add this MidiEvent to the queue
                     event_q_.Write(incoming_message_);
+                }
+                else
+                {
+                    // invalid message go back to start ;p
+                    pstate_ = ParserEmpty;
                 }
                 // Regardless, of whether the data was valid or not we go back to empty
                 // because either the message is queued for handling or its not.
@@ -429,7 +408,7 @@ class MidiHandler
     UartHandler                uart_;
     ParserState                pstate_;
     MidiEvent                  incoming_message_;
-    RingBuffer<MidiEvent, 256> event_q_;
+    RingBuffer<MidiEvent, 256> event_q_; // RingBuffer<MidiEvent, 256>
     uint32_t                   last_read_; // time of last byte
     MidiMessageType            running_status_;
     Config                     config_;
@@ -445,9 +424,13 @@ class MidiHandler
     const uint8_t kSystemRealTimeMask = 0x07;
 };
 
-/** @} */
-
+/**
+ *  @{ 
+ *  @ingroup midi
+ *  @brief shorthand accessors for MIDI Handlers
+ * */
 using MidiUartHandler = MidiHandler<MidiUartTransport>;
 using MidiUsbHandler  = MidiHandler<MidiUsbTransport>;
+/** @} */
 } // namespace daisy
 #endif

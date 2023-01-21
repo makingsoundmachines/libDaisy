@@ -9,16 +9,19 @@
 #include <stdlib.h>
 #include "per/uart.h"
 #include "util/ringbuffer.h"
+#include "util/FIFO.h"
 #include "hid/MidiEvent.h"
 #include "hid/usb_midi.h"
 #include "sys/system.h"
 
 namespace daisy
 {
-/** @addtogroup external 
-    @{ 
+/** @brief   Transport layer for sending and receiving MIDI data over UART 
+ *  @details This is the mode of communication used for TRS and DIN MIDI
+ *           There is an additional 2kB of RAM data used within this class
+ *           for processing bulk data from the UART peripheral
+ *  @ingroup midi
 */
-
 class MidiUartTransport
 {
   public:
@@ -58,15 +61,53 @@ class MidiUartTransport
         uart_.Init(uart_config);
     }
 
-    inline void    StartRx() { uart_.StartRx(); }
-    inline size_t  Readable() { return uart_.Readable(); }
-    inline uint8_t Rx() { return uart_.PopRx(); }
-    inline bool    RxActive() { return uart_.RxActive(); }
-    inline void    FlushRx() { uart_.FlushRx(); }
-    inline void    Tx(uint8_t* buff, size_t size) { uart_.PollTx(buff, size); }
+    inline void StartRx()
+    {
+        uart_.DmaListenStart(
+            rx_buffer, kDataSize, MidiUartTransport::rxCallback, this);
+    }
+
+    inline size_t  Readable() { return fifo_.GetNumElements(); }
+    inline uint8_t Rx() { return fifo_.PopFront(); }
+    inline bool    RxActive() { return uart_.IsListening(); }
+    inline void    FlushRx() { fifo_.Clear(); }
+
+    inline void Tx(uint8_t* buff, size_t size) { uart_.PollTx(buff, size); }
+
+    static constexpr size_t  kDataSize = 1024;
+    UartHandler              uart_;
+    uint8_t                  rx_buffer[kDataSize];
+    FIFO<uint8_t, kDataSize> fifo_;
+
+
+    /** Static callback for Uart MIDI that occurs when
+     *  new data is available from the peripheral.
+     *  The new data is transferred from the peripheral to the
+     *  MIDI instance's byte FIFO that feeds the MIDI parser.
+     * 
+     *  TODO: Handle UartHandler errors better/at all.
+     *  (If there is a UART error, there's not really any recovery
+     *  option at the moment)
+     */
+    static void rxCallback(uint8_t*            data,
+                           size_t              size,
+                           void*               context,
+                           UartHandler::Result res)
+    {
+        /** Read context as transport type */
+        MidiUartTransport* transport
+            = reinterpret_cast<MidiUartTransport*>(context);
+        if(res == UartHandler::Result::OK)
+        {
+            /** Internally Handle Filling the parser */
+            for(size_t i = 0; i < size; i++)
+            {
+                transport->fifo_.PushBack(data[i]);
+            }
+        }
+    }
 
   private:
-    UartHandler uart_;
 };
 
 /** 
@@ -75,6 +116,7 @@ class MidiUartTransport
     The MidiEvents fill a FIFO queue that the user can pop messages from.
     @author shensley
     @date March 2020
+    @ingroup midi
 */
 template <typename Transport>
 class MidiHandler
@@ -89,8 +131,7 @@ class MidiHandler
     };
 
     /** Initializes the MidiHandler 
-    \param in_mode Input mode
-    \param out_mode Output mode
+     *  \param config Configuration structure used to define specifics to the MIDI Handler.
      */
     void Init(Config config)
     {
@@ -98,7 +139,7 @@ class MidiHandler
 
         transport_.Init(config_.transport_config);
 
-        event_q_.Init();
+        //event_q_.Init();
         incoming_message_.type = MessageLast;
         pstate_                = ParserEmpty;
     }
@@ -131,13 +172,15 @@ class MidiHandler
     /** Checks if there are unhandled messages in the queue 
     \return True if there are events to be handled, else false.
      */
-    bool HasEvents() const { return event_q_.readable(); }
+    //bool HasEvents() const { return event_q_.readable(); }
+    bool HasEvents() const { return event_q_.GetNumElements() > 0; }
 
 
     /** Pops the oldest unhandled MidiEvent from the internal queue
     \return The event to be handled
      */
-    MidiEvent PopEvent() { return event_q_.Read(); }
+    // MidiEvent PopEvent() { return event_q_.Read(); }
+    MidiEvent PopEvent() { return event_q_.PopFront(); }
 
     /** SendMessage
     Send raw bytes as message
@@ -147,8 +190,6 @@ class MidiHandler
         transport_.Tx(bytes, size);
     }
 
-
-
     /** Feed in bytes to state machine from a queue.
     Populates internal FIFO queue with MIDI Messages
     For example with uart:
@@ -157,129 +198,11 @@ class MidiHandler
     */
     void Parse(uint8_t byte)
     {
-        uint8_t type_ = 0;
-        uint8_t ch_ = 0;
-
         // reset parser when status byte is received
         if((byte & kStatusByteMask) && pstate_ != ParserSysEx)
         {
             pstate_ = ParserEmpty;
-
-            type_ = byte & 0xF0;
-            ch_ = byte & 0x0F;
         }
-        switch(pstate_)
-        {
-            case ParserEmpty:
-
-                switch(type_)
-                {
-                    case 0xF0: { // System Common
-
-                        switch(byte)
-                        {
-                            case 0xF8:   // TimingClock
-                            case 0xFA:   // Start
-                            case 0xFB:   // Continue
-                            case 0xFC: { // Stop
-                                incoming_message_.type = SystemRealTime;
-                                running_status_        = SystemRealTime;
-                                incoming_message_.srt_type
-                                    = static_cast<SystemRealTimeType>(
-                                        byte & kSystemRealTimeMask);
-
-                                //short circuit to start
-                                pstate_ = ParserEmpty;
-                                event_q_.Write(incoming_message_);
-                            } break;
-                            default: pstate_ = ParserEmpty; break;
-                        }
-
-                    } break;
-                    case 0x80: { // Note Off
-
-                        incoming_message_.type = NoteOff;
-                        incoming_message_.channel = ch_;
-
-                        pstate_ = ParserHasStatus;
-                        running_status_ = NoteOff;                        
-
-                    } break;
-                    case 0x90: { // Note On
-
-                        incoming_message_.type = NoteOn;
-                        incoming_message_.channel = ch_;
-
-                        pstate_ = ParserHasStatus;
-                        running_status_ = NoteOn;                        
-
-                    } break;
-                    default: pstate_ = ParserEmpty; break;
-                }
-                    // Else we'll keep waiting for a valid incoming status byte
-
-            break;
-            case ParserHasStatus:
-
-                switch(running_status_)
-                {
-                    case NoteOff: { // Note Off
-                        incoming_message_.data[0] = byte & kDataByteMask;
-
-                        pstate_ = ParserHasData0;
-                    } break;
-                    case NoteOn: { // Note On
-                        incoming_message_.data[0] = byte & kDataByteMask;
-
-                        pstate_ = ParserHasData0;
-                    } break;
-                    default: pstate_ = ParserEmpty; break;
-                }
-
-            break;
-            case ParserHasData0:
-
-                switch(running_status_)
-                {
-                    case NoteOff: { // Note Off
-                        incoming_message_.data[1] = byte & kDataByteMask;
-
-                        event_q_.Write(incoming_message_);
-
-                        //back to start
-                        pstate_ = ParserEmpty;
-                    } break;
-                    case NoteOn: { // Note On
-                        incoming_message_.data[1] = byte & kDataByteMask;
-
-                        //velocity 0 NoteOns are NoteOffs
-                        if(incoming_message_.data[1] == 0) {
-                            incoming_message_.type = running_status_ = NoteOff;
-                        }
-
-                        event_q_.Write(incoming_message_);
-
-                        //back to start
-                        pstate_ = ParserEmpty;
-                    } break;
-                    default: pstate_ = ParserEmpty; break;
-                }
-                
-            break;
-            default: break;
-        }
-    }
-
-
-
-    /** Feed in bytes to state machine from a queue.
-    Populates internal FIFO queue with MIDI Messages
-    For example with uart:
-    midi.Parse(uart.PopRx());
-    \param byte &
-    */
-    void ParseX(uint8_t byte)
-    {
         switch(pstate_)
         {
             case ParserEmpty:
@@ -312,7 +235,8 @@ class MidiHandler
 
                                 //short circuit to start
                                 pstate_ = ParserEmpty;
-                                event_q_.Write(incoming_message_);
+                                // event_q_.Write(incoming_message_);
+                                event_q_.PushBack(incoming_message_);
                             }
                             //system common
                             else
@@ -330,7 +254,8 @@ class MidiHandler
                                 else if(incoming_message_.sc_type > SongSelect)
                                 {
                                     pstate_ = ParserEmpty;
-                                    event_q_.Write(incoming_message_);
+                                    // event_q_.Write(incoming_message_);
+                                    event_q_.PushBack(incoming_message_);
                                 }
                             }
                         }
@@ -342,7 +267,22 @@ class MidiHandler
                     // Handle as running status
                     incoming_message_.type    = running_status_;
                     incoming_message_.data[0] = byte & kDataByteMask;
-                    pstate_                   = ParserHasData0;
+                    //check for single byte running status, really this only applies to channel pressure though
+                    if(running_status_ == ChannelPressure
+                       || running_status_ == ProgramChange
+                       || incoming_message_.sc_type == MTCQuarterFrame
+                       || incoming_message_.sc_type == SongSelect)
+                    {
+                        //Send the single byte update
+                        pstate_ = ParserEmpty;
+                        //event_q_.Write(incoming_message_);
+                        event_q_.PushBack(incoming_message_);
+                    }
+                    else
+                    {
+                        pstate_
+                            = ParserHasData0; //we need to get the 2nd byte yet.
+                    }
                 }
                 break;
             case ParserHasStatus:
@@ -356,7 +296,8 @@ class MidiHandler
                     {
                         //these are just one data byte, so we short circuit back to start
                         pstate_ = ParserEmpty;
-                        event_q_.Write(incoming_message_);
+                        //event_q_.Write(incoming_message_);
+                        event_q_.PushBack(incoming_message_);
                     }
                     else
                     {
@@ -389,11 +330,17 @@ class MidiHandler
                     if(running_status_ == NoteOn
                        && incoming_message_.data[1] == 0)
                     {
-                        incoming_message_.type = running_status_ = NoteOff;
+                        incoming_message_.type = NoteOff;
                     }
 
                     // At this point the message is valid, and we can add this MidiEvent to the queue
-                    event_q_.Write(incoming_message_);
+                    //event_q_.Write(incoming_message_);
+                    event_q_.PushBack(incoming_message_);
+                }
+                else
+                {
+                    // invalid message go back to start ;p
+                    pstate_ = ParserEmpty;
                 }
                 // Regardless, of whether the data was valid or not we go back to empty
                 // because either the message is queued for handling or its not.
@@ -404,7 +351,8 @@ class MidiHandler
                 if(byte == 0xf7)
                 {
                     pstate_ = ParserEmpty;
-                    event_q_.Write(incoming_message_);
+                    //event_q_.Write(incoming_message_);
+                    event_q_.PushBack(incoming_message_);
                 }
                 else if(incoming_message_.sysex_message_len < SYSEX_BUFFER_LEN)
                 {
@@ -426,14 +374,15 @@ class MidiHandler
         ParserHasData0,
         ParserSysEx,
     };
-    UartHandler                uart_;
-    ParserState                pstate_;
-    MidiEvent                  incoming_message_;
-    RingBuffer<MidiEvent, 256> event_q_;
-    uint32_t                   last_read_; // time of last byte
-    MidiMessageType            running_status_;
-    Config                     config_;
-    Transport                  transport_;
+    UartHandler uart_;
+    ParserState pstate_;
+    MidiEvent   incoming_message_;
+    //RingBuffer<MidiEvent, 256> event_q_;
+    FIFO<MidiEvent, 256> event_q_;
+    uint32_t             last_read_; // time of last byte
+    MidiMessageType      running_status_;
+    Config               config_;
+    Transport            transport_;
 
     // Masks to check for message type, and byte content
     const uint8_t kStatusByteMask     = 0x80;
@@ -445,9 +394,13 @@ class MidiHandler
     const uint8_t kSystemRealTimeMask = 0x07;
 };
 
-/** @} */
-
+/**
+ *  @{ 
+ *  @ingroup midi
+ *  @brief shorthand accessors for MIDI Handlers
+ * */
 using MidiUartHandler = MidiHandler<MidiUartTransport>;
 using MidiUsbHandler  = MidiHandler<MidiUsbTransport>;
+/** @} */
 } // namespace daisy
 #endif

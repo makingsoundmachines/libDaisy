@@ -336,7 +336,7 @@ void DaisyStolperbeatsRev4::InitCvOutputs()
     cfg.chn        = DacHandle::Channel::BOTH;
     seed.dac.Init(cfg);
     seed.dac.WriteValue(DacHandle::Channel::BOTH, 0);
-}
+} 
 
 void DaisyStolperbeatsRev4::InitEncoder()
 {
