@@ -378,9 +378,9 @@ class SSD130xDriver
         transport_.SendCommand(0x8D);
         transport_.SendCommand(0x14);
         // Set Segment Remap
-        transport_.SendCommand(0xA1);
+        transport_.SendCommand(0xA0); // used to be 0xA1
         // COM Output Scan Direction
-        transport_.SendCommand(0xC8);
+        transport_.SendCommand(0xC0); // used to be 0xC8
         // Contrast Control
         transport_.SendCommand(0x81);
         transport_.SendCommand(0x8F);
@@ -476,9 +476,9 @@ class SSD130xDriver
         transport_.SendCommand(0x8D);
         transport_.SendCommand(0x14);
         // Set Segment Remap
-        transport_.SendCommand(0xA1);
+        transport_.SendCommand(0xA0); // used to be 0xA1
         // COM Output Scan Direction
-        transport_.SendCommand(0xC8);
+        transport_.SendCommand(0xC0); // used to be 0xC8
         // Contrast Control
         transport_.SendCommand(0x81);
         transport_.SendCommand(0x8F);
