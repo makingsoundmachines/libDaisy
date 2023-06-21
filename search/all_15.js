@@ -14,8 +14,8 @@ var searchData=
   ['updateleds_11',['UpdateLeds',['../classdaisy_1_1_daisy_petal.html#ab224cad4e33c800d36ab90184859b006',1,'daisy::DaisyPetal::UpdateLeds()'],['../classdaisy_1_1_daisy_pod.html#a77da50cfdca4810687adde08a4913135',1,'daisy::DaisyPod::UpdateLeds()'],['../classdaisy_1_1_daisy_versio.html#ad25ccf6c7994e35b95d8912a63f00e72',1,'daisy::DaisyVersio::UpdateLeds()']]],
   ['updateratems_5f_12',['updateRateMs_',['../structdaisy_1_1_ui_canvas_descriptor.html#acde42d0bcf27e4e78933e0bca8deb324',1,'daisy::UiCanvasDescriptor']]],
   ['updownselectleftrightmodify_13',['upDownSelectLeftRightModify',['../classdaisy_1_1_abstract_menu.html#a888073f41ded25c2aff52aed3506470fa9767d663609a60d09b9d10921b04ef49',1,'daisy::AbstractMenu']]],
-  ['usb_5fhandle_14',['usb_handle',['../classdaisy_1_1_daisy_seed.html#aca07ac3af9281104c5e8006024b23ae8',1,'daisy::DaisySeed::usb_handle()'],['../classdaisy_1_1_daisy_seed_percussive.html#aa249f1ffe385d4816c967a5a7ca45354',1,'daisy::DaisySeedPercussive::usb_handle()'],['../classdaisy_1_1_daisy_seed_stolperbeats.html#a5eab0478b9698d620e9498f0dfb0c60e',1,'daisy::DaisySeedStolperbeats::usb_handle()']]],
-  ['usb_5fhandle_5f_15',['usb_handle_',['../classdaisy_1_1_logger_impl_3_01_l_o_g_g_e_r___i_n_t_e_r_n_a_l_01_4.html#aa72b7704835630d0a4b8c8e46fae8ee6',1,'daisy::LoggerImpl&lt; LOGGER_INTERNAL &gt;::usb_handle_()'],['../classdaisy_1_1_logger_impl_3_01_l_o_g_g_e_r___e_x_t_e_r_n_a_l_01_4.html#aa83a8c57053eb33a321aa7273a95d1e4',1,'daisy::LoggerImpl&lt; LOGGER_EXTERNAL &gt;::usb_handle_()']]],
+  ['usb_5fhandle_14',['usb_handle',['../classdaisy_1_1_daisy_seed.html#aca07ac3af9281104c5e8006024b23ae8',1,'daisy::DaisySeed::usb_handle'],['../classdaisy_1_1_daisy_seed_percussive.html#aa249f1ffe385d4816c967a5a7ca45354',1,'daisy::DaisySeedPercussive::usb_handle'],['../classdaisy_1_1_daisy_seed_stolperbeats.html#a5eab0478b9698d620e9498f0dfb0c60e',1,'daisy::DaisySeedStolperbeats::usb_handle']]],
+  ['usb_5fhandle_5f_15',['usb_handle_',['../classdaisy_1_1_logger_impl_3_01_l_o_g_g_e_r___i_n_t_e_r_n_a_l_01_4.html#aa72b7704835630d0a4b8c8e46fae8ee6',1,'daisy::LoggerImpl&lt; LOGGER_INTERNAL &gt;::usb_handle_'],['../classdaisy_1_1_logger_impl_3_01_l_o_g_g_e_r___e_x_t_e_r_n_a_l_01_4.html#aa83a8c57053eb33a321aa7273a95d1e4',1,'daisy::LoggerImpl&lt; LOGGER_EXTERNAL &gt;::usb_handle_']]],
   ['usb_5fsiz_5fstring_5fserial_16',['USB_SIZ_STRING_SERIAL',['../group___u_s_b_d___d_e_s_c___exported___constants.html#ga76287dc6e5f3cf4566406bd9b2eb7a2f',1,'usbd_desc.h']]],
   ['usbd_5fcdc_5fif_17',['USBD_CDC_IF',['../group___u_s_b_d___c_d_c___i_f.html',1,'']]],
   ['usbd_5fcdc_5fif_2eh_18',['usbd_cdc_if.h',['../usbd__cdc__if_8h.html',1,'']]],
@@ -70,7 +70,7 @@ var searchData=
   ['usbh_5fmemset_67',['USBH_memset',['../group___u_s_b_h___c_o_n_f___exported___macros.html#ga63ee6c1ecdb1012d53f3aaf41a90430c',1,'usbh_conf.h']]],
   ['usbhandle_68',['UsbHandle',['../class_usb_handle.html',1,'']]],
   ['usbhosthandle_69',['USBHostHandle',['../classdaisy_1_1_u_s_b_host_handle.html',1,'daisy']]],
-  ['usbperiph_70',['UsbPeriph',['../class_usb_handle.html#a782f2982a91520188f2be5a80c9febb4',1,'UsbHandle::UsbPeriph()'],['../class_usb_handle.html#a782f2982a91520188f2be5a80c9febb4',1,'UsbHandle::UsbPeriph()']]],
+  ['usbperiph_70',['UsbPeriph',['../class_usb_handle.html#a782f2982a91520188f2be5a80c9febb4',1,'UsbHandle::UsbPeriph'],['../class_usb_handle.html#a782f2982a91520188f2be5a80c9febb4',1,'UsbHandle::UsbPeriph']]],
   ['user_5fled_71',['user_led',['../classdaisy_1_1patch__sm_1_1_daisy_patch_s_m.html#a2ae2a7c25b4beae24a733acbd1d398b6',1,'daisy::patch_sm::DaisyPatchSM']]],
   ['utility_72',['UTILITY',['../group__utility.html',1,'']]]
 ];

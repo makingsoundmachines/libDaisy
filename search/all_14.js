@@ -6,7 +6,7 @@ var searchData=
   ['test_5fmode_3',['Test_mode',['../classdaisy_1_1_is31fl3731.html#a13cec1455c155e2175d2c9fecab926ff',1,'daisy::Is31fl3731']]],
   ['text_4',['text',['../structdaisy_1_1_abstract_menu_1_1_item_config.html#a7d9c5d9a01014d1369c21e5d175b1f6a',1,'daisy::AbstractMenu::ItemConfig']]],
   ['threshold_5',['threshold',['../group__dac.html#ga0117f0f619cd39155b4c723289341039',1,'daisy::MAX11300Driver::PinConfig']]],
-  ['tim5_5f_6',['tim5_',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#a285a4a2f66290391c55dd9bb0ca15bd7',1,'daisy::DaisyStolperbeatsRev4::tim5_()'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#a28ffed9740ff4d2f225fce22547ba1d3',1,'daisy::DaisyStolperbeatsRev3::tim5_()']]],
+  ['tim5_5f_6',['tim5_',['../classdaisy_1_1_daisy_stolperbeats_rev4.html#a285a4a2f66290391c55dd9bb0ca15bd7',1,'daisy::DaisyStolperbeatsRev4::tim5_'],['../classdaisy_1_1_daisy_stolperbeats_rev3.html#a28ffed9740ff4d2f225fce22547ba1d3',1,'daisy::DaisyStolperbeatsRev3::tim5_']]],
   ['tim_5f2_7',['TIM_2',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaa848c6355c514c385d53dde45615d0411',1,'daisy::TimerHandle::Config']]],
   ['tim_5f3_8',['TIM_3',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaa069b86aefb75f0c622fc14d8e28db631',1,'daisy::TimerHandle::Config']]],
   ['tim_5f4_9',['TIM_4',['../structdaisy_1_1_timer_handle_1_1_config.html#a907160c00bf0cad7ec645368bd4f5bcaac9136368e302d247b27e74dd7726ec1f',1,'daisy::TimerHandle::Config']]],
@@ -35,11 +35,11 @@ var searchData=
   ['tunerequest_32',['TuneRequest',['../group__midi__events.html#gga4f648ead175d62e97ceb4d3b49f692f5a7b6ba4068c8926730850ee9ca33a66ae',1,'daisy']]],
   ['twelvebituinttovolts_33',['TwelveBitUintToVolts',['../group__dac.html#ga086fceb7760823216e43206438862139',1,'daisy::MAX11300Driver']]],
   ['tx_34',['tx',['../structdaisy_1_1_uart_handler_1_1_config.html#aede71d4e3449591e661b0decfeecd993',1,'daisy::UartHandler::Config']]],
-  ['tx_35',['TX',['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX()'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX()'],['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daa869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::SpiHandle::TX()']]],
+  ['tx_35',['TX',['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX'],['../classdaisy_1_1_uart_handler.html#adbdfbf1dfaab99cf76ac7ca36d22cf00a869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::UartHandler::TX'],['../classdaisy_1_1_spi_handle.html#aa7c484882faf187c7c4153db7cf5e4daa869036c9d97cf6593c6f1c2ccfd99a49',1,'daisy::SpiHandle::TX']]],
   ['tx_5fbuff_5f_36',['tx_buff_',['../group__external.html#gab254d9ed55afc936ae351128a3209484',1,'daisy::Logger']]],
   ['tx_5fptr_5f_37',['tx_ptr_',['../group__external.html#ga00faf12f737b89347c2a9f7af123b25f',1,'daisy::Logger']]],
   ['type_38',['Type',['../classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483',1,'daisy::Switch']]],
-  ['type_39',['type',['../structdaisy_1_1_midi_event.html#aeb9a8c018a3f54c7cafd11b6f8e63e91',1,'daisy::MidiEvent::type()'],['../structdaisy_1_1_abstract_menu_1_1_item_config.html#a0b79dcaa186542997e04669b92d821ae',1,'daisy::AbstractMenu::ItemConfig::type()']]],
+  ['type_39',['type',['../structdaisy_1_1_midi_event.html#aeb9a8c018a3f54c7cafd11b6f8e63e91',1,'daisy::MidiEvent::type'],['../structdaisy_1_1_abstract_menu_1_1_item_config.html#a0b79dcaa186542997e04669b92d821ae',1,'daisy::AbstractMenu::ItemConfig::type']]],
   ['type_5fmomentary_40',['TYPE_MOMENTARY',['../classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483aaddc897d9c79b39b2024829bebb336a1',1,'daisy::Switch']]],
   ['type_5ftoggle_41',['TYPE_TOGGLE',['../classdaisy_1_1_switch.html#a944058682bae079439ddddd42302b483a5c6a5cc5d4fbe03be97b81244e669038',1,'daisy::Switch']]]
 ];

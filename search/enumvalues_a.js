@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['last_0',['LAST',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a59fb8f2d16bd5cd2cc0e5ca7fe7def92',1,'daisy::Color::LAST()'],['../classdaisy_1_1_parameter.html#a2fcb1b7095721f0de77594aabb9594daafd1a0bfdbd74a9f915abd72694b57621',1,'daisy::Parameter::LAST()']]],
+  ['last_0',['LAST',['../classdaisy_1_1_color.html#af93d31d5fc63705c228bf9da407c9a40a59fb8f2d16bd5cd2cc0e5ca7fe7def92',1,'daisy::Color::LAST'],['../classdaisy_1_1_parameter.html#a2fcb1b7095721f0de77594aabb9594daafd1a0bfdbd74a9f915abd72694b57621',1,'daisy::Parameter::LAST']]],
   ['led_5fkey_5fa1_1',['LED_KEY_A1',['../classdaisy_1_1_daisy_field.html#a934bafad363c30d198a71961d32a2fdaae960daa550abed7fb149bb3d58083f7c',1,'daisy::DaisyField']]],
   ['led_5fkey_5fa2_2',['LED_KEY_A2',['../classdaisy_1_1_daisy_field.html#a934bafad363c30d198a71961d32a2fdaa5f995baced93c7fa68c474e26a231102',1,'daisy::DaisyField']]],
   ['led_5fkey_5fa3_3',['LED_KEY_A3',['../classdaisy_1_1_daisy_field.html#a934bafad363c30d198a71961d32a2fdaaaf69b6332bcc63e551b34cdd2f9ff104',1,'daisy::DaisyField']]],
